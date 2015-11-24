@@ -1,0 +1,37 @@
+import os
+import nucleotide
+
+nucleotide.Options.check()
+
+rs = nucleotide.RoadSign()
+
+settings = nucleotide.Settings()
+
+settings.set_custom( 'directory:install',       'install'  )
+settings.set_custom( 'directory:temp',          'temp'     )
+settings.set_custom( 'architecture' ,           'i386'     )
+settings.set_custom( 'compiler:configuration',  'release'  )
+settings.set_custom( 'RTL',                     'static'   )
+
+
+settings.set_custom( 'architecture',             ARGUMENTS.get( 'architecture',           settings.get_custom( 'architecture' )      ) )
+settings.set_custom( 'directory:temp',           ARGUMENTS.get( 'directory:temp',         settings.get_custom( 'directory:temp' ) ) )
+settings.set_custom( 'directory:install',        ARGUMENTS.get( 'directory:install',      settings.get_custom( 'directory:install' ) ) )
+settings.set_custom( 'compiler:configuration',   ARGUMENTS.get( 'compiler:configuration', settings.get_custom( 'compiler:configuration' ) ) )
+settings.set_custom( 'RTL',                      ARGUMENTS.get( 'RTL',                    settings.get_custom( 'RTL' ) ) )
+
+settings.set_custom( 'directory:root',    '.'   )
+settings.set_custom( 'directory:source',  '.'  )
+
+settings.accumulate( 'architecture' , { 'name' : settings.get_custom( 'architecture' ) } )
+
+#print settings.get_config().m_this
+#print settings.get_options().m_this
+
+my_choice = nucleotide.Atom( );
+my_choice.get_config().append( 'CPPPATH', [ os.getenv( 'DDMRM_path_work_code_cpp__' ) ] )
+settings.extend( 'my-blank', my_choice )
+
+product = SConscript('./SConscript', exports=[ 'settings' ] )
+
+Default( product )

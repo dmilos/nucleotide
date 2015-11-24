@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Nucleotide</title>
+	</head>
+	<body>
+		<h1 align="center">Nucleotide</h1>
+		TOC
+			<ul>
+				<li><a href="#Description">Description</a></li>
+				<li><a href="#Information">Information</a>
+					<ul>
+						<li><a href="#Status">Status</a></li>
+					</ul>
+				</li>
+				<li><a href="#License">License</a></li>
+				<li><a href="#Examples">Examples</a></li>
+				<li><a href="#Install">Install</a></li>
+				<li><a href="#API">API</a></li>
+				<li><a href="#Miscellaneous">Miscellaneous</a></li>
+			</ul>
+
+		<dl>
+			<dt id="Description">Description</dt>
+			<dd>
+				An Scons library which wraps compiler interface in to universal one.<br>
+				With Nucleotide it is easy to write Scons build files avoiding to explicitly state platform or compiler.<br><br>
+				Quick example:
+				<blockquote>
+					Next  line set RTL:<br>
+					<blockquote>
+					<code>
+						settings.accumulate( 'RTL', { 'type': 'static', 'configuration' : 'debug' } )<br>
+					</code>
+
+					</blockquote>
+					and replace:
+					<blockquote>
+						<code> if( os.platform == 'win32' ):<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;if( compiler == 'msvc' ):<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I_flag = 'M'<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if( 'dynamic' == retrieve_RTL_type() ):<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I_flag += 'D'<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if( 'static' == retrieve_RTL_type() ):<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I_flag += 'T'<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if( 'debug' == retrieve_configuration_type() ):<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I_flag += 'd'<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if( 'release' == retrieve_configuration_type() ):<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pass<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;env.append( CPPFLAGS, [ I_flag ] )<br><br>
+						&nbsp;&nbsp;&nbsp;&nbsp;if( compiler == 'cygwin' ):<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;env.append( LINKFLAGS, "-static" )<br><br>
+						&nbsp;&nbsp;&nbsp;&nbsp;if( compiler == 'mingw' ):<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;env.append( LINKFLAGS, "-static" )<br>
+						else:<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;if( os.platform == 'linux' ):<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if( compiler == 'gcc' ):<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;env.append( LINKFLAGS, "-static" )</code><br>
+						... ... ...
+					</blockquote>
+				</blockquote>
+			</dd>
+			<dt id="Information">Information</dt>
+				<dd>
+					<ul>
+						<li id="Status">Status:
+							<ul>
+								<li>Still many things <a href="./todo.html">TODO</a>.</li>
+								<li>Git repository under construction</li>
+								<li>Source might be used for testing</li>
+								<li>Some atom's parameter(s) may not be yet implemented or might be changed.</li>
+							</ul>
+
+						</li>
+						<li>Version:0.0.0.0a</li>
+						<li>Date:2015-11-16</li>
+						<li>Files: clone https://github.com/dmilos/nukleotide.git </li>
+						<li>Web:
+							<ul>
+							<li>Home: <a href="https://github.com/dmilos/nukleotide">https://github.com/dmilos/nukleotide</a></li>
+							<li>Wiki: <a href="https://github.com/dmilos/nukleotide/wiki">https://github.com/dmilos/nukleotide/wiki</a></li>
+							<ul>
+						</li>
+					</ul>
+				</dd>
+			<dt id="License">License</dt>
+			<dd>
+				Full and original Apache 2.0 License.<br>
+				Original version: <a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a>
+			</dd>
+			<dt id="Examples">Examples</dt>
+			<dd>
+				<dl>
+					<dt>Lessons</dt>
+					<dd>TODO  Lorem ipsum dolor sit amet, consectetur adipiscing elit</dd>
+					<dt>Templates</dt>
+					<dd>TODO  Lorem ipsum dolor sit amet, consectetur adipiscing elit</dd>
+					<dt>Test</dt>
+					<dd>TODO  Lorem ipsum dolor sit amet, consectetur adipiscing elit</dd>
+				</dl>
+			</dd>
+			<dt id="Install">Install</dt>
+			<dd>
+				<a href="./install.html">Instructions in detail</a>.
+			</dd>
+			<dt id="API">API</dt>
+				<dd>
+					<a href="./api/index.html">Index or starting point</a>.
+					<ul>
+						<li>Classes</li>
+						<li>Atoms
+							<ul>
+								<li><a href="api/warning.html">warning</a></li>
+								<li>Compiler</li>
+								<li>Linker</li>
+								<li>Libraries: boost, python</li>
+							</ul>
+						</li>
+					</ul>
+				</dd>
+
+			<dt id="Miscellaneous">Miscellaneous</dt>
+				<dd> Unrelated Nucleotide on Wikipedia <a href="https://en.wikipedia.org/wiki/Nucleotide">https://en.wikipedia.org/wiki/Nucleotide</a> </dd>
+		</dl>
+		<hr width="80%" align="center">
+		<table align="center">
+			<tr><td><a href="./todo.html">TODO</a></td>
+			    <td><a href="./api/index.html">API</a></td></tr>
+		</table>
+		<hr width="100%" align="center">
+	</body>
+
+
+</html>

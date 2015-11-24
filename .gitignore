@@ -1,1 +1,11 @@
 *.pyc
+.svn
+.sconsign.dblite
+*.exe
+*.obj
+*.o
+*.dll
+*.exp
+*.lib
+*.exp
+*.bak

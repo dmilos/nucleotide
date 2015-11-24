@@ -1,0 +1,16 @@
+import os
+import nucleotide
+
+#make setting
+settings = nucleotide.Settings()
+
+#Accumulate architecture
+settings.set_custom( 'architecture' ,            ARGUMENTS.get( 'architecture',   'i386'  )      )
+settings.accumulate( 'architecture' , { 'name' : settings.get_custom( 'architecture' )  } )
+
+# Call
+product = SConscript('./SConscript', exports=[ 'settings' ] )
+
+#Make it defualt
+Default( product )
+

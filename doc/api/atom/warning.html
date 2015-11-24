@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Warnings</title>
+	</head>
+	<body>
+		<h1 align="center">Warnings</h1>
+		TOC
+		<ul>
+			<li><a href="#Naming">Naming</a></dt>
+			<li><a href="#Common">Common Parameter</a></dt>
+			<li><a href="#List">List</a></dt>
+		</ul>
+
+		<dl>
+			<dt id="Naming">Naming</dt>
+			<dd>Name of warning are consisted of few word separated by sign minus.<br>
+			It is usually copy/past from GCC or MSVS depend which one give clear explanation on the first look.</dd>
+		</dl>
+		<dl>
+			<dt id="Naming">Examples</dt>
+			<dd>
+				<ul>
+					<li><code>settings.accumulate( 'compiler:warning', { 'unused-local-variable' : 'once' }  )</code></li>
+					<li><code>settings.accumulate( 'compiler:warning', { 'returning-address-of-local-variable' : 'error' } )</code></li>
+						
+					
+				</ul>
+			</dd>
+		</dl>
+
+		<dl>
+			<dt id ="Common">Common Value(s) for all Parameter(s)</dt>
+			<dd>All parameters has same common values.<br>
+				<blockquote>
+					<dl>
+						<dt>Name:</dt>
+						<dd> <code>action</code> </dd>
+						<dt>Values:</dt>
+						<dd> 
+							<table>
+								<tr><td><code>enable</code></td><td> Enable reporting of this warning</td></tr>
+								<tr><td><code>disable</code></td><td>Disengage reporting of this warning</td></tr>
+								<tr><td><code>once</code></td><td>Report this warning just once </td></tr>
+								<tr><td><code>error</code></td><td> Report this warning as error</td></tr>
+							</table>
+						</dd>
+					</dl>
+				</blockquote>
+			</dd>
+		<dl>
+
+		<dl>
+			<dt d="List">List: </dt>
+			<dd>
+				<dl>
+					<dt><code>return-by-value</code></dt>
+					<dd>
+						<table>
+							<tr><td>Desciption</td><td> TODO </td></tr>
+							<tr><td>Example</td><td> <code>settings.accumulate('compiler:warning', { 'returning-address-of-local-variable': 'error'})</code></td></tr>
+						</table>
+					</dd>
+					<dt><code>returning-address-of-local-variable</code></dt>     <dd> TODO</dd>
+					<dt><code>unused-local-variable</code></dt>                   <dd> TODO</dd>
+					<dt><code>unused-variable</code></dt>                         <dd> TODO</dd>
+					<dt><code>unused-local-typedefs</code></dt>                   <dd> TODO</dd>
+					<dt><code>unused-but-set-variable</code></dt>                 <dd> TODO</dd>
+					<dt><code>member-order-of-initialization</code></dt>          <dd> TODO</dd>
+					<dt><code>sign-compare</code></dt>                            <dd> TODO</dd>
+					<dt><code>no-return-statement</code></dt>                     <dd> TODO</dd>
+					<dt><code>using-of-uninitialized-variable</code></dt>         <dd> TODO</dd>
+
+				</dl>
+			</dd>
+		</dl>
+
+	<hr width="80%" align="center">
+		<table align="center">
+			<td><a href="../index.html">Index</a></td>
+			<td><a href="../todo.html">TODO</a></td>
+			<td><a href="warning.html">Warnings</a></td>
+		</table>
+	<hr width="100%">
+
+	</body>
+</html>
+
+<!--
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+-->

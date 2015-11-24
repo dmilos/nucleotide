@@ -1,0 +1,22 @@
+import os
+#import sys
+#import subprocess
+import nucleotide
+
+
+#make setting
+settings = nucleotide.Settings()
+
+# Write my extension
+## 1. Construct blank
+my_choice = nucleotide.Atom( );
+## 2. Fill
+my_choice.get_config().append( 'CPPPATH', [ os.getenv( 'DDMRM_path_work_code_cpp__' ) ] )
+## 3. register
+settings.extend( 'my-extension', my_choice )
+
+# Call
+product = SConscript('./SConscript', exports=[ 'settings' ] )
+
+#Make it defualt
+Default( product )
