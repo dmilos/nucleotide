@@ -14,47 +14,46 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License. 
 
-
-table = {
+TABLE = {
     'misleading-indentation'                : {
             'X-X-FSF-gcc-X': 'misleading-indentation'
         },
 
     'unused-variable'                       : {
-            'X-X-FSF-gcc-X'                   : 'unused-variable'
+            'X-X-FSF-gcc-X'                   : 'unused-variable',
             'Windows-Windows-Microsoft-msvc-X': '4189' 
         },
     'unused-local-typedefs'                 : {
             'X-X-FSF-gcc-X': 'unused-local-typedefs'
         },
-
     'unused-variable-but-set'               : {
             'X-X-FSF-gcc-X': 'unused-but-set-variable'
         },
-    'unused-formal -parameter'               : {
+    'unused-formal-parameter'               : {
             'Windows-Windows-Microsoft-msvc-X': '4100'
         },
-
     'unused-code':{
             'Windows-Windows-Microsoft-msvc-X': '4702'
-        }
-
+        },
 
     'member-order-initialization'           : {
             'X-X-FSF-gcc-X': 'reorder'
         },
 
-
     'return-no-return-statement'            : {
             'X-X-FSF-gcc-X': 'return-type'
         },
     'return-address-of-local-variable': {
+            'Windows-Windows-Microsoft-msvc-X': '4172',
+            'X-X-FSF-gcc-X'                   : 'return-local-addr'
         },
 
     'uninitialized-variable'                : {
             'X-X-FSF-gcc-X': 'uninitialized'
         },
-    'uninitialized-using-of--variable' : {
+    'uninitialized-using-of-variable' : {
+            'Windows-Windows-Microsoft-msvc-X': '4700',
+            'X-X-FSF-gcc-X'                   : 'uninitialized'
         },
 
     'base-class-destructor-is-inaccessible' : {
@@ -62,7 +61,7 @@ table = {
         },
 
     'conversion-comparation' : {
-        'Windows-Windows-Microsoft-msvc-X': [ '4388', '4018' ]
+        'Windows-Windows-Microsoft-msvc-X': [ '4388', '4018' ],
         'linux-gcc': 'sign-compare'
         },
 
@@ -77,7 +76,6 @@ table = {
     'enumerator-not-explicitly-handled' : {
         'Windows-Windows-Microsoft-msvc-X': '4601'
         },
-
     'enumerator-not-handled' : {
         'Windows-Windows-Microsoft-msvc-X': '4602'
         },
@@ -89,7 +87,6 @@ table = {
     'macro-not-enought-parameter' : {
         'Windows-Windows-Microsoft-msvc-X': '4003'
         },
-
     'macro-redfinition' : {
         'Windows-Windows-Microsoft-msvc-X': '4005'
         },

@@ -15,7 +15,7 @@
 #   limitations under the License. 
 
 
-__all__       = [ 'Options', 'Settings', 'Atom', 'Environment', 'Config', 'Direction', 'Custom' ]
+__all__       = [ 'Options', 'Settings', 'Atom', 'Environment', 'Config', 'Direction', 'Custom', 'component' ]
 __name__      = 'nucleotide'
 __author__    = 'I'
 __developer__ = 'I'

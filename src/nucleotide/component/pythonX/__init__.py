@@ -15,8 +15,8 @@
 #   limitations under the License. 
 
 
-__all__ = [ '' ]
-__name__      = 'nucleotide.component.pythonX'
+__all__   = [ '' ]
+__name__  = 'nucleotide.component.pythonX'
 
 import main
 

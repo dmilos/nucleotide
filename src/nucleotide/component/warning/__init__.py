@@ -15,8 +15,8 @@
 #   limitations under the License. 
 
 
-__all__ = [ '' ]
-__name__      = 'nucleotide.component.warning'
+__all__   = [ 'table', 'util' ]
+__name__  = 'nucleotide.component.warning'
 
 import main
 

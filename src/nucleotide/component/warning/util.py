@@ -14,29 +14,47 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License. 
 
+import platform
+
+import nucleotide
+import nucleotide.component
+import nucleotide.component.warning.table
+import nucleotide.direction
 
 def windows_make( P_native, P_status ):
-   #if( 'enable'   == P_status ): Ir_list += []
-    if( 'disable'  == P_status ): Ir_list += ['/wd' + P_native]
-    if( 'error'    == P_status ): Ir_list += ['/we' + P_native]
-    if( 'once'     == P_status ): Ir_list += ['/wo' + P_native]
+    Ir_switch = ''
+   #if( 'enable'   == P_status ): Ir_switch = ''
+    if( 'disable'  == P_status ): Ir_switch = '/wd' + P_native 
+    if( 'error'    == P_status ): Ir_switch = '/we' + P_native 
+    if( 'once'     == P_status ): Ir_switch = '/wo' + P_native 
+    return Ir_switch
 
 def linux_make( P_native, P_status ):
-    if( 'enable'   == P_status ): Ir_list += []
-    if( 'disable'  == P_status ): Ir_list += [ '-W'       + P_native ]
-    if( 'error'    == P_status ): Ir_list += [ '-Werror=' + P_native ]
-    if( 'once'     == P_status ): Ir_list += []
+    Ir_switch = ''
+    if( 'enable'   == P_status ): Ir_switch = ''
+    if( 'disable'  == P_status ): Ir_switch = '-Wno-'    + P_native
+    if( 'error'    == P_status ): Ir_switch = '-Werror=' + P_native
+    if( 'once'     == P_status ): Ir_switch = ''
+    return Ir_switch
 
-def general2specific( P_name, P_specific ):
-    if( True == warning_table.Has_key( P_name ) ):
-        if( True == warning_table[P_name].Has_key( P_specific ) ):
-            return warning_table[P_name][P_specific]
-    return ''
+def convertor(P_direction):
+    if( 'Linux'   == platform.system() ):
+        return linux_make 
+    if( 'Windows' == platform.system() ): 
+        return windows_make 
 
-def specific2general( P_data, P_specific ):
-    #for item in warning_table:
-    #    if( True == warning_table[item].Has_key( P_specific ) ):
-    #        if( P_data == warning_table[item][P_specific] )
-    #            return item
-    pass
-
+def list( P_list, P_direction ):
+    Ir_list = []
+    I_convertor = convertor( P_direction )
+    for item in P_list:
+        if( False == nucleotide.component.warning.table.TABLE.has_key( item ) ):
+            continue
+        I_best = -1
+        for elem in nucleotide.component.warning.table.TABLE[item]:
+            I_similar = P_direction.smilarity( nucleotide.direction.Direction.extract( elem ) ) 
+            if( I_best < I_similar ):
+                I_best = I_similar
+                I_text = nucleotide.component.warning.table.TABLE[item][elem]
+        if( -1 != I_best ):
+            Ir_list += [ I_convertor( I_text, P_list[item]) ]
+    return Ir_list

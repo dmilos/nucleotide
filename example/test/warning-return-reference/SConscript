@@ -5,7 +5,7 @@ Import('settings')
 
 # Accumulate Atoms
 settings.accumulate( 'exception' )
-settings.accumulate( 'compiler:warning', { 'returning-address-of-local-variable': 'error'  } )
+settings.accumulate( 'compiler:warning', { 'return-address-of-local-variable': 'error'  } )
 
 # Accumulate source
 source = []

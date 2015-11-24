@@ -19,6 +19,7 @@ import function
 import nucleotide.direction
 import nucleotide.config
 import nucleotide.klass
+import nucleotide.component.warning
 
 
 atom_linux_blank = {
@@ -381,32 +382,11 @@ atom_linux_pp2f = {
     'class':  [ 'pp2f', 'linux:pp2f' ]
 }
 
-warning_table = {
-    'unused-variable'                         : 'unused-variable',
-    'unused-local-typedefs'                   : 'unused-local-typedefs',
-    'member-order-initialization'             : 'reorder',
-    'sign-compare'                            : 'sign-compare',
-    'unused-but-set-variable'                 : 'unused-but-set-variable',
-    'no-return-statement'                     : 'return-type',
-    'using-of-uninitialized-variable'         : 'uninitialized',
-    'returning-address-of-local-variable'     : 'no-return-local-addr',
-
-   #'base-class-destructor-is-inaccessible' : 'TODO'
-
-}
-
 def _linux_compiler_warning_CPPFLAGS( P_list ):
     Ir_list= []
-    for item in P_list:
-        if ( False  == warning_table.has_key( item ) ):
-            continue
+    I_direction = nucleotide.direction.Direction( {'host'  : 'Linux','guest' : 'Linux'}, P_cc = { 'vendor': 'FSF', 'name': 'gcc', 'version': 'X'} )
 
-        if( 'enable'   == P_list[item] ): Ir_list += []
-        if( 'disable'  == P_list[item] ): Ir_list += [ '-W'       + warning_table[item] ]
-        if( 'error'    == P_list[item] ): Ir_list += [ '-Werror=' + warning_table[item] ]
-        if( 'once'     == P_list[item] ): Ir_list += []
-
-    return Ir_list
+    return nucleotide.component.warning.util.list( P_list, I_direction )
 
 atom_linux_compiler_warning = {
     'platform' : {

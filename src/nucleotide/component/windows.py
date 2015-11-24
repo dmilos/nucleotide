@@ -19,6 +19,7 @@ import function
 import nucleotide.direction
 import nucleotide.config
 import nucleotide.klass
+import nucleotide.component.warning
 
 
 atom_windows_blank = {
@@ -427,36 +428,11 @@ atom_windows_architecture= {
     'class':  [ 'architecture' ]
 }
 
-def _windows_compiler_warning_CPPFLAGS( P_data ):
+def _windows_compiler_warning_CPPFLAGS( P_list ):
     Ir_list= []
-    
-    #for item in P_data:
-    #    number = general2specific( 'microsoft-msvc', item )
-    #    if( '' == number ):
-    #        continue
-    #   #if( 'enable'   == P_data[item] ): Ir_list += []
-    #    if( 'disable'  == P_data[item] ): Ir_list += ['/wd'+number]
-    #    if( 'error'    == P_data[item] ): Ir_list += ['/we'+number]
-    #    if( 'once'     == P_data[item] ): Ir_list += ['/wo'+number]
+    I_direction = nucleotide.direction.Direction( {'host'  : 'Windows','guest' : 'Windows'}, P_cc = { 'vendor': 'Microsoft', 'name': 'msvc', 'version': 'X'} )
 
-    for item in P_data:
-        if item == 'base-class-destructor-is-inaccessible':
-           #if( 'enable'   == P_data[item] ): Ir_list += []
-            if( 'disable'  == P_data[item] ): Ir_list += ['/wd4624']
-            if( 'error'    == P_data[item] ): Ir_list += ['/we4624']
-            if( 'once'     == P_data[item] ): Ir_list += ['/wo4624']
-        if item == 'returning-address-of-local-variable':
-           #if( 'enable'   == P_data[item] ): Ir_list += []
-            if( 'disable'  == P_data[item] ): Ir_list += ['/wd4172']
-            if( 'error'    == P_data[item] ): Ir_list += ['/we4172']
-            if( 'once'     == P_data[item] ): Ir_list += ['/wo4172']
-        if item == 'using-of-uninitialized-variable':
-           #if( 'enable'   == P_data[item] ): Ir_list += []
-            if( 'disable'  == P_data[item] ): Ir_list += ['/wd4700']
-            if( 'error'    == P_data[item] ): Ir_list += ['/we4700']
-            if( 'once'     == P_data[item] ): Ir_list += ['/wo4700']
-
-    return Ir_list
+    return nucleotide.component.warning.util.list( P_list, I_direction )
 
 atom_windows_compiler_warning = {
     'platform' : {

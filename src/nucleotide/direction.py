@@ -114,13 +114,13 @@ class Direction:
 
     @staticmethod
     def extract( P_string ):
-        print 'Directory.extract(' + P_string + ')'
+        #print 'Directory.extract(' + P_string + ')'
         m = re.match( '(\w*)-(\w*)-(\w*)-(\w*)-(\w*)', P_string )
         if( None == m ):
-            print 'Directory.extract:: return invalid'
+            #print 'Directory.extract:: return invalid'
             return Direction( {'host'  : 'Y','guest' : 'Y'}, { 'vendor': 'Y', 'name': 'Y', 'version': 'Y'} )
 
-        I_return = Direction( {'host' : m.group(1), 'guest' : m.group(2) }, { 'vendor': m.group(3), 'name': m.group(4), 'version': m.group(5)} )
-        print 'Directory.extract( P_string =' + P_string + ' ) -> ' +str( I_return.m_translator )
-        return I_return
+        Ir_return = Direction( {'host' : m.group(1), 'guest' : m.group(2) }, { 'vendor': m.group(3), 'name': m.group(4), 'version': m.group(5)} )
+        #print 'Directory.extract( P_string =' + P_string + ' ) -> ' +str( Ir_return.m_translator )
+        return Ir_return
 
