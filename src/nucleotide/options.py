@@ -87,10 +87,10 @@ class Options:
             #print '    Options::get:: 3 - ' + ' element:   ' + element + ' ; ' + ' level: ' + str( I_level )
 
         if( -1 == I_best['level'] ):
-            #print '    Options::get:: 4 - I_best[\'level\'] = ' + str( I_best['level'] )
+            print '    Options::get:: 4 ' + P_universal + ' - I_best[\'level\'] = ' + str( I_best['level'] )
             return atom.Atom( )
 
-        print '    Options::get:: 5 for: ' + P_universal + ' - return: ' +  I_best['name']
+        print '    Options::get:: 5 for: ' + P_universal + ' - return: ||' + str( I_best['level'] ) + '|| - '+  I_best['name']
         return self.m_this[ I_best['name'] ]
 
     def join_out2(self, a, b ):

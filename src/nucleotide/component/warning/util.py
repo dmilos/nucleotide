@@ -44,6 +44,8 @@ def convertor(P_translator):
         return windows_make 
 
 def list( P_list, P_translator ):
+    #print 
+    #print __file__ + ' - ' + str( P_translator.get() )
     Ir_list = []
     I_convertor = convertor( P_translator )
     for item in P_list:
@@ -57,4 +59,6 @@ def list( P_list, P_translator ):
                 I_text = nucleotide.component.warning.table.TABLE[item][elem]
         if( -1 != I_best ):
             Ir_list += [ I_convertor( I_text, P_list[item]) ]
+            #print '        ' + __file__ + ' - ||' + str( I_best ) + '||  Name = ' + I_text
+    #print '    ' + __file__ + ' - ' + str( Ir_list )
     return Ir_list

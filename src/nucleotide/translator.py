@@ -12,7 +12,7 @@
 #   distributed under the License is distributed on an "AS IS" BASIS,
 #   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 #   See the License for the specific language governing permissions and
-#   limitations under the License. 
+#   limitations under the License.
 
 
 import re
@@ -48,6 +48,8 @@ class Translator:
 
     def smilarity( self, P_other ):
         I_level = -1
+        #print __file__ +' - P_other.m_translator == '+ str( P_other.m_translator )
+        #print __file__ +' - self.m_translator    == '+ str(    self.m_translator )
 
         I_match = Translator._smilarity0( self.m_translator['platform']['host' ], P_other.m_translator['platform']['host' ] );
         if( 0 == I_match ):
@@ -59,14 +61,14 @@ class Translator:
         if( 0 == I_match ):
             return -1
 
-        I_level += 10
+        I_level += 1
 
-        if( self.m_translator['cc']['vendor']       == P_other.m_translator['cc']['vendor']       ):  I_level += 200
-        if( self.m_translator['cc']['vendor']       == 'X'       ):  I_level += 100
-        if( self.m_translator['cc']['name']         == P_other.m_translator['cc']['name']         ):  I_level += 2000
-        if( self.m_translator['cc']['name']         == 'X'         ):  I_level += 1000
-        if( self.m_translator['cc']['version']      == P_other.m_translator['cc']['version']      ):  I_level += 20000
-        if( self.m_translator['cc']['version']      == 'X'      ):  I_level += 10000
+        I_match = Translator._smilarity0( self.m_translator['cc']['vendor'], P_other.m_translator['cc']['vendor'] );
+        I_level += [  -9000,    50,    50,    90 ][ I_match ]
+        I_match = Translator._smilarity0( self.m_translator['cc']['name'], P_other.m_translator['cc']['name'] );
+        I_level += [  -9000,   500,   500,   900 ][ I_match ]
+        I_match = Translator._smilarity0( self.m_translator['cc']['version'], P_other.m_translator['cc']['version'] );
+        I_level += [  -9000,  5000,  5000,  9000 ][ I_match ]
 
         return I_level
 
@@ -92,10 +94,10 @@ class Translator:
         #print '        P_left = '+P_left+' , P_right = '+ P_right +' '
         if( P_left == P_right ):
             #print '            2'
-            return 2
+            return 3
         if( 'X' == P_left ):
             #print '            1'
-            return 1
+            return 2
         if( 'X' == P_right ):
             #print '            1'
             return 1
