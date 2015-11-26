@@ -17,24 +17,24 @@
 
 import config
 import klass
-import direction
+import translator
 
 ## Minimal action thats configure translator
 class Atom:
-    m_direction = None
+    m_translator = None
     m_config    = None
     m_klass     = None
 
-    def __init__( self, P_direction = direction.Direction(), P_config = config.Config(), P_class = klass.Klass() ):
-        self.m_direction = P_direction
+    def __init__( self, P_translator = translator.Translator(), P_config = config.Config(), P_class = klass.Klass() ):
+        self.m_translator = P_translator
         self.m_config    = P_config
         self.m_klass     = P_class
 
-    def set_direction( self, P_value ):
-        self.m_direction = P_value
+    def set_translator( self, P_value ):
+        self.m_translator = P_value
 
-    def get_direction( self ):
-        return self.m_direction
+    def get_translator( self ):
+        return self.m_translator
 
     def get_config( self ):
         return self.m_config

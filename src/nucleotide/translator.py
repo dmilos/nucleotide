@@ -20,7 +20,7 @@ import copy
 
 ## Translator infromation
 #
-class Direction:
+class Translator:
     m_translator ={}
 
     def __init__( self, P_platform = {'host'  : 'X','guest' : 'X'}, P_cc = { 'vendor': 'X', 'name': 'X', 'version': 'X'} ):
@@ -49,13 +49,13 @@ class Direction:
     def smilarity( self, P_other ):
         I_level = -1
 
-        I_match = Direction._smilarity0( self.m_translator['platform']['host' ], P_other.m_translator['platform']['host' ] );
+        I_match = Translator._smilarity0( self.m_translator['platform']['host' ], P_other.m_translator['platform']['host' ] );
         if( 0 == I_match ):
             return -1
 
         I_level += 1
 
-        I_match = Direction._smilarity0( self.m_translator['platform']['guest' ], P_other.m_translator['platform']['guest' ] );
+        I_match = Translator._smilarity0( self.m_translator['platform']['guest' ], P_other.m_translator['platform']['guest' ] );
         if( 0 == I_match ):
             return -1
 
@@ -118,9 +118,9 @@ class Direction:
         m = re.match( '(\w*)-(\w*)-(\w*)-(\w*)-(\w*)', P_string )
         if( None == m ):
             #print 'Directory.extract:: return invalid'
-            return Direction( {'host'  : 'Y','guest' : 'Y'}, { 'vendor': 'Y', 'name': 'Y', 'version': 'Y'} )
+            return Translator( {'host'  : 'Y','guest' : 'Y'}, { 'vendor': 'Y', 'name': 'Y', 'version': 'Y'} )
 
-        Ir_return = Direction( {'host' : m.group(1), 'guest' : m.group(2) }, { 'vendor': m.group(3), 'name': m.group(4), 'version': m.group(5)} )
+        Ir_return = Translator( {'host' : m.group(1), 'guest' : m.group(2) }, { 'vendor': m.group(3), 'name': m.group(4), 'version': m.group(5)} )
         #print 'Directory.extract( P_string =' + P_string + ' ) -> ' +str( Ir_return.m_translator )
         return Ir_return
 

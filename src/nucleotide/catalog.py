@@ -19,7 +19,7 @@ import detect
 import nucleotide
 
 ## List of Translator
-class RoadSign:
+class Catalog:
     m_map = []
 
     ## TODO

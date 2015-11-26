@@ -3,7 +3,7 @@ import nucleotide
 
 nucleotide.Options.check()
 
-rs = nucleotide.RoadSign()
+rs = nucleotide.Catalog()
 
 settings = nucleotide.Settings()
 

@@ -15,7 +15,7 @@
 #   limitations under the License. 
 
 
-__all__       = [ 'Options', 'Settings', 'Atom', 'Environment', 'Config', 'Direction', 'Custom', 'component' ]
+__all__       = [ 'Options', 'Settings', 'Atom', 'Environment', 'Config', 'Translator', 'Custom', 'component' ]
 __name__      = 'nucleotide'
 __author__    = 'I'
 __developer__ = 'I'
@@ -28,7 +28,7 @@ __buildsys__  = ''
 
 
 from  .config       import *
-from  .direction    import *
+from  .translator    import *
 from  .klass        import *
 from  .custom       import *
 
@@ -36,7 +36,7 @@ from  .atom       import *
 
 from  .options      import *
 
-from  .roadsign     import *
+from  .catalog     import *
 
 from  .settings     import *
 

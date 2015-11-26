@@ -19,7 +19,7 @@ import platform
 import nucleotide
 import nucleotide.component
 import nucleotide.component.warning.table
-import nucleotide.direction
+import nucleotide.translator
 
 def windows_make( P_native, P_status ):
     Ir_switch = ''
@@ -37,21 +37,21 @@ def linux_make( P_native, P_status ):
     if( 'once'     == P_status ): Ir_switch = ''
     return Ir_switch
 
-def convertor(P_direction):
+def convertor(P_translator):
     if( 'Linux'   == platform.system() ):
         return linux_make 
     if( 'Windows' == platform.system() ): 
         return windows_make 
 
-def list( P_list, P_direction ):
+def list( P_list, P_translator ):
     Ir_list = []
-    I_convertor = convertor( P_direction )
+    I_convertor = convertor( P_translator )
     for item in P_list:
         if( False == nucleotide.component.warning.table.TABLE.has_key( item ) ):
             continue
         I_best = -1
         for elem in nucleotide.component.warning.table.TABLE[item]:
-            I_similar = P_direction.smilarity( nucleotide.direction.Direction.extract( elem ) ) 
+            I_similar = P_translator.smilarity( nucleotide.translator.Translator.extract( elem ) ) 
             if( I_best < I_similar ):
                 I_best = I_similar
                 I_text = nucleotide.component.warning.table.TABLE[item][elem]

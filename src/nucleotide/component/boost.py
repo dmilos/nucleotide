@@ -19,7 +19,7 @@ import os
 import platform
 
 import function
-import nucleotide.direction
+import nucleotide.translator
 import nucleotide.config
 import nucleotide.klass
 

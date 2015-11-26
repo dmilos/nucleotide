@@ -42,7 +42,7 @@ class GCC:
                 }
             }
 
-        self.m_list.append( nucleotide.Direction( I_data['platform'], I_data['cc'] ) )
+        self.m_list.append( nucleotide.Translator( I_data['platform'], I_data['cc'] ) )
         #print self.m_list
 
     def get(self):

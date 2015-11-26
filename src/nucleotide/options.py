@@ -19,7 +19,7 @@ import sys
 import platform
 
 import atom
-import direction
+import translator
 import component
 
 ## TODO
@@ -65,8 +65,8 @@ class Options:
             #print '    Options::extend( represent: ' + represent  + '   with: '+ full_name+' )'
 
     ##Extend current options with new atom
-    def get( self, P_direction, P_universal ):
-        #print 'Options::get(' + ' P_direction =' + P_direction.string()  + ', P_universal = '+ P_universal + ' )'
+    def get( self, P_translator, P_universal ):
+        #print 'Options::get(' + ' P_translator =' + P_translator.string()  + ', P_universal = '+ P_universal + ' )'
 
         if( False == self.m_represent.has_key( P_universal ) ) :
             print '    Options::get:: 0 - i_classeq = [] for ' + P_universal
@@ -80,7 +80,7 @@ class Options:
             if( False == self.m_this.has_key( element ) ) :
                 #print '    Options::get:: 2 - no key = ' + str( element )
                 continue
-            I_level =  P_direction.smilarity( self.m_this[ element ].get_direction() )
+            I_level =  P_translator.smilarity( self.m_this[ element ].get_translator() )
             if( I_best['level'] < I_level ):
                 I_best['level'] = I_level
                 I_best['name'] = element
@@ -106,5 +106,5 @@ class Options:
         return a + separator_in  + b+ separator_in  + c + separator_in  + d + separator_in  + e
 
     def make_name( self,P_atom, P_name ):
-        return self.join_out2( P_atom.get_direction().string(), P_name )
+        return self.join_out2( P_atom.get_translator().string(), P_name )
 

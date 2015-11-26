@@ -17,30 +17,30 @@
 import nucleotide
 #import config
 #import options
-#import direction
+#import translator
 #import custom
 
 ## TODO
 class Settings:
-    m_direction  = None
+    m_translator  = None
     m_options    = None # Option or what is possible
     m_config     = None # This goes to Environment
     m_custom     = None
     m_info       = None
 
-    def __init__( self, P_direction = None, P_options = nucleotide.Options( True ), P_custom = nucleotide.Custom() ):
-        if( None != P_direction ):
-            self.m_direction = P_direction;
+    def __init__( self, P_translator = None, P_options = nucleotide.Options( True ), P_custom = nucleotide.Custom() ):
+        if( None != P_translator ):
+            self.m_translator = P_translator;
         else:
-            rs = nucleotide.RoadSign()
-            self.m_direction = rs.get()[0]
+            catalog = nucleotide.Catalog()
+            self.m_translator = catalog.get()[0]
 
         self.m_config = nucleotide.Config()
         self.m_options = P_options
         self.m_custom = P_custom
 
-    def get_direction( self ):
-        return self.m_direction
+    def get_translator( self ):
+        return self.m_translator
 
     def get_options( self ):
         return self.m_options
@@ -61,6 +61,6 @@ class Settings:
         self.m_options.extend( P_name, P_atom )
 
     def accumulate( self, P_name, P_parameter = {} ):
-        I_atom = self.m_options.get( self.m_direction, P_name );
+        I_atom = self.m_options.get( self.m_translator, P_name );
 
         self.m_config.accumulate( I_atom.get_config(), P_parameter )

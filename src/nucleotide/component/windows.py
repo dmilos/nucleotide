@@ -16,7 +16,7 @@
 
 
 import function
-import nucleotide.direction
+import nucleotide.translator
 import nucleotide.config
 import nucleotide.klass
 import nucleotide.component.warning
@@ -430,9 +430,9 @@ atom_windows_architecture= {
 
 def _windows_compiler_warning_CPPFLAGS( P_list ):
     Ir_list= []
-    I_direction = nucleotide.direction.Direction( {'host'  : 'Windows','guest' : 'Windows'}, P_cc = { 'vendor': 'Microsoft', 'name': 'msvc', 'version': 'X'} )
+    I_translator = nucleotide.translator.Translator( {'host'  : 'Windows','guest' : 'Windows'}, P_cc = { 'vendor': 'Microsoft', 'name': 'msvc', 'version': 'X'} )
 
-    return nucleotide.component.warning.util.list( P_list, I_direction )
+    return nucleotide.component.warning.util.list( P_list, I_translator )
 
 atom_windows_compiler_warning = {
     'platform' : {

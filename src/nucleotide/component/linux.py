@@ -16,7 +16,7 @@
 
 
 import function
-import nucleotide.direction
+import nucleotide.translator
 import nucleotide.config
 import nucleotide.klass
 import nucleotide.component.warning
@@ -384,9 +384,9 @@ atom_linux_pp2f = {
 
 def _linux_compiler_warning_CPPFLAGS( P_list ):
     Ir_list= []
-    I_direction = nucleotide.direction.Direction( {'host'  : 'Linux','guest' : 'Linux'}, P_cc = { 'vendor': 'FSF', 'name': 'gcc', 'version': 'X'} )
+    I_translator = nucleotide.translator.Translator( {'host'  : 'Linux','guest' : 'Linux'}, P_cc = { 'vendor': 'FSF', 'name': 'gcc', 'version': 'X'} )
 
-    return nucleotide.component.warning.util.list( P_list, I_direction )
+    return nucleotide.component.warning.util.list( P_list, I_translator )
 
 atom_linux_compiler_warning = {
     'platform' : {

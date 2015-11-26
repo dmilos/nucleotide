@@ -15,14 +15,14 @@ alias = name_bare
 
 
 ## Project compiler settings
-platform      = settings.get_direction().get()['platform']['guest']
+platform      = settings.get_translator().get()['platform']['guest']
 
 # Project directories
 
 directory_prefix = name_full
 directory_prefix = os.path.join( directory_prefix, platform )
-directory_prefix += '-' + settings.get_direction().get()['cc']['name']
-directory_prefix += '-' + settings.get_direction().get()['cc']['version'] + '-' + settings.get_custom( 'architecture' )
+directory_prefix += '-' + settings.get_translator().get()['cc']['name']
+directory_prefix += '-' + settings.get_translator().get()['cc']['version'] + '-' + settings.get_custom( 'architecture' )
 directory_prefix += '-' + settings.get_custom( 'compiler:configuration' )
 
 #if 'win32' == platform :

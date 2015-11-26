@@ -43,12 +43,12 @@ def append( P_option, P_class, P_data ):
     P_class[ P_data['class'] ]  += [ full_name ]
 
 def extend( P_option, P_name, P_data ):
-    i_direction = nucleotide.direction.Direction( P_data['platform'], P_data['cc'] )
-    i_config    = nucleotide.config.Config( P_data['config']  )
-    i_klass     = nucleotide.klass.Klass( P_data['class'] )
+    I_translator = nucleotide.translator.Translator( P_data['platform'], P_data['cc'] )
+    I_config    = nucleotide.config.Config( P_data['config']  )
+    I_klass     = nucleotide.klass.Klass( P_data['class'] )
 
-    i_atom = nucleotide.atom.Atom( i_direction, i_config, i_klass )
-    P_option.extend( P_name, i_atom )
+    I_atom = nucleotide.atom.Atom( I_translator, I_config, I_klass )
+    P_option.extend( P_name, I_atom )
 
 
 def check__env( P_name ) :

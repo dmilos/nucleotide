@@ -33,7 +33,7 @@ class MinGW:
             return
 
         version = str.split( process.communicate()[0], os.linesep )[0]
-        self.m_list.append( nucleotide.Direction( {
+        self.m_list.append( nucleotide.Translator( {
                 'platform' : {
                     'host'  : 'Windows',
                     'guest' : 'Windows'

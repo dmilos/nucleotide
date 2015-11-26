@@ -31,7 +31,7 @@ except ImportError:
 import platform
 import copy
 
-import nucleotide.direction
+import nucleotide.translator
 
 ##TODO Detect MSVC on Window
 class MSVC:
@@ -42,7 +42,7 @@ class MSVC:
         if( 'Windows' != platform.system() ):
             return
 
-        I_data = nucleotide.Direction.blank()
+        I_data = nucleotide.Translator.blank()
         I_data['platform']['host'] = 'Windows'
         I_data['platform']['guest'] = 'Windows'
         I_data['cc']['vendor'] = 'Microsoft'
@@ -51,22 +51,22 @@ class MSVC:
         if( True == MSVC._exists( _winreg_HKEY_LOCAL_MACHINE, 'SOFTWARE\\Microsoft\\VisualStudio\\12.0' ) ):
             I_data['cc']['version'] = '12'
             I_c = copy.deepcopy( I_data )
-            self.m_list.append( nucleotide.Direction( I_c['platform'], I_c['cc'] ) )
+            self.m_list.append( nucleotide.Translator( I_c['platform'], I_c['cc'] ) )
 
         if( True == MSVC._exists( _winreg_HKEY_LOCAL_MACHINE, 'SOFTWARE\\Microsoft\\VisualStudio\\11.0' ) ):
             I_data['cc']['version'] = '11'
             I_c = copy.deepcopy( I_data )
-            self.m_list.append( nucleotide.Direction( I_c['platform'], I_c['cc'] ) )
+            self.m_list.append( nucleotide.Translator( I_c['platform'], I_c['cc'] ) )
 
         if( True == MSVC._exists( _winreg_HKEY_LOCAL_MACHINE, 'SOFTWARE\\Microsoft\\VisualStudio\\10.0' ) ):
             I_data['cc']['version'] = '10'
             I_c = copy.deepcopy( I_data )
-            self.m_list.append( nucleotide.Direction( I_c['platform'], I_c['cc'] ) )
+            self.m_list.append( nucleotide.Translator( I_c['platform'], I_c['cc'] ) )
 
         if( True == MSVC._exists( _winreg_HKEY_LOCAL_MACHINE, 'SOFTWARE\\Microsoft\\VisualStudio\\9.0' ) ):
             I_data['cc']['version'] = '9'
             I_c = copy.deepcopy( I_data )
-            self.m_list.append( nucleotide.Direction( I_c['platform'], I_c['cc'] ) )
+            self.m_list.append( nucleotide.Translator( I_c['platform'], I_c['cc'] ) )
 
 
         #print self.m_list[0].get()
