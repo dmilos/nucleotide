@@ -25,8 +25,8 @@ class Translator:
 
     def __init__( self, P_platform = {'host'  : 'X','guest' : 'X'}, P_cc = { 'vendor': 'X', 'name': 'X', 'version': 'X'} ):
         self.m_translator = {}
-        self.m_translator['platform'] = P_platform
-        self.m_translator['cc'] = P_cc
+        self.m_translator['platform'] = copy.deepcopy( P_platform )
+        self.m_translator['cc'] = copy.deepcopy( P_cc )
 
     def set_platform_host( self, P_value ):
         self.m_translator['platform']['host'] = P_value

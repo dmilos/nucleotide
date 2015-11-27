@@ -60,6 +60,7 @@ class Config:
     def append( self, P_name, P_list ):
         self.m_native[P_name] += P_list
 
+    ## Take all from other config by respecting P_param
     def accumulate( self, P_config, P_param = {} ):
 
         #print 'Config::accumulate::P_config.m_native = ' + str( P_config.m_native )

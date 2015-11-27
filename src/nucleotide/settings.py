@@ -14,21 +14,20 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License. 
 
-import nucleotide
-#import config
-#import options
-#import translator
-#import custom
 
-## TODO
+import nucleotide
+
+
+## Manipulate with all data needed to generating Scons.Environment
+# Most important function is accumulate. Next one is extend.
 class Settings:
-    m_translator  = None
+    m_translator = None
     m_options    = None # Option or what is possible
     m_config     = None # This goes to Environment
     m_custom     = None
     m_info       = None
 
-    def __init__( self, P_translator = None, P_options = nucleotide.Options( True ), P_custom = nucleotide.Custom() ):
+    def __init__( self, P_translator = None, P_options = None, P_custom = None ):
         if( None != P_translator ):
             self.m_translator = P_translator;
         else:
@@ -36,7 +35,12 @@ class Settings:
             self.m_translator = catalog.get()[0]
 
         self.m_config = nucleotide.Config()
+        if( None == P_options ):
+            P_options = nucleotide.Options( True )
         self.m_options = P_options
+
+        if( None == P_custom ):
+            P_custom = nucleotide.Custom()
         self.m_custom = P_custom
 
     def get_translator( self ):
@@ -57,9 +61,11 @@ class Settings:
     def get_info( self ):
         return self.m_info
 
+    ##Add specified atom ( as unified name ) to be availabe for accumulating
     def extend( self, P_name, P_atom ):
         self.m_options.extend( P_name, P_atom )
 
+    ##Add specified atom ( as unified name ) so the latter will be used for creating Scons.environment
     def accumulate( self, P_name, P_parameter = {} ):
         I_atom = self.m_options.get( self.m_translator, P_name );
 

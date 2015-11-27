@@ -15,19 +15,26 @@
 #   limitations under the License. 
 
 
-import config
-import klass
-import translator
+import nucleotide
 
 ## Minimal action thats configure translator
 class Atom:
     m_translator = None
-    m_config    = None
+    m_config    = None #!< Native configuration. In form (key,data|function)
     m_klass     = None
 
-    def __init__( self, P_translator = translator.Translator(), P_config = config.Config(), P_class = klass.Klass() ):
+    def __init__( self, P_translator = None, P_config = None, P_class = None ):
+
+        if( None == P_translator ):
+            P_translator = nucleotide.translator.Translator()
         self.m_translator = P_translator
+
+        if( None == P_config ):
+            P_config = nucleotide.config.Config()
         self.m_config    = P_config
+
+        if( None == P_class ):
+            P_class = nucleotide.klass.Klass()
         self.m_klass     = P_class
 
     def set_translator( self, P_value ):
@@ -42,9 +49,10 @@ class Atom:
     def set_config( self, P_value ):
         self.m_config = P_value
 
+    def get_klass( self ):
+        return self.m_klass
+
     def set_klass( self, P_value ):
         self.m_klass = P_value
 
-    def get_klass( self ):
-        return self.m_klass
 

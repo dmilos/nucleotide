@@ -14,14 +14,18 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License. 
 
-# TODO
+
+import copy
+
+## Name of atom
+# For now it is just simple string
 class Klass:
     m_name   = None
     m_others = None
 
     def __init__( self, P_others = [] ):
         #self.m_name   = P_name
-        self.m_others = P_others
+        self.m_others = copy.deepcopy( P_others )
 
     #def name( self ):
     #    return self.m_name

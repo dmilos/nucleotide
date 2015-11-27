@@ -20,15 +20,15 @@ import nucleotide
 
 ## List of Translator
 class Catalog:
-    m_map = []
+    m_catalog = []
 
     ## TODO
     def __init__( self ):
         enumerator = nucleotide.detect.enumerate.Enumerate()
-        self.m_map = enumerator.get()
+        self.m_catalog = enumerator.get()
 
     ## TODO
     def get(self):
-        #print self.m_map
-        return self.m_map
+        #print self.m_catalog
+        return self.m_catalog
 

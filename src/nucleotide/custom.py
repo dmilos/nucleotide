@@ -15,6 +15,8 @@
 #   limitations under the License. 
 
 
+import copy
+
 ## Miscelenious custom data, organised in simple ( key, data ) pairs
 class Custom:
 
@@ -22,7 +24,7 @@ class Custom:
     m_dictinary= {}
 
     def __init__( self, P_dictinary = {} ):
-        self.m_dictinary = P_dictinary
+        self.m_dictinary = copy.deepcopy( P_dictinary )
 
     def get( self, P_name ):
         if( False == self.m_dictinary.has_key( P_name ) ):

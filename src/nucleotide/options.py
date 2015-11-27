@@ -22,9 +22,9 @@ import atom
 import translator
 import component
 
-## TODO
-#    Set of atoms grouped around represents
-#   An atom can be grouped around several represents
+##  Set of atoms grouped around represents
+#   An atom can be connected with several represents at the same time
+# Answer on Questions: What I can do? or What is possibilities?
 class Options:
     m_this = {}
     m_represent = {}
@@ -54,7 +54,10 @@ class Options:
 
     ##Extend current options with new atom
     def extend( self, P_name, P_atom ):
-        #print 'Options::extend ( P_name = ' + P_name+ ' )'
+        #print 'Options::extend ( P_name = ' + P_name + ', '+ ' )'
+        #print '    Options::extend ( P_atom.get_translator().string() = ' + P_atom.get_translator().string() +' )'
+        #print '    Options::extend ( P_atom.get_klass().others() = ' + str( P_atom.get_klass().others() ) +' )'
+
         full_name = self.make_name( P_atom, P_name );
         self.m_this[ full_name ] = P_atom
 
@@ -64,7 +67,7 @@ class Options:
             self.m_represent[ represent ] += [ full_name ]
             #print '    Options::extend( represent: ' + represent  + '   with: '+ full_name+' )'
 
-    ##Extend current options with new atom
+    ##Return specific atom for given translator and universal name
     def get( self, P_translator, P_universal ):
         #print 'Options::get(' + ' P_translator =' + P_translator.string()  + ', P_universal = '+ P_universal + ' )'
 
@@ -78,13 +81,13 @@ class Options:
 
         for element in i_classeq:
             if( False == self.m_this.has_key( element ) ) :
-                #print '    Options::get:: 2 - no key = ' + str( element )
+                print '            Options::get:: 2 - no key = ' + str( element )
                 continue
             I_level =  P_translator.smilarity( self.m_this[ element ].get_translator() )
             if( I_best['level'] < I_level ):
                 I_best['level'] = I_level
                 I_best['name'] = element
-            #print '    Options::get:: 3 - ' + ' element:   ' + element + ' ; ' + ' level: ' + str( I_level )
+            #print '        Options::get:: 3 - ' + ' element:   ' + element + ' ; ' + ' level: ' + str( I_level )
 
         if( -1 == I_best['level'] ):
             print '    Options::get:: 4 ' + P_universal + ' - I_best[\'level\'] = ' + str( I_best['level'] )
@@ -92,6 +95,12 @@ class Options:
 
         print '    Options::get:: 5 for: ' + P_universal + ' - return: ||' + str( I_best['level'] ) + '|| - '+  I_best['name']
         return self.m_this[ I_best['name'] ]
+    def get_this(self):
+        return self.m_this
+
+    def get_represents(self):
+        return self.m_represent
+
 
     def join_out2(self, a, b ):
         return a + '::'  + b

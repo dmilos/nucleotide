@@ -28,22 +28,19 @@ __buildsys__  = ''
 
 
 from  .config       import *
-from  .translator    import *
+from  .translator   import *
 from  .klass        import *
 from  .custom       import *
 
-from  .atom       import *
+from  .atom         import *
 
 from  .options      import *
 
-from  .catalog     import *
+from  .catalog      import *
 
 from  .settings     import *
 
 from  .environment  import *
 
-custom
-
 #from  .main        import *
 
-#print 'End importing Module: -|' + __name__

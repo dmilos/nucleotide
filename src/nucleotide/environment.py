@@ -23,7 +23,6 @@ class Environment:
     M_native = None
 
     def __init__( self, P_settings ):
-        pass
         I_init = {}
         if( True == P_settings.get_config().exists( 'TARGET_ARCH' ) ):
             #print 'TARGET_ARCH: -|' + str( P_settings.get_config().get( 'TARGET_ARCH'  ) ) + '|-'
