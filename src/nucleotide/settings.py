@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python2
+#!/usr/bin/env python2
 
 #   Copyright 2015 Dejan D. M. Milosavljevic
 #

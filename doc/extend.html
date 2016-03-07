@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+	<body>
+		<h1 align="center">Extend the Nucleotide</h1>
+		<dl>
+			<dt>TOC</dt>
+			<dd></dd>
+			<dt>New compiler</dt>
+			<dd>
+				General rule is follow the pattern of GCC or MSVC, they are created in same manner.<br>
+				<br>
+				Here is step by step explanation.
+				<ol>
+					<li>make new folder with <code>&lt;OS&gt;</code> name in <code>./component</code> if not exists</li>
+					<li>make new folder with compiler name in <code>./component&lt;OS&gt;</code></li>
+					<li>create file translator.py and __init__.py </li>
+					<li>Copy content of some existing compiler e.g. GCC or MSVC </li>
+					<li>make folder atom in <code>./component&lt;OS&gt;/&lt;new-compiler&gt;</code></li>
+					<li>Create __init__.py in <code>./component&lt;OS&gt;/&lt;new-compiler&gt;/atom</code> </li>
+					<li>Populate folder atom in same manner as some exiting e.g. GCC or MSVC </li>
+				</ol>
+			</dd>
+		</dl>
+	</body>
+</html>

@@ -1,0 +1,21 @@
+import nucleotide
+
+Import('settings')
+
+
+# Accumulate source
+source = []
+source +=   ['main.cpp'] 
+
+
+# Make native environment
+envProgram = nucleotide.Environment( settings ).native()
+
+# Create program
+exe_name =  'main-' + settings.get_custom( 'cc_version' )
+
+program = envProgram.Program( target =  exe_name + envProgram['PROGSUFFIX'], source = source  )
+
+# ... and return!
+Return( 'program' )
+

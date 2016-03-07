@@ -18,39 +18,36 @@
 import sys
 import platform
 
-import atom
-import translator
-import component
+import nucleotide
+import nucleotide.component
+import nucleotide.component.translator
 
 ##  Set of atoms grouped around represents
 #   An atom can be connected with several represents at the same time
 # Answer on Questions: What I can do? or What is possibilities?
 class Options:
-    m_this = {}
-    m_represent = {}
+    m_this = None
+    m_represent = None
 
     def __init__( self, P_enumerate = True ):
-        self.m_this['blank'] = atom.Atom( )
+        self.m_this = {}
+        self.m_represent = {}
+
+        #self.m_this['blank'] = nucleotide.atom.Atom( )
+
         if( True == P_enumerate ):
             self._enumerate( P_enumerate )
 
     @staticmethod
     def check():
-        component.python.check( )
-        component.boost.check( )
-        if( 'Windows' == platform.system() ):
-            component.windows.check( )
-        component.linux.check( )
+        #nucleotide.component.translator.Translator.check()
+        pass
 
     def _enumerate( self, P_enumerate = True ):
         if( False == P_enumerate ):
             return
-        component.python.init( self )
-        component.boost.init( self )
-        if( 'Windows' == platform.system() ):
-            component.windows.init( self )
-        if( 'Linux' == platform.system() ):
-            component.linux.init( self )
+
+        nucleotide.component.translator.Translator.extend( self )
 
     ##Extend current options with new atom
     def extend( self, P_name, P_atom ):
@@ -73,7 +70,7 @@ class Options:
 
         if( False == self.m_represent.has_key( P_universal ) ) :
             print '    Options::get:: 0 - i_classeq = [] for ' + P_universal
-            return atom.Atom( )
+            return nucleotide.atom.Atom( )
 
         i_classeq = self.m_represent[ P_universal ]
         I_best = { 'level': -1, 'name': 'X' }
@@ -81,7 +78,7 @@ class Options:
 
         for element in i_classeq:
             if( False == self.m_this.has_key( element ) ) :
-                print '            Options::get:: 2 - no key = ' + str( element )
+                #print '            Options::get:: 2 - no key = ' + str( element )
                 continue
             I_level =  P_translator.smilarity( self.m_this[ element ].get_translator() )
             if( I_best['level'] < I_level ):
@@ -91,16 +88,20 @@ class Options:
 
         if( -1 == I_best['level'] ):
             print '    Options::get:: 4 ' + P_universal + ' - I_best[\'level\'] = ' + str( I_best['level'] )
-            return atom.Atom( )
+            return nucleotide.atom.Atom( )
 
-        print '    Options::get:: 5 for: ' + P_universal + ' - return: ||' + str( I_best['level'] ) + '|| - '+  I_best['name']
+        Options.message( '    Options::get:: 5 for: ' + P_universal + ' - return: ||' + str( I_best['level'] ) + '|| - '+  I_best['name'] )
         return self.m_this[ I_best['name'] ]
+
     def get_this(self):
         return self.m_this
 
     def get_represents(self):
         return self.m_represent
 
+    @staticmethod
+    def message(P_message):
+        print P_message
 
     def join_out2(self, a, b ):
         return a + '::'  + b

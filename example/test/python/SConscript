@@ -47,7 +47,7 @@ settings.accumulate( 'PDB', { 'config': settings.get_custom( 'compiler:configura
 settings.accumulate( settings.get_custom( 'compiler:configuration' ) )
 
 settings.accumulate( 'exception' )
-settings.accumulate( 'source:c++:dialekt', { 'dialekt': 'c++11' } )
+settings.accumulate( 'source:c++', { 'dialect': 'c++11' } )
 settings.accumulate( 'boost:blank' )
 settings.accumulate( 'RTTI' )
 
@@ -74,7 +74,6 @@ cc_files += [ 'main.cpp' ]
 
 # Deal with Scons
 project_common_settings.accumulate( 'compiler:warning', { 'base-class-destructor-is-inaccessible': 'disable'  } )
-
 
 
 envCommon  = nucleotide.Environment( project_common_settings ).native()

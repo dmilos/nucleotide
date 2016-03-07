@@ -15,7 +15,6 @@
 #   limitations under the License. 
 
 
-import detect
 import nucleotide
 
 ## List of Translator
@@ -24,7 +23,7 @@ class Catalog:
 
     ## TODO
     def __init__( self ):
-        enumerator = nucleotide.detect.enumerate.Enumerate()
+        enumerator = nucleotide.component.translator.Translator()
         self.m_catalog = enumerator.get()
 
     ## TODO

@@ -15,10 +15,8 @@
 #   limitations under the License. 
 
 
-__all__   = [ 'warning', 'pythonX' ]
-__name__  = 'nucleotide.component'
+#__all__   = [ 'warning' ]
+#__name__  = 'nucleotide.component'
 
 import main
 
-
-#print 'End importing Module: -|' + __name__

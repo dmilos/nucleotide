@@ -2,6 +2,7 @@ import os
 #import sys
 #import subprocess
 import nucleotide
+import json
 
 
 #make setting
@@ -11,9 +12,15 @@ settings = nucleotide.Settings()
 ## 1. Construct blank
 my_choice = nucleotide.Atom( );
 ## 2. Fill
+## 2.1. config
 my_choice.get_config().append( 'CPPPATH', [ os.getenv( 'DDMRM_path_work_code_cpp__' ) ] )
+## 2.2. Equivalent to itself or other, In here to itself
+my_choice.set_klass( nucleotide.Klass( ['my-extension'] ) )
 ## 3. register
 settings.extend( 'my-extension', my_choice )
+
+#print settings.get_config().get_native()
+#print json.dumps( settings.get_options().get_represents(), indent=4 )
 
 # Call
 product = SConscript('./SConscript', exports=[ 'settings' ] )

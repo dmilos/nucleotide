@@ -19,7 +19,7 @@ import re
 
 # Scons Native thing only. Stored in (key,data) format
 class Config:
-    m_this = None
+    m_native = None
 
     def __init__( self, P_data = {} ):
         self.m_native = {
@@ -42,8 +42,8 @@ class Config:
         if( True == P_data.has_key( 'LIBS'       ) ): self.m_native[ 'LIBS'       ] = P_data[ 'LIBS'      ]
         if( True == P_data.has_key( 'LINKFLAGS'  ) ): self.m_native[ 'LINKFLAGS'  ] = P_data[ 'LINKFLAGS' ]
 
-        if( True == P_data.has_key( 'TARGET_ARCH'  ) ): self.m_native[ 'TARGET_ARCH'  ] = P_data[ 'TARGET_ARCH' ]
-        if( True == P_data.has_key( 'MSVS_VERSION' ) ): self.m_native[ 'MSVS_VERSION' ] = P_data[ 'MSVS_VERSION' ]
+        if( True == P_data.has_key( 'TARGET_ARCH'  ) ): self.m_native[ 'TARGET_ARCH'  ] = P_data[ 'TARGET_ARCH'  ]
+        if( True == P_data.has_key( 'MSVC_VERSION' ) ): self.m_native[ 'MSVC_VERSION' ] = P_data[ 'MSVC_VERSION' ]
 
     def get_native( self ):
         return self.m_native
@@ -73,9 +73,9 @@ class Config:
         self._process_list( P_config.get_native(), 'LINKFLAGS' , P_param )
 
         self._process_value( P_config.get_native(), 'TARGET_ARCH' , P_param )
-        self._process_value( P_config.get_native(), 'MSVS_VERSION' , P_param )
+        self._process_value( P_config.get_native(), 'MSVC_VERSION' , P_param )
 
-       #print 'Config::accumulate::self.m_native = ' + str( self.m_native )
+        #print 'Config::accumulate::self.m_native = ' + str( self.m_native )
 
     def _process_value( self, P_data, P_key, P_param={} ):
         if( False == P_data.has_key( P_key ) ):

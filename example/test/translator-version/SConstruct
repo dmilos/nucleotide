@@ -1,0 +1,19 @@
+import os
+import nucleotide
+
+#make setting
+settings = nucleotide.Settings()
+
+#Accumulate version
+settings.set_custom( 'cc_version' ,            ARGUMENTS.get( 'ccv',   '12.0'  )      )
+settings.accumulate( 'compiler:version' , { 'id' : settings.get_custom( 'cc_version' )  } )
+
+#Accumulate exception
+settings.accumulate( 'exception' )
+
+# Call
+product = SConscript('./SConscript', exports=[ 'settings' ] )
+
+#Make it defualt
+Default( product )
+

@@ -3,7 +3,6 @@ import nucleotide
 
 nucleotide.Options.check()
 
-rs = nucleotide.Catalog()
 
 settings = nucleotide.Settings()
 

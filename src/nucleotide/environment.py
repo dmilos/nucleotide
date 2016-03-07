@@ -26,10 +26,11 @@ class Environment:
         I_init = {}
         if( True == P_settings.get_config().exists( 'TARGET_ARCH' ) ):
             #print 'TARGET_ARCH: -|' + str( P_settings.get_config().get( 'TARGET_ARCH'  ) ) + '|-'
-            I_init[ 'TARGET_ARCH' ] = P_settings.get_config().get( 'TARGET_ARCH'  )
+            I_init[ 'TARGET_ARCH' ] = P_settings.get_config().get( 'TARGET_ARCH' )
 
-        if( True == P_settings.get_config().exists( 'MSVS_VERSION'   ) ):
-            I_init[ 'MSVS_VERSION' ] = P_settings.get_config().get( 'MSVS_VERSION'  )
+        if( True == P_settings.get_config().exists( 'MSVC_VERSION'   ) ):
+            #print 'MSVC_VERSION: -|' + str( P_settings.get_config().get( 'MSVC_VERSION'  ) ) + '|-'
+            I_init[ 'MSVC_VERSION' ] = P_settings.get_config().get( 'MSVC_VERSION' )
 
         self.M_native = SCons.Script.Environment( **I_init )
 

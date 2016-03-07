@@ -15,8 +15,7 @@
 #   limitations under the License. 
 
 
-import boost
-import python
+import _common
 import windows
 import linux
 

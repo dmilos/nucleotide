@@ -37,10 +37,10 @@
 											else:<br>
 											&nbsp;&nbsp;&nbsp;&nbsp;if( true == pick_exising_folder() ):<br>
 											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;list = os.environ.get( 'PYTHONPATH' ).split(';')<br>
-											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;os.copy( source = 'src/*.*', target = os.path.join( list[ rand(0, length( list ))] , 'nucleotide' )<br>
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;os.copy( source = 'src/nucleotide', target = list[ rand(0, length( list ))] )<br>
 											&nbsp;&nbsp;&nbsp;&nbsp;else:<br>
-											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;os.mkdir( 'my/python/extensions/nukleotide' )<br>
-											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;os.copy( source = 'src/*.*', target = 'my/python/extensions/nukleotide' )<br>
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;os.mkdir( 'my/python/extensions' )<br>
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;os.copy( source = 'src/nucleotide', target = 'my/python/extensions' )<br>
 										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'PYTHONPATH' += 'my/python/extensions'
 									</code>
 								</td>
