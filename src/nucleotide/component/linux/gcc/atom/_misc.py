@@ -124,8 +124,7 @@ atom_linux_shared_library = {
         'version': 'X'
     },
     'config' : {
-            'CPPDEFINES'  : ['TODO' ],
-            'LINKFLAGS'   : [ '/TODO' ]
+        # Nothing. It is empty
     },
     'name' :'dll',
     'class':  [ 'executable:shared_object', 'linux:executable:shared_object' ]

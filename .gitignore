@@ -27,3 +27,4 @@ example/test/python/UniversalTest-1.0.0.0/
 example/test/python/install/
 example/test/warning-unused/main
 example/framework/02_cpp11/main
+example/test/translator-version/main-12.0
