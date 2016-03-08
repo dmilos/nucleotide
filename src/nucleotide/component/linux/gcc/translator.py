@@ -35,6 +35,8 @@ import nucleotide.component.linux.gcc.atom.rtti
 import nucleotide.component.linux.gcc.atom.pp2f
 import nucleotide.component.linux.gcc.atom.exception
 import nucleotide.component.linux.gcc.atom.dialect
+import nucleotide.component.linux.gcc.atom.encode
+import nucleotide.component.linux.gcc.atom.executable
 
 ## Detect GCC on linux
 class Translator:
@@ -82,3 +84,6 @@ class Translator:
         nucleotide.component.linux.gcc.atom.pp2f.PP2F.extend(P_options)
         nucleotide.component.linux.gcc.atom.exception.Exception.extend(P_options)
         nucleotide.component.linux.gcc.atom.dialect.Dialect.extend(P_options)
+        nucleotide.component.linux.gcc.atom.encode.Encode.extend(P_options)
+        nucleotide.component.linux.gcc.atom.executable.Executable.extend(P_options)
+

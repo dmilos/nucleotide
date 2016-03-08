@@ -44,6 +44,11 @@ import nucleotide.component.windows.msvc.atom.rtti
 import nucleotide.component.windows.msvc.atom.rtl
 import nucleotide.component.windows.msvc.atom.pdb
 import nucleotide.component.windows.msvc.atom.version
+import nucleotide.component.windows.msvc.atom.blank
+import nucleotide.component.windows.msvc.atom.dialect
+import nucleotide.component.windows.msvc.atom.pp2f
+import nucleotide.component.windows.msvc.atom.executable
+import nucleotide.component.windows.msvc.atom.exception
 
 
 ##Detect MSVC on Window
@@ -100,7 +105,12 @@ class Translator:
         nucleotide.component.windows.msvc.atom.pdb.PDB.extend(P_options)
 
         nucleotide.component.windows.msvc.atom.version.Version.extend(P_options)
-
+        nucleotide.component.windows.msvc.atom.blank.Blank.extend(P_options)
+        nucleotide.component.windows.msvc.atom.dialect.Dialect.extend(P_options)
+        nucleotide.component.windows.msvc.atom.pp2f.PP2F.extend(P_options)
+        nucleotide.component.windows.msvc.atom.executable.Executable.extend(P_options)
+        nucleotide.component.windows.msvc.atom.exception.Exception.extend(P_options)
+ 
     @staticmethod
     def _exists( key, sub_key ):
         try:

@@ -24,23 +24,6 @@ import nucleotide.translator
 import nucleotide.config
 import nucleotide.klass
 
-atom_linux_unicode = {
-    'platform' : {
-        'host'  : 'Linux',
-        'guest' : 'Linux'
-    },
-    'cc' : {
-        'vendor' : 'FSF',
-        'name'   : 'gcc',
-        'version': 'X'
-    },
-    'name' :'unicode',
-    'config' : {
-        #'CPPDEFINES'   : ['_UNICODE', 'UNICODE' ],
-    },
-    'class':  [ 'encoding:unicode', 'linux:encoding:unicode' ]
-}
-
 atom_linux_debug = {
     'platform' : {
         'host'  : 'Linux',
@@ -75,42 +58,6 @@ atom_linux_release = {
     },
     'name' :'release',
     'class':  [ 'release' , 'linux:release' ]
-}
-
-atom_linux_exe_console = {
-    'platform' : {
-        'host'  : 'Linux',
-        'guest' : 'Linux'
-    },
-    'cc' : {
-        'vendor' : 'FSF',
-        'name'   : 'gcc',
-        'version': 'X'
-    },
-     'config' : {
-           'CPPDEFINES'  : ['_TODO' ],
-            'LINKFLAGS'   : [ '/TODO' ]
-    },
-    'name' : 'exe:console',
-    'class': [ 'executable:console', 'linux:executable:console' ]
-}
-
-atom_linux_exe_UI = {
-    'platform' : {
-        'host'  : 'Linux',
-        'guest' : 'Linux'
-    },
-    'cc' : {
-        'vendor' : 'FSF',
-        'name'   : 'gcc',
-        'version': 'X'
-    },
-    'config' : {
-            'CPPDEFINES'  : ['TODO' ],
-            'LINKFLAGS'   : [ '/TODO' ]
-    },
-    'name' : 'exe:win',
-    'class': [ 'executable:UI', 'linux:executable:UI' ]
 }
 
 atom_linux_shared_library = {
@@ -186,12 +133,8 @@ def init( P_option ) :
     
    #nucleotide.component.function.extend( P_option, 'architecture',        atom_linux_architecture )
 
-    nucleotide.component.function.extend( P_option, 'linux:encoding:unicode',      atom_linux_unicode    )
     nucleotide.component.function.extend( P_option, 'linux:debug',                 atom_linux_debug      )
     nucleotide.component.function.extend( P_option, 'linux:release',               atom_linux_release    )
-
-    nucleotide.component.function.extend( P_option, 'linux:executable:console',    atom_linux_exe_console)
-    nucleotide.component.function.extend( P_option, 'linux:executable:UI',         atom_linux_exe_UI)
 
     nucleotide.component.function.extend( P_option, 'linux:shared_library',        atom_linux_shared_library)
     nucleotide.component.function.extend( P_option, 'linux:shared_object',         atom_linux_shared_object)

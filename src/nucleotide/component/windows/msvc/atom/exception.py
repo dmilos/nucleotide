@@ -12,7 +12,7 @@
 #   distributed under the License is distributed on an "AS IS" BASIS,
 #   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 #   See the License for the specific language governing permissions and
-#   limitations under the License. 
+#   limitations under the License.
 
 
 import os
@@ -22,33 +22,30 @@ import nucleotide
 import nucleotide.component
 import nucleotide.component.function
 
-## TODO join this with 'boost'
-atom_boost_thread = {
+atom_windows_exception = {
     'platform' : {
-        'host'  : 'X',
-        'guest' : 'X'
+        'host'  : 'Windows',
+        'guest' : 'Windows'
     },
     'cc' : {
-        'vendor' : 'FSF',
-        'name'   : 'gcc',
+        'vendor': 'Microsoft',
+        'name': 'msvc',
         'version': 'X'
     },
     'config' : {
-        'LINKFLAGS'  : [ '-pthread', '-lboost_thread', '-lboost_system' ],
-        'CPPFLAGS'   : [ '-fopenmp' ],
-        'CPPDEFINES' : [ 'BOOST_LOG_DYN_LINK' ]
+        'CPPFLAGS'  : ['/EHsc' ],
     },
-    'name' : 'boost:thread',
-    'class':  [ 'boost:thread' ]
+    'name' : 'exception',
+    'class': [  'exception', 'compiler:exception', 'windows:msvc:compiler:exception' ]
 }
 
-class Boost:
+class Exception:
     def __init__(self):
         pass
 
     @staticmethod
     def extend( P_option ):
-         nucleotide.component.function.extend( P_option, 'boost:blank',           atom_boost_thread )
+         nucleotide.component.function.extend( P_option, 'windows:exception',    atom_windows_exception)
 
     @staticmethod
     def check():

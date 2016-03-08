@@ -22,13 +22,13 @@ import nucleotide
 import nucleotide.component
 import nucleotide.component.function
 
-def _linux_CompileAs_CPP_CPPFLAGS( P_data ):
+def _linux_Dialect_CPPFLAGS( P_data ):
     if( False == P_data.has_key( 'dialect' ) ):
         return [ '' ]
 
     return [ '-std=' + P_data['dialect'] ]
 
-option_linux_CompileAs_CPP_dialect = {
+atom_linux_gcc_dialect = {
     'platform' : {
         'host'  : 'Linux',
         'guest' : 'Linux'
@@ -39,7 +39,7 @@ option_linux_CompileAs_CPP_dialect = {
         'version': 'X'
     },
      'config' : {
-        'CPPFLAGS'   : _linux_CompileAs_CPP_CPPFLAGS
+        'CPPFLAGS'   : _linux_Dialect_CPPFLAGS
     },
     'name' :'source:c++:dialect',
     'class':  [ 'source:c++', 'source:c++:dialect' ,'linux:source:c++:dialect'  ]
@@ -51,7 +51,7 @@ class Dialect:
 
     @staticmethod
     def extend( P_option ):
-        nucleotide.component.function.extend( P_option, 'linux:source:c++:dialect',   option_linux_CompileAs_CPP_dialect )
+        nucleotide.component.function.extend( P_option, 'linux:source:c++:dialect',   atom_linux_gcc_dialect )
 
     @staticmethod
     def check():
