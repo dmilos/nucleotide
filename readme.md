@@ -1,15 +1,18 @@
-Description
-    An Scons library which wraps interface of various compilers in to one universal.
-    Nucleotide allow us to make Scons files avoiding to explicitly state: platform, compiler, compiler's version.
+#Wrap all C++ compilers in to the one.
 
-    Quick example:
+##Description
 
-        Next line set RTL:
+  An Scons library which wraps interface of various compilers in to one universal.
+  Nucleotide allow us to make Scons files avoiding to explicitly state: platform, compiler, compiler's version.
 
-            settings.accumulate( 'RTL', { 'type': 'static', 'configuration' : 'debug' } )
+##Quick example:
 
-        and replace:
-
+  Next line set RTL:
+```c++
+    settings.accumulate( 'RTL', { 'type': 'static', 'configuration' : 'debug' } )
+```
+  and replace:
+```c++
             if( os.platform == 'win32' ):
                 if( retrieve_compiler_name() == 'msvc' ):
                     flag = 'M'
@@ -33,5 +36,6 @@ Description
                     if( retrieve_compiler_name() == 'gcc' ):
                         env.append( LINKFLAGS, "-static" )
             ... ... ... 
+```
 
 More details in ./doc/index.html !!!
