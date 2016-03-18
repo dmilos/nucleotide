@@ -1,0 +1,17 @@
+#Set RTTI - Minimal example
+
+SConscript
+
+~~~python
+
+~~~
+
+SConstruct
+~~~python
+
+~~~
+
+main.cpp
+~~~c++
+
+~~~

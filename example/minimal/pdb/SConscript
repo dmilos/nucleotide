@@ -2,10 +2,13 @@ import nucleotide
 
 Import('settings')
 
-
 # Accumulate Atoms
+
+## Enable exceptions
 settings.accumulate( 'exception' )
-settings.accumulate( 'compiler:warning', { 'unused-variable': 'disable'  } )
+
+## Set Program Database File
+settings.accumulate( 'PDB', { 'configuration': 'release', 'synchronous' : 'false', 'file-name': './main.pdb' } ) 
 
 # Accumulate source
 source = []

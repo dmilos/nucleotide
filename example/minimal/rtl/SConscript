@@ -4,12 +4,16 @@ Import('settings')
 
 
 # Accumulate Atoms
+
+## Enable exceptions
 settings.accumulate( 'exception' )
-settings.accumulate( 'compiler:warning', { 'return-address-of-local-variable': 'error'  } )
+
+## Set Run Time Library
+settings.accumulate( 'RTL', { 'configuration' : 'release', 'type': 'dynamic' } )
 
 # Accumulate source
 source = []
-source +=   ['main.cpp'] 
+source +=   ['main.cpp']
 
 # Make native environment
 envProgram = nucleotide.Environment( settings ).native()

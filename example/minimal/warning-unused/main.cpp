@@ -4,16 +4,22 @@
 
 using namespace std;
 
-int & f()
+void f()
  {
    int i=0;
-  return i;	 
+ }
+
+void g()
+ {
+   int j=0;
  }
 
 int main( int argc, char *argv[] )
  {
+  f();
+g();
   cout << "Hello World" << endl;
-  cout << f() << endl;
+
 
   return EXIT_SUCCESS;
  }

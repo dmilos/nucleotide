@@ -4,7 +4,7 @@ import nucleotide
 #make setting
 settings = nucleotide.Settings( )
 
-#Accumulate 
+#Accumulate
 # Nothing to accumulate. This is minimal
 
 # Call
@@ -12,5 +12,3 @@ product = SConscript('./SConscript', exports=[ 'settings' ] )
 
 #Make it defualt
 Default( product )
-
-

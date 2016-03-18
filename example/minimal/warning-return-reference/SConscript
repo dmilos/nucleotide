@@ -1,0 +1,21 @@
+import nucleotide
+
+Import('settings')
+
+
+# Accumulate Atoms
+settings.accumulate( 'exception' )
+settings.accumulate( 'compiler:warning', { 'return-address-of-local-variable': 'error'  } )
+
+# Accumulate source
+source = []
+source +=   ['main.cpp']
+
+# Make native environment
+envProgram = nucleotide.Environment( settings ).native()
+
+# Create program
+program = envProgram.Program( target =  'main' + envProgram['PROGSUFFIX'], source = source  )
+
+# ... and return!
+Return( 'program' )
