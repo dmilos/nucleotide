@@ -12,7 +12,7 @@
 #   distributed under the License is distributed on an "AS IS" BASIS,
 #   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 #   See the License for the specific language governing permissions and
-#   limitations under the License. 
+#   limitations under the License.
 
 
 import subprocess
@@ -37,6 +37,7 @@ import nucleotide.component.linux.gcc.atom.exception
 import nucleotide.component.linux.gcc.atom.dialect
 import nucleotide.component.linux.gcc.atom.encode
 import nucleotide.component.linux.gcc.atom.executable
+import nucleotide.component.linux.gcc.atom.macro
 
 ## Detect GCC on linux
 class Translator:
@@ -86,4 +87,5 @@ class Translator:
         nucleotide.component.linux.gcc.atom.dialect.Dialect.extend(P_options)
         nucleotide.component.linux.gcc.atom.encode.Encode.extend(P_options)
         nucleotide.component.linux.gcc.atom.executable.Executable.extend(P_options)
+        nucleotide.component.linux.gcc.atom.macro.Macro.extend(P_options)
 
