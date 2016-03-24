@@ -37,7 +37,7 @@ def _linux_Macro_CPPFLAGS( P_data ):
         s += ')'
 
     if( True == P_data.has_key( 'body' ) ):
-        s += '=' + P_data.has_key( 'body' )
+        s += '=' + P_data[ 'body' ]
 
     Ir_list += [ s ]
     return Ir_list
