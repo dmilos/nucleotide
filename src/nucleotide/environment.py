@@ -12,7 +12,7 @@
 #   distributed under the License is distributed on an "AS IS" BASIS,
 #   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 #   See the License for the specific language governing permissions and
-#   limitations under the License. 
+#   limitations under the License.
 
 
 import SCons.Script
@@ -41,6 +41,9 @@ class Environment:
         if( P_settings.get_config().exists( 'LIBS'       ) ): self.M_native.Append( LIBS        = P_settings.get_config().get( 'LIBS'      ) )
         if( P_settings.get_config().exists( 'LINKFLAGS'  ) ): self.M_native.Append( LINKFLAGS   = P_settings.get_config().get( 'LINKFLAGS' ) )
 
+        if( True == P_settings.get_config().exists( 'CC'   ) ): self.M_native.Replace( CC   = P_settings.get_config().get( 'CC'   ) )
+        if( True == P_settings.get_config().exists( 'CXX'  ) ): self.M_native.Replace( CXX  = P_settings.get_config().get( 'CXX'  ) )
+        if( True == P_settings.get_config().exists( 'LINK' ) ): self.M_native.Replace( LINK = P_settings.get_config().get( 'LINK' ) )
+
     def native( self ):
         return self.M_native
-

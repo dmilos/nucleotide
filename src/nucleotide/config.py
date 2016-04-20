@@ -25,6 +25,9 @@ class Config:
         self.m_native = {
             #'TARGET_ARCH' : 'x86', #<purposely omit this key
             #'MSVC_VERSION': '12',  #<purposely omit this key
+            #'CC'    : '',  #<purposely omit this key
+            #'CXX'   : '',  #<purposely omit this key
+            #'LINK'  : '',  #<purposely omit this key
             'CPPFLAGS'   :[],
             'CPPPATH'    :[],
             'CPPDEFINES' :[],
@@ -44,6 +47,11 @@ class Config:
 
         if( True == P_data.has_key( 'TARGET_ARCH'  ) ): self.m_native[ 'TARGET_ARCH'  ] = P_data[ 'TARGET_ARCH'  ]
         if( True == P_data.has_key( 'MSVC_VERSION' ) ): self.m_native[ 'MSVC_VERSION' ] = P_data[ 'MSVC_VERSION' ]
+
+        if( True == P_data.has_key( 'CC'   ) ): self.m_native[ 'CC'   ] = P_data[ 'CC'   ]
+        if( True == P_data.has_key( 'CXX'  ) ): self.m_native[ 'CXX'  ] = P_data[ 'CXX'  ]
+        if( True == P_data.has_key( 'LINK' ) ): self.m_native[ 'LINK' ] = P_data[ 'LINK' ]
+
 
     def get_native( self ):
         return self.m_native
@@ -74,6 +82,10 @@ class Config:
 
         self._process_value( P_config.get_native(), 'TARGET_ARCH' , P_param )
         self._process_value( P_config.get_native(), 'MSVC_VERSION' , P_param )
+
+        self._process_value( P_config.get_native(), 'CC'   , P_param )
+        self._process_value( P_config.get_native(), 'CXX'  , P_param )
+        self._process_value( P_config.get_native(), 'LINK' , P_param )
 
         #print 'Config::accumulate::self.m_native = ' + str( self.m_native )
 

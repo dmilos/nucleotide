@@ -38,6 +38,7 @@ import nucleotide.component.linux.gcc.atom.dialect
 import nucleotide.component.linux.gcc.atom.encode
 import nucleotide.component.linux.gcc.atom.executable
 import nucleotide.component.linux.gcc.atom.macro
+import nucleotide.component.linux.gcc.atom.version
 
 ## Detect GCC on linux
 class Translator:
@@ -88,4 +89,5 @@ class Translator:
         nucleotide.component.linux.gcc.atom.encode.Encode.extend(P_options)
         nucleotide.component.linux.gcc.atom.executable.Executable.extend(P_options)
         nucleotide.component.linux.gcc.atom.macro.Macro.extend(P_options)
+        nucleotide.component.linux.gcc.atom.version.Version.extend(P_options)
 
