@@ -17,7 +17,8 @@
 
 import subprocess
 import platform
-import os
+import glob
+import re
 
 import nucleotide
 import nucleotide.component
@@ -49,9 +50,6 @@ class Translator:
         if( 'Linux' != platform.system() ):
             return
 
-        process = subprocess.Popen( [ 'gcc', '-dumpversion' ], stdout = subprocess.PIPE )
-        version = str.split( process.communicate()[0], os.linesep )[0]
-
         I_data = {
                 'platform' : {
                     'host'  : 'Linux',
@@ -60,11 +58,31 @@ class Translator:
                 'cc' : {
                     'vendor' : 'FSF',
                     'name'   : 'gcc',
-                    'version': version
+                    'version': 'X'
                 }
             }
+        self.m_list += [ nucleotide.Translator( I_data['platform'], I_data['cc'] ) ]
 
-        self.m_list +=[ nucleotide.Translator( I_data['platform'], I_data['cc'] ) ]
+        r = re.compile('/usr/bin/gcc-(([0-9]+)(\\.[0-9]+)*)')
+
+        list = glob.glob("/usr/bin/gcc-*")
+
+        for item in list:
+            m = r.search( item )
+            if( None == m ):
+                continue
+            I_data = {
+                    'platform' : {
+                        'host'  : 'Linux',
+                        'guest' : 'Linux'
+                    },
+                    'cc' : {
+                        'vendor' : 'FSF',
+                        'name'   : 'gcc',
+                        'version': m.group(1)
+                    }
+                }
+            self.m_list += [ nucleotide.Translator( I_data['platform'], I_data['cc'] ) ]
 
     def get(self):
         return self.m_list

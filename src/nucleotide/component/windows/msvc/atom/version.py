@@ -23,9 +23,9 @@ import nucleotide.component
 import nucleotide.component.function
 
 def _windows_version_MSVC_VERSION( P_data ):
-    if( False == P_data.has_key( 'id') ):
-        return ''
-    return P_data[ 'id' ]
+    if( False == P_data.has_key( 'msvc') ):
+        return None
+    return P_data[ 'msvc' ][0]
 
 atom_windows_CCVERSION = {
     'platform' : {

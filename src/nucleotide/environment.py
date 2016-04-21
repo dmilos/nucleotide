@@ -28,9 +28,10 @@ class Environment:
             #print 'TARGET_ARCH: -|' + str( P_settings.get_config().get( 'TARGET_ARCH'  ) ) + '|-'
             I_init[ 'TARGET_ARCH' ] = P_settings.get_config().get( 'TARGET_ARCH' )
 
-        if( True == P_settings.get_config().exists( 'MSVC_VERSION'   ) ):
+        if( True == P_settings.get_config().exists( 'MSVC_VERSION' ) ):
+            if( None != P_settings.get_config().get( 'MSVC_VERSION' ) ):
             #print 'MSVC_VERSION: -|' + str( P_settings.get_config().get( 'MSVC_VERSION'  ) ) + '|-'
-            I_init[ 'MSVC_VERSION' ] = P_settings.get_config().get( 'MSVC_VERSION' )
+                I_init[ 'MSVC_VERSION' ] = P_settings.get_config().get( 'MSVC_VERSION' )
 
         self.M_native = SCons.Script.Environment( **I_init )
 
@@ -41,9 +42,9 @@ class Environment:
         if( P_settings.get_config().exists( 'LIBS'       ) ): self.M_native.Append( LIBS        = P_settings.get_config().get( 'LIBS'      ) )
         if( P_settings.get_config().exists( 'LINKFLAGS'  ) ): self.M_native.Append( LINKFLAGS   = P_settings.get_config().get( 'LINKFLAGS' ) )
 
-        if( True == P_settings.get_config().exists( 'CC'   ) ): self.M_native.Replace( CC   = P_settings.get_config().get( 'CC'   ) )
-        if( True == P_settings.get_config().exists( 'CXX'  ) ): self.M_native.Replace( CXX  = P_settings.get_config().get( 'CXX'  ) )
-        if( True == P_settings.get_config().exists( 'LINK' ) ): self.M_native.Replace( LINK = P_settings.get_config().get( 'LINK' ) )
+        if( True == P_settings.get_config().exists( 'CC'   ) ) and ( None != P_settings.get_config().get( 'CC'   ) ): self.M_native.Replace( CC   = P_settings.get_config().get( 'CC'   ) )
+        if( True == P_settings.get_config().exists( 'CXX'  ) ) and ( None != P_settings.get_config().get( 'CXX'  ) ): self.M_native.Replace( CXX  = P_settings.get_config().get( 'CXX'  ) )
+        if( True == P_settings.get_config().exists( 'LINK' ) ) and ( None != P_settings.get_config().get( 'LINK' ) ): self.M_native.Replace( LINK = P_settings.get_config().get( 'LINK' ) )
 
     def native( self ):
         return self.M_native

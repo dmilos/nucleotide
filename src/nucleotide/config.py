@@ -92,6 +92,7 @@ class Config:
     def _process_value( self, P_data, P_key, P_param={} ):
         if( False == P_data.has_key( P_key ) ):
             return;
+
         if( False ==  self.exists( P_key ) ):
             self.set( P_key, '' )
 
@@ -104,6 +105,7 @@ class Config:
     def _process_list( self, P_data, P_key, P_param={} ):
         if( False == P_data.has_key( P_key ) ):
             return;
+
         if( False ==  self.exists( P_key ) ):
             self.set( P_key, [] )
 

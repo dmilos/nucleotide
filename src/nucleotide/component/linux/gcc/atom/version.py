@@ -23,19 +23,19 @@ import nucleotide.component
 import nucleotide.component.function
 
 def _linux_gcc_version_GCC_CC_VERSION( P_data ):
-    if( False == P_data.has_key( 'gcc-id' ) ):
-        return ''
-    return 'gcc-' + P_data[ 'gcc-id' ]
+    if( False == P_data.has_key( 'gcc' ) ):
+        return None
+    return 'gcc-' + P_data[ 'gcc' ][0]
 
 def _linux_gcc_version_GCC_CXX_VERSION( P_data ):
-    if( False == P_data.has_key( 'g++-id') ):
-        return ''
-    return 'g++-' + P_data[ 'g++-id' ]
+    if( False == P_data.has_key( 'gcc') ):
+        return None
+    return 'g++-' + P_data[ 'gcc' ][0]
 
 def _linux_gcc_version_GCC_LINK_VERSION( P_data ):
-    if( False == P_data.has_key( 'glink-id') ):
-        return ''
-    return 'g++-' + P_data[ 'glink-id' ]
+    if( False == P_data.has_key( 'gcc') ):
+        return None
+    return 'g++-' + P_data[ 'gcc' ][0]
 
 
 atom_linux_CCVERSION = {

@@ -28,5 +28,7 @@ example/test/python/install/
 example/test/warning-unused/main
 example/framework/02_cpp11/main
 example/test/translator-version/main-12.0
+example/minimal/version/main
+
 
 example/test/macro/main
