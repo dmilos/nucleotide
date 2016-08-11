@@ -12,7 +12,7 @@
 #   distributed under the License is distributed on an "AS IS" BASIS,
 #   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 #   See the License for the specific language governing permissions and
-#   limitations under the License. 
+#   limitations under the License.
 
 
 import nucleotide
@@ -23,6 +23,38 @@ import nucleotide.component._common
 import nucleotide.translator
 import nucleotide.config
 import nucleotide.klass
+
+def atom_linux_configuration_CPPFLAGS( P_data ):
+    Ir_list = []
+
+    if( False == P_data.has_key( 'name') ):
+        return Ir_list
+
+    if( 'debug '== P_data[ 'name' ] ):
+        Ir_list += [ '-g'  ]
+
+    if( 'release'== P_data[ 'name' ] ):
+        pass
+
+    return Ir_list
+
+atom_linux_configuration = {
+    'platform' : {
+        'host'  : 'Linux',
+        'guest' : 'Linux'
+    },
+    'cc' : {
+        'vendor' : 'FSF',
+        'name'   : 'gcc',
+        'version': 'X'
+    },
+    'config' : {
+        'CPPFLAGS'   : atom_linux_configuration_CPPFLAGS,
+    },
+    'name' :'compiler:configuration',
+    'class': [ 'compiler:configuration', 'linux:compiler:configuration' ]
+}
+
 
 atom_linux_debug = {
     'platform' : {
@@ -130,7 +162,7 @@ atom_linux_debug_optimisation = {
 
 
 def init( P_option ) :
-    
+
    #nucleotide.component.function.extend( P_option, 'architecture',        atom_linux_architecture )
 
     nucleotide.component.function.extend( P_option, 'linux:debug',                 atom_linux_debug      )
@@ -145,3 +177,8 @@ def init( P_option ) :
 
    #nucleotide.component.function.extend( P_option, 'linux:linker:warning',    atom_linux_linker_warning )
    #nucleotide.component.function.extend( P_option, 'linux:compiler:feature:for-scope',  atom_linux_compiler_warning )   -ffor-scope
+
+    nucleotide.component.function.extend( P_option, 'linux:compiler:configuration',    atom_linux_configuration )
+
+
+
