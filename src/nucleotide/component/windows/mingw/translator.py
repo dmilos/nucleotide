@@ -12,7 +12,7 @@
 #   distributed under the License is distributed on an "AS IS" BASIS,
 #   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 #   See the License for the specific language governing permissions and
-#   limitations under the License. 
+#   limitations under the License.
 
 
 import subprocess
@@ -42,17 +42,17 @@ class Translator:
             return
 
         version = str.split( process.communicate()[0], os.linesep )[0]
-        self.m_list.append( nucleotide.Translator( {
-                'platform' : {
+        self.m_list.append( nucleotide.Translator(
+                {
                     'host'  : 'Windows',
                     'guest' : 'Windows'
                 },
-                'cc' : {
+                {
                     'vendor' : 'FSF',
                     'name'   : 'gcc',
                     'version': version
                 }
-            } ) )
+              ) )
 
     def get(self):
         return self.m_list

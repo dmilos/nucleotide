@@ -24,6 +24,7 @@ class Environment:
 
     def __init__( self, P_settings ):
         I_init = {}
+
         if( True == P_settings.get_config().exists( 'TARGET_ARCH' ) ):
             #print 'TARGET_ARCH: -|' + str( P_settings.get_config().get( 'TARGET_ARCH'  ) ) + '|-'
             I_init[ 'TARGET_ARCH' ] = P_settings.get_config().get( 'TARGET_ARCH' )
@@ -32,6 +33,11 @@ class Environment:
             if( None != P_settings.get_config().get( 'MSVC_VERSION' ) ):
             #print 'MSVC_VERSION: -|' + str( P_settings.get_config().get( 'MSVC_VERSION'  ) ) + '|-'
                 I_init[ 'MSVC_VERSION' ] = P_settings.get_config().get( 'MSVC_VERSION' )
+
+        if( True == P_settings.get_config().exists( 'tools' ) ):
+            if( None != P_settings.get_config().get( 'tools' ) ):
+            #print 'MSVC_VERSION: -|' + str( P_settings.get_config().get( 'MSVC_VERSION'  ) ) + '|-'
+                I_init[ 'tools' ] = P_settings.get_config().get( 'tools' )
 
         self.M_native = SCons.Script.Environment( **I_init )
 
