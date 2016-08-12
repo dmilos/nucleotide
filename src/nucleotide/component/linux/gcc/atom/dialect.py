@@ -51,7 +51,11 @@ class Dialect:
 
     @staticmethod
     def extend( P_option ):
-        nucleotide.component.function.extend( P_option, 'linux:source:c++:dialect',   atom_linux_gcc_dialect )
+        nucleotide.component.function.extend( P_option, 'A:linux:source:c++:dialect',   atom_linux_gcc_dialect )
+        atom_linux_gcc_dialect['platform']['host'] = 'X'; 
+        nucleotide.component.function.extend( P_option, 'x:linux:source:c++:dialect',   atom_linux_gcc_dialect )
+        atom_linux_gcc_dialect['platform']['guest'] = 'X'; 
+        nucleotide.component.function.extend( P_option, 'y:linux:source:c++:dialect',   atom_linux_gcc_dialect )
 
     @staticmethod
     def check():

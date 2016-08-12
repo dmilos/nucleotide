@@ -15,30 +15,8 @@
 #   limitations under the License. 
 
 
-import platform
+#__all__   = [ 'TODO' ]
+#__name__  = 'nucleotide.component'
 
-import nucleotide
-import nucleotide.component
-import nucleotide.component.windows
-import nucleotide.component.windows._common
-import nucleotide.component.windows._common.python
-import nucleotide.component.windows._common.boost
-
-## Detect _Common on Windows
-class Translator:
-    m_list = []
-    def __init__(self):
-        self.m_list = []
-
-    def get(self):
-        return self.m_list
-
-    def check(self):
-        pass
-
-    @staticmethod
-    def extend(P_options):
-
-        nucleotide.component.windows._common.python.Python.extend(P_options)
-        nucleotide.component.windows._common.boost.Boost.extend(P_options)
+#import main
 

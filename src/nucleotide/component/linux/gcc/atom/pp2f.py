@@ -12,7 +12,7 @@
 #   distributed under the License is distributed on an "AS IS" BASIS,
 #   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 #   See the License for the specific language governing permissions and
-#   limitations under the License. 
+#   limitations under the License.
 
 
 import os
@@ -45,7 +45,12 @@ class PP2F:
 
     @staticmethod
     def extend( P_option ):
-         nucleotide.component.function.extend( P_option, 'linux:pp2f',                atom_linux_pp2f    )
+         nucleotide.component.function.extend( P_option, 'A:linux:pp2f',                atom_linux_pp2f    )
+         atom_linux_pp2f['platform']['host'] = 'X';
+         nucleotide.component.function.extend( P_option, 'x:linux:pp2f',               atom_linux_pp2f    )
+         atom_linux_pp2f['platform']['guest'] = 'X';
+         nucleotide.component.function.extend( P_option, 'y:linux:pp2f',               atom_linux_pp2f    )
+
 
     @staticmethod
     def check():

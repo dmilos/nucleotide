@@ -66,7 +66,7 @@ class Options:
 
     ##Return specific atom for given translator and universal name
     def get( self, P_translator, P_universal ):
-        #print 'Options::get(' + ' P_translator =' + P_translator.string()  + ', P_universal = '+ P_universal + ' )'
+        #print 'Options::get(' + ' translator =' + P_translator.string()  + ', universal = '+ P_universal + ' )'
 
         if( False == self.m_represent.has_key( P_universal ) ) :
             print '    Options::get:: 0 - i_classeq = [] for ' + P_universal

@@ -58,9 +58,6 @@ class Translator:
     def __init__(self):
         self.m_list = []
 
-        if( 'Windows' != platform.system() ):
-            return
-
         I_data = nucleotide.Translator.blank()
         I_data['platform']['host'] = 'Windows'
         I_data['platform']['guest'] = 'Windows'

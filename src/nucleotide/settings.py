@@ -12,7 +12,7 @@
 #   distributed under the License is distributed on an "AS IS" BASIS,
 #   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 #   See the License for the specific language governing permissions and
-#   limitations under the License. 
+#   limitations under the License.
 
 
 import nucleotide
@@ -61,7 +61,7 @@ class Settings:
     def get_info( self ):
         return self.m_info
 
-    ##Add specified atom ( as unified name ) to be availabe for accumulating
+    ##Add specified atom ( as unified name ) to be available for accumulating
     def extend( self, P_name, P_atom ):
         self.m_options.extend( P_name, P_atom )
 

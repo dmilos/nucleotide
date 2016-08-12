@@ -55,7 +55,11 @@ class RTL:
 
     @staticmethod
     def extend( P_option ):
-         nucleotide.component.function.extend( P_option, 'linux:RTL',                 atom_linux_RTL )
+         nucleotide.component.function.extend( P_option, 'A:linux:RTL',                 atom_linux_RTL )
+         atom_linux_RTL['platform']['host'] = 'X';
+         nucleotide.component.function.extend( P_option, 'x:linux:RTL',                 atom_linux_RTL )
+         atom_linux_RTL['platform']['guest'] = 'X';
+         nucleotide.component.function.extend( P_option, 'y:linux:RTL',                 atom_linux_RTL )
 
     @staticmethod
     def check():

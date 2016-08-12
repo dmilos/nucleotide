@@ -60,8 +60,6 @@ class Boost:
 
     @staticmethod
     def check():
-        if( 'Windows' != platform.system() ):
-            return
 
         function.check__env( 'BOOST_INCLUDE' )
         function.check__env( 'BOOST_LIBPATH' )

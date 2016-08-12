@@ -22,8 +22,6 @@ class Translator:
     m_list = []
     def __init__(self):
         self.m_list = []
-        if( 'Linux' != platform.system() ):
-            return
 
     def get(self):
         return self.m_list

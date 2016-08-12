@@ -33,8 +33,6 @@ class Translator:
     m_list = []
     def __init__(self):
         self.m_list = []
-        if( 'Windows' != platform.system() ):
-            return
 
         try:
             process = subprocess.Popen( [ 'gcc', '-dumpversion' ], stdout = subprocess.PIPE )

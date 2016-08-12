@@ -74,9 +74,6 @@ class Boost:
 
     def check():
 
-        if( 'Windows' != platform.system() ):
-            return
-
         nucleotide.component.function.check__env( 'BOOST_MSVC12_INCLUDE' )
         nucleotide.component.function.check__env( 'BOOST_MSVC12_LIBPATH' )
         nucleotide.component.function.check__env( 'BOOST_MSVC12_VERSION' )

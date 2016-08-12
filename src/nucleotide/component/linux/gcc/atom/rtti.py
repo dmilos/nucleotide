@@ -57,7 +57,11 @@ class RTTI:
 
     @staticmethod
     def extend( P_option ):
-         nucleotide.component.function.extend( P_option, 'linux:RTTI',                atom_linux_RTTI)
+         nucleotide.component.function.extend( P_option, 'A:linux:RTTI',                atom_linux_RTTI)
+         atom_linux_RTTI['platform']['host'] = 'X';
+         nucleotide.component.function.extend( P_option, 'x:linux:RTTI',                atom_linux_RTTI)
+         atom_linux_RTTI['platform']['guest'] = 'X';
+         nucleotide.component.function.extend( P_option, 'y:linux:RTTI',                atom_linux_RTTI)
 
     @staticmethod
     def check():

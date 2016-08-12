@@ -12,7 +12,7 @@
 #   distributed under the License is distributed on an "AS IS" BASIS,
 #   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 #   See the License for the specific language governing permissions and
-#   limitations under the License. 
+#   limitations under the License.
 
 
 import nucleotide
@@ -25,7 +25,7 @@ def _windows_configuration_CPPDEFINES( P_data ):
     if( False == P_data.has_key( 'name') ):
         return Ir_list
 
-    if( 'debug '== P_data[ 'name' ] ):
+    if( 'debug' == P_data[ 'name' ] ):
         Ir_list += [ '_DEBUG' ]
 
     if( 'release'== P_data[ 'name' ] ):
@@ -38,26 +38,27 @@ def _windows_configuration_CPPFLAGS( P_data ):
     if( False == P_data.has_key( 'name') ):
         return Ir_list
 
-    if( 'debug '== P_data[ 'name' ] ):
+    if( 'debug' == P_data[ 'name' ] ):
         Ir_list += [ '/RTC1'  ]
 
     if( 'release'== P_data[ 'name' ] ):
         pass
+
     return Ir_list
 
 def _windows_configuration_LINKFLAGS( P_data ):
-    Ir_data = []
+    Ir_list = []
 
     if( False == P_data.has_key( 'name') ):
-        return Ir_data
+        return Ir_list
 
-    if( 'debug '== P_data[ 'name' ] ):
+    if( 'debug' == P_data[ 'name' ] ):
         Ir_list += [ '/DEBUG' ]
 
     if( 'release'== P_data[ 'name' ] ):
         pass
 
-    return Ir_data
+    return Ir_list
 
 # debug   'CPPDEFINES' : [ '_DEBUG' ],
 # debug   'CPPFLAGS'   : [ '/RTC1'  ],
@@ -144,7 +145,7 @@ atom_windows_optimisation = {
         'CPPFLAGS'  : _windows_optimisation_CPPFLAGS,
     },
     'name' : 'release-optimisation',
-    'class': [ 'compiler:optimisation', 'windows:compiler:configuration' ]
+    'class': [ 'compiler:optimisation', 'windows:compiler:optimisation' ]
 }
 
 

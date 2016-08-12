@@ -12,7 +12,7 @@
 #   distributed under the License is distributed on an "AS IS" BASIS,
 #   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 #   See the License for the specific language governing permissions and
-#   limitations under the License. 
+#   limitations under the License.
 
 
 import nucleotide
@@ -52,7 +52,11 @@ class Warning:
 
     @staticmethod
     def extend(P_option):
-        nucleotide.component.function.extend( P_option, 'linux:compiler:warning',  atom_linux_compiler_warning )
+        nucleotide.component.function.extend( P_option, 'A:linux:compiler:warning',  atom_linux_compiler_warning )
+        atom_linux_compiler_warning['platform']['host'] = 'X';
+        nucleotide.component.function.extend( P_option, 'x:linux:compiler:warning',  atom_linux_compiler_warning )
+        atom_linux_compiler_warning['platform']['guest'] = 'X';
+        nucleotide.component.function.extend( P_option, 'y:linux:compiler:warning',  atom_linux_compiler_warning )
 
     @staticmethod
     def check(self):

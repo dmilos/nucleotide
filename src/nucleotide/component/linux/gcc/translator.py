@@ -40,6 +40,8 @@ import nucleotide.component.linux.gcc.atom.encode
 import nucleotide.component.linux.gcc.atom.executable
 import nucleotide.component.linux.gcc.atom.macro
 import nucleotide.component.linux.gcc.atom.version
+import nucleotide.component.linux.gcc.atom.configuration
+import nucleotide.component.linux.gcc.atom.optimisation
 
 ## Detect GCC on linux
 class Translator:
@@ -47,8 +49,6 @@ class Translator:
 
     def __init__(self):
         self.m_list = []
-        if( 'Linux' != platform.system() ):
-            return
 
         I_data = {
                 'platform' : {
@@ -108,4 +108,7 @@ class Translator:
         nucleotide.component.linux.gcc.atom.executable.Executable.extend(P_options)
         nucleotide.component.linux.gcc.atom.macro.Macro.extend(P_options)
         nucleotide.component.linux.gcc.atom.version.Version.extend(P_options)
+        nucleotide.component.linux.gcc.atom.configuration.Configuration.extend(P_options)
+        nucleotide.component.linux.gcc.atom.optimisation.Optimisation.extend(P_options)
+
 

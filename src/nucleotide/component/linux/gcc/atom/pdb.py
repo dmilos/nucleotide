@@ -55,7 +55,11 @@ class PDB:
 
     @staticmethod
     def extend( P_option ):
-         nucleotide.component.function.extend( P_option, 'linux:PDB',           atom_linux_PDB )
+         nucleotide.component.function.extend( P_option, 'A:linux:PDB',           atom_linux_PDB )
+         atom_linux_PDB['platform']['host'] = 'X'; 
+         nucleotide.component.function.extend( P_option, 'x:linux:PDB',           atom_linux_PDB )
+         atom_linux_PDB['platform']['guest'] = 'X'; 
+         nucleotide.component.function.extend( P_option, 'y:linux:PDB',           atom_linux_PDB )
 
     @staticmethod
     def check():
