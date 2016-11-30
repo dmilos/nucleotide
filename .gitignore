@@ -32,3 +32,11 @@ example/minimal/version/main
 
 
 example/test/macro/main
+
+/build/nucleotide
+/build/license.txt
+/build/readme
+/build/dist
+/build/MANIFEST
+/build/readme.txt
+/build/nucleotide.egg-info
