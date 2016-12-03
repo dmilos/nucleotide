@@ -12,7 +12,7 @@
 #   distributed under the License is distributed on an "AS IS" BASIS,
 #   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 #   See the License for the specific language governing permissions and
-#   limitations under the License. 
+#   limitations under the License.
 
 
 import copy
@@ -33,6 +33,11 @@ class Custom:
 
     def set( self, P_name, P_value ):
         self.m_dictinary[ P_name ] = P_value
+
+    def exists( self, P_name, P_value ):
+        if( False == self.m_dictinary.has_key( P_name ) ):
+            return False
+        return True
 
     def get_dictinary( self ):
         return self.m_dictinary

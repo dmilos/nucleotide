@@ -52,6 +52,9 @@ class Settings:
     def get_config( self ):
         return self.m_config
 
+    def exists_custom( self, P_name ):
+        return self.m_custom.exists( P_name )
+
     def get_custom( self, P_name ):
         return self.m_custom.get( P_name )
 
