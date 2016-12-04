@@ -8,11 +8,11 @@
 ##Quick example:
 
   Next line set RTL:
-```c++
+```python
     settings.accumulate( 'RTL', { 'type': 'static', 'configuration' : 'debug' } )
 ```
   and replace:
-```c++
+```python
             if( os.platform == 'win32' ):
                 if( retrieve_compiler_name() == 'msvc' ):
                     flag = 'M'
