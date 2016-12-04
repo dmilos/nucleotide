@@ -20,7 +20,7 @@ print my_packages
 setup(
     name             = "nucleotide",
     version          = my_version,
-    keywords         = 'scons module universal unified compiler',
+    keywords         = 'scons, module, universal, unified, compiler, c++',
     author           = "Dejan Milosavljevic",
     author_email     = "dmilos@gmail.com",
     url              = "https://github.com/dmilos/nucleotide",
