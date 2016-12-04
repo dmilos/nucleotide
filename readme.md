@@ -27,17 +27,20 @@
                     env.append( CPPFLAGS, [ flag ] )
 
                 if( retrieve_compiler_name() == 'cygwin' ):
-                    env.append( LINKFLAGS, "-static" )
+                    env.append( LINKFLAGS, '-static' )
 
                 if( retrieve_compiler_name() == 'mingw' ):
-                    env.append( LINKFLAGS, "-static" )
+                    env.append( LINKFLAGS, '-static' )
             else:
                 if( os.platform == 'linux' ):
                     if( retrieve_compiler_name() == 'gcc' ):
-                        env.append( LINKFLAGS, "-static" )
+                        env.append( LINKFLAGS, '-static' )
             ... ... ... 
 ```
+##Install:
+  Start command line and type:
+    ```pip install nucleotide```
 
-Want to see more:
+##Want to see more:
   - [HTML Documentation ](doc/index.html)
   - [Wiki page](https://github.com/dmilos/nucleotide/wiki) 

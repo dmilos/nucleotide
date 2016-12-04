@@ -27,12 +27,12 @@ setup(
     license          = "https://raw.githubusercontent.com/dmilos/nucleotide/master/license.txt",
     packages         = my_packages,
     description      = "An Scons library which wraps interface of various compilers in to one universal.",
-    long_description = open( rootdir + "\\readme.txt").read(),
+    long_description = open( rootdir + "\\readme.rst").read(),
     platforms        = ["All"],
     #install_requires = [ "scons"  ],
     # NO scripts = [ "nucleotide"  ]
     classifiers=[
-        'Development Status :: 4 - Alpha',
+        'Development Status :: 3 - Alpha',
         'Programming Language :: Python :: 2.7',
         'Intended Audience :: Developers',
         'Operating System :: OS Independent',
