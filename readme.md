@@ -42,5 +42,4 @@
     ```pip install nucleotide```
 
 ##Want to see more:
-  - [HTML Documentation ](doc/index.html)
   - [Wiki page](https://github.com/dmilos/nucleotide/wiki) 

@@ -4,7 +4,10 @@ copy ..\license.txt .
 
 call md2rst.bat
 
-%prg_python% setup.py sdist
+copy readme.rst readme.txt
+
+@rem %prg_python% setup.py sdist -o
+%prg_python% setup.py sdist --formats=gztar,zip
 @rem %prg_python% setup.py egg_info
 @rem %prg_python% setup.py bdist_wheel
 
