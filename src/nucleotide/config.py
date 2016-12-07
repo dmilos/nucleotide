@@ -25,15 +25,15 @@ class Config:
         self.m_native = {
             #'TARGET_ARCH' : 'x86', #<purposely omit this key
             #'MSVC_VERSION': '12',  #<purposely omit this key
-            #'CC'    : '',  #<purposely omit this key
-            #'CXX'   : '',  #<purposely omit this key
-            #'LINK'  : '',  #<purposely omit this key
-            'CPPFLAGS'   :[],
-            'CPPPATH'    :[],
-            'CPPDEFINES' :[],
-            'LIBPATH'    :[],
-            'LIBS'       :[],
-            'LINKFLAGS'  :[],
+            #'CC'          : '',    #<purposely omit this key
+            #'CXX'         : '',    #<purposely omit this key
+            #'LINK'        : '',    #<purposely omit this key
+            'CPPFLAGS'     : [],
+            'CPPPATH'      : [],
+            'CPPDEFINES'   : [],
+            'LIBPATH'      : [],
+            'LIBS'         : [],
+            'LINKFLAGS'    : [],
         }
 
         #print 'Config::__init__( P_data = ' + str( P_data ) + ' )'

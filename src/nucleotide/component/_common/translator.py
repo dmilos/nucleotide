@@ -12,7 +12,7 @@
 #   distributed under the License is distributed on an "AS IS" BASIS,
 #   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 #   See the License for the specific language governing permissions and
-#   limitations under the License. 
+#   limitations under the License.
 
 
 import os
@@ -26,6 +26,8 @@ import nucleotide.component._common.blank
 import nucleotide.component._common.boost
 import nucleotide.component._common.architecture
 import nucleotide.component._common.include
+import nucleotide.component._common.library
+
 
 ## Ddetect existing translators
 class Translator:
@@ -41,6 +43,7 @@ class Translator:
         nucleotide.component._common.boost.Boost.extend( P_options )
         nucleotide.component._common.architecture.Architecture.extend( P_options )
         nucleotide.component._common.include.Include.extend( P_options )
+        nucleotide.component._common.library.Library.extend( P_options )
 
     @staticmethod
     def platform():

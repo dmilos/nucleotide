@@ -23,6 +23,9 @@ class Environment:
     M_native = None
 
     def __init__( self, P_settings ):
+
+        #print 'Environment::P_settings.get_config().m_native: ' + str( P_settings.get_config().m_native )
+
         I_init = {}
 
         if( True == P_settings.get_config().exists( 'TARGET_ARCH' ) ):

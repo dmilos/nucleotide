@@ -69,7 +69,7 @@ class Options:
         #print 'Options::get(' + ' translator =' + P_translator.string()  + ', universal = '+ P_universal + ' )'
 
         if( False == self.m_represent.has_key( P_universal ) ) :
-            print '    Options::get:: 0 - i_classeq = [] for ' + P_universal
+            print '    Options::get:: 0 - i_classeq = [] for \'' + P_universal + '\''
             return nucleotide.atom.Atom( )
 
         i_classeq = self.m_represent[ P_universal ]
