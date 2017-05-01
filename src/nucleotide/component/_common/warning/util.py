@@ -52,7 +52,7 @@ def list( P_list, P_translator ):
             continue
         I_best = -1
         for elem in nucleotide.component._common.warning.table.TABLE[item]:
-            I_similar = P_translator.smilarity( nucleotide.translator.Translator.extract( elem ) ) 
+            I_similar = P_translator.similarity( nucleotide.translator.Translator.extract( elem ) ) 
             if( I_best < I_similar ):
                 I_best = I_similar
                 I_text = nucleotide.component._common.warning.table.TABLE[item][elem]

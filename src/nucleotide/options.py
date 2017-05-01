@@ -80,7 +80,7 @@ class Options:
             if( False == self.m_this.has_key( element ) ) :
                 #print '            Options::get:: 2 - no key = ' + str( element )
                 continue
-            I_level =  P_translator.smilarity( self.m_this[ element ].get_translator() )
+            I_level =  P_translator.similarity( self.m_this[ element ].get_translator() )
             if( I_best['level'] < I_level ):
                 I_best['level'] = I_level
                 I_best['name'] = element
