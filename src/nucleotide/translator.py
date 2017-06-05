@@ -46,28 +46,28 @@ class Translator:
     def get( self ):
         return self.m_translator
 
-    def smilarity( self, P_other ):
+    def similarity( self, P_other ):
         I_level = -1
         #print __file__ +' - P_other.m_translator == '+ str( P_other.m_translator )
         #print __file__ +' - self.m_translator    == '+ str(    self.m_translator )
 
-        I_match = Translator._smilarity0( self.m_translator['platform']['host' ], P_other.m_translator['platform']['host' ] );
+        I_match = Translator._similarity0( self.m_translator['platform']['host' ], P_other.m_translator['platform']['host' ] );
         if( 0 == I_match ):
             return -1
 
         I_level += 1
 
-        I_match = Translator._smilarity0( self.m_translator['platform']['guest' ], P_other.m_translator['platform']['guest' ] );
+        I_match = Translator._similarity0( self.m_translator['platform']['guest' ], P_other.m_translator['platform']['guest' ] );
         if( 0 == I_match ):
             return -1
 
         I_level += 1
 
-        I_match = Translator._smilarity0( self.m_translator['cc']['vendor'], P_other.m_translator['cc']['vendor'] );
+        I_match = Translator._similarity0( self.m_translator['cc']['vendor'], P_other.m_translator['cc']['vendor'] );
         I_level += [  -9000,    50,    50,    90 ][ I_match ]
-        I_match = Translator._smilarity0( self.m_translator['cc']['name'], P_other.m_translator['cc']['name'] );
+        I_match = Translator._similarity0( self.m_translator['cc']['name'], P_other.m_translator['cc']['name'] );
         I_level += [  -9000,   500,   500,   900 ][ I_match ]
-        I_match = Translator._smilarity0( self.m_translator['cc']['version'], P_other.m_translator['cc']['version'] );
+        I_match = Translator._similarity0( self.m_translator['cc']['version'], P_other.m_translator['cc']['version'] );
         I_level += [  -9000,  5000,  5000,  9000 ][ I_match ]
 
         return I_level
@@ -90,7 +90,7 @@ class Translator:
 
 
     @staticmethod
-    def _smilarity0( P_left, P_right ):
+    def _similarity0( P_left, P_right ):
         #print '        P_left = '+P_left+' , P_right = '+ P_right +' '
         if( P_left == P_right ):
             #print '            2'

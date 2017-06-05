@@ -1,11 +1,11 @@
-#Wrap all C++ compilers in to the one.
+# Wrap all C++ compilers in to the one.
 
-##Description
+## Description
 
   An Scons library which wraps interface of various compilers in to one universal.
   Nucleotide allow us to make Scons files avoiding to explicitly state: platform, compiler, compiler's version.
 
-##Quick example:
+## Quick example:
 
   Next line set RTL:
 ```python
@@ -37,9 +37,9 @@
                         env.append( LINKFLAGS, '-static' )
             ... ... ... 
 ```
-##Install:
+## Install:
   Start command line and type:
     ```pip install nucleotide```
 
-##Want to see more:
+## Want to see more:
   - [Wiki page](https://github.com/dmilos/nucleotide/wiki) 
