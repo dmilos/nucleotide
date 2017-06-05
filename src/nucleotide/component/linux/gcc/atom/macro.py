@@ -59,13 +59,18 @@ atom_linux_Macro = {
     'class': [  'macro', 'linux:macro' ]
 }
 
+# { 'name' : 'MY_MAX', 'parameter':['a', 'b'], 'body': '( (a)<(b) ? (b) : (a) )' }
 class Macro:
     def __init__(self):
         pass
 
     @staticmethod
     def extend( P_option ):
-         nucleotide.component.function.extend( P_option, 'linux:macro',           atom_linux_Macro )
+        nucleotide.component.function.extend( P_option, 'A:linux:compiler:macro',  atom_linux_Macro )
+        atom_linux_Macro['platform']['host'] = 'X';
+        nucleotide.component.function.extend( P_option, 'x:linux:compiler:macro',  atom_linux_Macro )
+        atom_linux_Macro['platform']['guest'] = 'X';
+        nucleotide.component.function.extend( P_option, 'y:linux:compiler:macro',  atom_linux_Macro )
 
     @staticmethod
     def check():

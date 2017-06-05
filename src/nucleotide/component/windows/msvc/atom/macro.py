@@ -15,12 +15,10 @@
 #   limitations under the License.
 
 
-import os
-import subprocess
-
 import nucleotide
 import nucleotide.component
 import nucleotide.component.function
+
 
 def _windows_Macro_CPPFLAGS( P_data ):
     Ir_list = []
