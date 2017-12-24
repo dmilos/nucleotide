@@ -1,0 +1,23 @@
+import nucleotide
+
+Import('settings')
+
+
+# Accumulate Atoms
+settings.accumulate( 'exception' )
+
+# Accumulate source
+source = []
+source +=   ['main.cpp'] 
+
+# Make native environment
+envProgram = nucleotide.Environment( settings ).native()
+
+# Create program
+program = envProgram.Program( target =  'main' + envProgram['PROGSUFFIX'], source = source  )
+
+### Simply add whatever you need in here.  ###
+envProgram.Append( CPPFLAGS = [ '/Wall' ] )
+
+# ... and return!
+Return( 'program' )
