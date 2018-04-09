@@ -12,7 +12,7 @@
 #   distributed under the License is distributed on an "AS IS" BASIS,
 #   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 #   See the License for the specific language governing permissions and
-#   limitations under the License. 
+#   limitations under the License.
 
 
 import platform
@@ -25,9 +25,9 @@ import nucleotide.component._common.warning.table
 def windows_make( P_native, P_status ):
     Ir_switch = ''
    #if( 'enable'   == P_status ): Ir_switch = ''
-    if( 'disable'  == P_status ): Ir_switch = '/wd' + P_native 
-    if( 'error'    == P_status ): Ir_switch = '/we' + P_native 
-    if( 'once'     == P_status ): Ir_switch = '/wo' + P_native 
+    if( 'disable'  == P_status ): Ir_switch = '/wd' + P_native
+    if( 'error'    == P_status ): Ir_switch = '/we' + P_native
+    if( 'once'     == P_status ): Ir_switch = '/wo' + P_native
     return Ir_switch
 
 def linux_make( P_native, P_status ):
@@ -40,9 +40,15 @@ def linux_make( P_native, P_status ):
 
 def convertor(P_translator):
     if( 'Linux'   == platform.system() ):
-        return linux_make 
-    if( 'Windows' == platform.system() ): 
-        return windows_make 
+        return linux_make
+    if( 'Windows' == platform.system() ):
+        return windows_make
+    
+    if( 'CYGWIN_NT-6.1-WOW' == platform.system() ):
+        return linux_make
+
+    print "Unknown Platform :" , platform.system()
+    return None
 
 def list( P_list, P_translator ):
     Ir_list = []
@@ -52,7 +58,7 @@ def list( P_list, P_translator ):
             continue
         I_best = -1
         for elem in nucleotide.component._common.warning.table.TABLE[item]:
-            I_similar = P_translator.similarity( nucleotide.translator.Translator.extract( elem ) ) 
+            I_similar = P_translator.similarity( nucleotide.translator.Translator.extract( elem ) )
             if( I_best < I_similar ):
                 I_best = I_similar
                 I_text = nucleotide.component._common.warning.table.TABLE[item][elem]

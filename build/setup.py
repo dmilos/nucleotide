@@ -7,7 +7,7 @@ import glob
 
 rootdir = os.path.abspath( os.path.dirname(__file__) )
 
-print rootdir
+print ( rootdir )
 
 #my_version = "0.1.0" +  str(time.time()),
 my_version = "0.1.3"

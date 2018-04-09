@@ -56,6 +56,3 @@ class Warning:
     @staticmethod
     def check(self):
         pass
-
-
-
