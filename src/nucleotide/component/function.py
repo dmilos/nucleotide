@@ -54,8 +54,8 @@ def extend( P_option, P_name, P_data ):
 def check__env( P_name ) :
     value = os.getenv( P_name )
     if None == value:
-        print  P_name + ' Not exists'
+        print(  P_name + ' Not exists' )
         return False
-    print  P_name + ': -|' + value +'|-'
+    print( P_name + ': -|' + value +'|-' )
     return True
 

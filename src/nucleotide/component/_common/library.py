@@ -31,7 +31,7 @@ def _common_library_LIBPATH( P_list ):
             continue
         Ir_list += [ P_list[item]['path'] ]
 
-    #print 'Library::_common_library_LIBPATH::Ir_list =  ' + str( Ir_list )
+    #print( 'Library::_common_library_LIBPATH::Ir_list =  ' + str( Ir_list ) )
 
     return Ir_list
 
@@ -44,7 +44,7 @@ def _common_library_LIBS( P_list ):
             continue
         Ir_list += P_list[item]['list']
 
-    #print 'Library::_common_library_LIBS::Ir_list =  ' + str( Ir_list )
+    #print( 'Library::_common_library_LIBS::Ir_list =  ' + str( Ir_list ) )
 
     return Ir_list
 

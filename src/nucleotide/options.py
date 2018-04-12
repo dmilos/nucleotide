@@ -51,9 +51,9 @@ class Options:
 
     ##Extend current options with new atom
     def extend( self, P_name, P_atom ):
-        #print 'Options::extend ( P_name = ' + P_name + ', '+ ' )'
-        #print '    Options::extend ( P_atom.get_translator().string() = ' + P_atom.get_translator().string() +' )'
-        #print '    Options::extend ( P_atom.get_klass().others() = ' + str( P_atom.get_klass().others() ) +' )'
+        #print( 'Options::extend ( P_name = ' + P_name + ', '+ ' )' )
+        #print( '    Options::extend ( P_atom.get_translator().string() = ' + P_atom.get_translator().string() +' )' )
+        #print( '    Options::extend ( P_atom.get_klass().others() = ' + str( P_atom.get_klass().others() ) +' )' )
 
         full_name = self.make_name( P_atom, P_name );
         self.m_this[ full_name ] = P_atom
@@ -62,32 +62,32 @@ class Options:
             if( False == self.m_represent.has_key( represent ) ):
                 self.m_represent[ represent ]  = []
             self.m_represent[ represent ] += [ full_name ]
-            #print '    Options::extend( represent: ' + represent  + '   with: '+ full_name+' )'
+            #print( '    Options::extend( represent: ' + represent  + '   with: '+ full_name+' )' )
 
     ##Return specific atom for given translator and universal name
     def get( self, P_translator, P_universal ):
-        #print 'Options::get(' + ' translator =' + P_translator.string()  + ', universal = '+ P_universal + ' )'
+        #print( 'Options::get(' + ' translator =' + P_translator.string()  + ', universal = '+ P_universal + ' )' )
 
         if( False == self.m_represent.has_key( P_universal ) ) :
-            print '    Options::get:: 0 - i_classeq = [] for \'' + P_universal + '\''
+            print( '    Options::get:: 0 - i_classeq = [] for \'' + P_universal + '\'' )
             return nucleotide.atom.Atom( )
 
         i_classeq = self.m_represent[ P_universal ]
         I_best = { 'level': -1, 'name': 'X' }
-        #print '    Options::get:: 1 - i_classeq = ' + str( i_classeq )
+        #print( '    Options::get:: 1 - i_classeq = ' + str( i_classeq ) )
 
         for element in i_classeq:
             if( False == self.m_this.has_key( element ) ) :
-                #print '            Options::get:: 2 - no key = ' + str( element )
+                #print( '            Options::get:: 2 - no key = ' + str( element ) )
                 continue
             I_level =  P_translator.similarity( self.m_this[ element ].get_translator() )
             if( I_best['level'] < I_level ):
                 I_best['level'] = I_level
                 I_best['name'] = element
-            #print '        Options::get:: 3 - ' + ' element:   ' + element + ' ; ' + ' level: ' + str( I_level )
+            #print( '        Options::get:: 3 - ' + ' element:   ' + element + ' ; ' + ' level: ' + str( I_level ) )
 
         if( -1 == I_best['level'] ):
-            print '    Options::get:: 4 ' + P_universal + ' - I_best[\'level\'] = ' + str( I_best['level'] )
+            print( '    Options::get:: 4 ' + P_universal + ' - I_best[\'level\'] = ' + str( I_best['level'] ) )
             return nucleotide.atom.Atom( )
 
         Options.message( '    Options::get:: 5 for: ' + P_universal + ' - return: ||' + str( I_best['level'] ) + '|| - '+  I_best['name'] )
@@ -101,7 +101,7 @@ class Options:
 
     @staticmethod
     def message(P_message):
-        print P_message
+        print( P_message )
 
     def join_out2(self, a, b ):
         return a + '::'  + b

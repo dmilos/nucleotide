@@ -36,7 +36,7 @@ class Config:
             'LINKFLAGS'    : [],
         }
 
-        #print 'Config::__init__( P_data = ' + str( P_data ) + ' )'
+        #print( 'Config::__init__( P_data = ' + str( P_data ) + ' )' )
 
         if( True == P_data.has_key( 'CPPFLAGS'   ) ): self.m_native[ 'CPPFLAGS'   ] = P_data[ 'CPPFLAGS'  ]
         if( True == P_data.has_key( 'CPPPATH'    ) ): self.m_native[ 'CPPPATH'    ] = P_data[ 'CPPPATH'   ]
@@ -71,7 +71,7 @@ class Config:
     ## Take all from other config by respecting P_param
     def accumulate( self, P_config, P_param = {} ):
 
-        #print 'Config::accumulate::P_config.m_native = ' + str( P_config.m_native )
+        #print( 'Config::accumulate::P_config.m_native = ' + str( P_config.m_native ) )
 
         self._process_list( P_config.get_native(), 'CPPFLAGS'  , P_param )
         self._process_list( P_config.get_native(), 'CPPPATH'   , P_param )
@@ -87,7 +87,7 @@ class Config:
         self._process_value( P_config.get_native(), 'CXX'  , P_param )
         self._process_value( P_config.get_native(), 'LINK' , P_param )
 
-        #print 'Config::accumulate::self.m_native = ' + str( self.m_native )
+        #print( 'Config::accumulate::self.m_native = ' + str( self.m_native ) )
 
     def _process_value( self, P_data, P_key, P_param={} ):
         if( False == P_data.has_key( P_key ) ):

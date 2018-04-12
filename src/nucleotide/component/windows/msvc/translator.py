@@ -64,6 +64,12 @@ class Translator:
         I_data['cc']['vendor'] = 'Microsoft'
         I_data['cc']['name'] = 'msvc'
 
+
+        if( True == Translator._exists( _winreg_HKEY_LOCAL_MACHINE, 'SOFTWARE\\Microsoft\\VisualStudio\\14.0' ) ):
+            I_data['cc']['version'] = '14'
+            I_c = copy.deepcopy( I_data )
+            self.m_list.append( nucleotide.Translator( I_c['platform'], I_c['cc'] ) )
+
         if( True == Translator._exists( _winreg_HKEY_LOCAL_MACHINE, 'SOFTWARE\\Microsoft\\VisualStudio\\12.0' ) ):
             I_data['cc']['version'] = '12'
             I_c = copy.deepcopy( I_data )

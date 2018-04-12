@@ -41,18 +41,24 @@ def linux_make( P_native, P_status ):
 def convertor(P_translator):
     if( 'Linux'   == platform.system() ):
         return linux_make
+
     if( 'Windows' == platform.system() ):
         return windows_make
-    
-    if( 'CYGWIN_NT-6.1-WOW' == platform.system() ):
+
+    if( 'CYGWIN_NT' in platform.system() ):
         return linux_make
 
-    print "Unknown Platform :" , platform.system()
+    print( "Unknown Platform : " + platform.system() )
     return None
 
 def list( P_list, P_translator ):
     Ir_list = []
     I_convertor = convertor( P_translator )
+
+    if( None == I_convertor ):
+        print( "Non convertor" )
+        return Ir_list;
+
     for item in P_list:
         if( False == nucleotide.component._common.warning.table.TABLE.has_key( item ) ):
             continue

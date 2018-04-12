@@ -28,6 +28,6 @@ class Catalog:
 
     ## TODO
     def get(self):
-        #print self.m_catalog
+        #print( self.m_catalog )
         return self.m_catalog
 

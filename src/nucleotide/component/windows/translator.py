@@ -50,7 +50,7 @@ class Translator:
             I_msvc   = nucleotide.component.windows.msvc.translator.Translator()
             self.m_list += I_msvc.get()
 
-        if( 'CYGWIN_NT-6.1-WOW' == platform.system() ):
+        if( 'CYGWIN_NT' in platform.system() ):
             I_cygwin    = nucleotide.component.windows.mingw.translator.Translator()
             self.m_list += I_cygwin.get()
 
@@ -72,13 +72,16 @@ class Translator:
         if( 'Windows' == platform.system() ):
             nucleotide.component.windows.msvc.translator.Translator.extend(P_options)
 
-        if( 'CYGWIN_NT-6.1-WOW' == platform.system() ):
+        if( 'CYGWIN_NT' in platform.system() ):
             nucleotide.component.windows.cygwingcc.translator.Translator.extend(P_options)
 
     @staticmethod
     def _detect():
-        if( 'Windows' != platform.system() ):
+        if( 'Windows' == platform.system() ):
             return True
-        if( 'CYGWIN_NT-6.1-WOW' != platform.system() ):
+
+        if( 'CYGWIN_NT' in platform.system() ):
             return True
+
+        print ( "Unknown Platform: " + platform.system() )
         return False

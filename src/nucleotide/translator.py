@@ -48,8 +48,8 @@ class Translator:
 
     def similarity( self, P_other ):
         I_level = -1
-        #print __file__ +' - P_other.m_translator == '+ str( P_other.m_translator )
-        #print __file__ +' - self.m_translator    == '+ str(    self.m_translator )
+        #print( __file__ +' - P_other.m_translator == '+ str( P_other.m_translator ) )
+        #print( __file__ +' - self.m_translator    == '+ str(    self.m_translator ) )
 
         I_match = Translator._similarity0( self.m_translator['platform']['host' ], P_other.m_translator['platform']['host' ] );
         if( 0 == I_match ):
@@ -91,17 +91,17 @@ class Translator:
 
     @staticmethod
     def _similarity0( P_left, P_right ):
-        #print '        P_left = '+P_left+' , P_right = '+ P_right +' '
+        #print( '        P_left = '+P_left+' , P_right = '+ P_right +' ' )
         if( P_left == P_right ):
-            #print '            2'
+            #print( '            2' )
             return 3
         if( 'X' == P_left ):
-            #print '            1'
+            #print( '            1' )
             return 2
         if( 'X' == P_right ):
-            #print '            1'
+            #print( '            1')
             return 1
-        #print '            0'
+        #print( '            0' )
         return 0;
 
 
@@ -116,13 +116,13 @@ class Translator:
 
     @staticmethod
     def extract( P_string ):
-        #print 'Directory.extract(' + P_string + ')'
+        #print( 'Directory.extract(' + P_string + ')' )
         m = re.match( '(\w*)-(\w*)-(\w*)-(\w*)-(\w*)', P_string )
         if( None == m ):
             #print 'Directory.extract:: return invalid'
             return Translator( {'host'  : 'Y','guest' : 'Y'}, { 'vendor': 'Y', 'name': 'Y', 'version': 'Y'} )
 
         Ir_return = Translator( {'host' : m.group(1), 'guest' : m.group(2) }, { 'vendor': m.group(3), 'name': m.group(4), 'version': m.group(5)} )
-        #print 'Directory.extract( P_string =' + P_string + ' ) -> ' +str( Ir_return.m_translator )
+        #print() 'Directory.extract( P_string =' + P_string + ' ) -> ' +str( Ir_return.m_translator ) )
         return Ir_return
 
