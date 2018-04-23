@@ -34,7 +34,7 @@ class Custom:
     def set( self, P_name, P_value ):
         self.m_dictinary[ P_name ] = P_value
 
-    def exists( self, P_name, P_value ):
+    def exists( self, P_name ):
         if( False == self.m_dictinary.has_key( P_name ) ):
             return False
         return True
