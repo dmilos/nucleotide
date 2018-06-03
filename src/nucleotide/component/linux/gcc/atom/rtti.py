@@ -26,10 +26,10 @@ def _linux_RTTI_CPPFLAGS( P_data ):
     if( False == P_data.has_key( 'enable' ) ):
         return [ '' ]
 
-    if( 'true' == P_data.has_key( 'enable' ) ):
+    if( 'true' == P_data[ 'enable' ] ):
         return [ '' ]
 
-    if( 'false' == P_data.has_key( 'enable' ) ):
+    if( 'false' == P_data[ 'enable' ] ):
         return [ '-fno-rtti' ]
 
     return [ '' ]

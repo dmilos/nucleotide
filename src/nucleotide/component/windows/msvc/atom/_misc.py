@@ -22,7 +22,7 @@ import nucleotide.component.function
 def _windows_configuration_CPPDEFINES( P_data ):
     Ir_list = []
 
-    if( False == P_data.has_key( 'name') ):
+    if( False == ( 'name' in P_data ) ):
         return Ir_list
 
     if( 'debug' == P_data[ 'name' ] ):
@@ -35,7 +35,7 @@ def _windows_configuration_CPPDEFINES( P_data ):
 def _windows_configuration_CPPFLAGS( P_data ):
     Ir_list = []
 
-    if( False == P_data.has_key( 'name') ):
+    if( False == ( 'name' in P_data ) ):
         return Ir_list
 
     if( 'debug' == P_data[ 'name' ] ):
@@ -49,7 +49,7 @@ def _windows_configuration_CPPFLAGS( P_data ):
 def _windows_configuration_LINKFLAGS( P_data ):
     Ir_list = []
 
-    if( False == P_data.has_key( 'name') ):
+    if( False == ( 'name' in P_data ) ):
         return Ir_list
 
     if( 'debug' == P_data[ 'name' ] ):
@@ -123,7 +123,7 @@ atom_windows_shared_object = {
 
 def _windows_optimisation_CPPFLAGS( P_data ):
     Ir_list = []
-    if( True == P_data.has_key( 'configuration' ) ):
+    if( True == ( 'configuration' in P_data ) ):
         if( 'debug' == P_data['configuration'] ):
            Ir_list.append( '/Od' )
         if( 'release' == P_data['configuration'] ):

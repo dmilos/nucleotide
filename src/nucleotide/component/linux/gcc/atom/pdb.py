@@ -24,10 +24,10 @@ def _linux_PDB_CPPFLAGS( P_data ):
     Ir_list = [ '-g' ]
     return Ir_list
 
-    if( True == P_data.has_key( 'file-name-compile' ) ):
+    if( True == ( 'file-name-compile' in P_data ) ):
         Ir_list.append( 'TODO"' + P_data['file-name-compile'] + '"' )
     else:
-        if( True == P_data.has_key( 'file-name' ) ):
+        if( True == ( 'file-name' in P_data ) ):
             Ir_list.append( 'TODO"' + P_data['file-name'] + '"' )
 
     return Ir_list

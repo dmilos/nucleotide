@@ -16,8 +16,15 @@
 
 
 import os
-from constant import *
+
 import nucleotide
+import nucleotide.component.constant
+#TODO import nucleotide.translator.Translator
+#TODO import nucleotide.config.Config
+#TODO import nucleotide.klass.Klass
+#TODO import nucleotide.atom.Atom
+
+
 
 def join_out2(a,b):
     return a + separator_out  + b

@@ -25,7 +25,7 @@ import nucleotide.component.function
 def atom_linux_configuration_CPPFLAGS( P_data ):
     Ir_list = []
 
-    if( False == P_data.has_key( 'name') ):
+    if( False == ( 'name' in P_data ) ):
         return Ir_list
 
     if( 'debug' == P_data[ 'name' ] ):
@@ -39,7 +39,7 @@ def atom_linux_configuration_CPPFLAGS( P_data ):
 def atom_linux_configuration_CPPDEFINES( P_data ):
     Ir_list = []
 
-    if( False == P_data.has_key( 'name' ) ):
+    if( False == ( 'name' in P_data ) ):
         return Ir_list
 
     if( 'debug' == P_data[ 'name' ] ):
@@ -53,7 +53,7 @@ def atom_linux_configuration_CPPDEFINES( P_data ):
 def atom_linux_configuration_LINKFLAGS( P_data ):
     Ir_list = []
 
-    if( False == P_data.has_key( 'name' ) ):
+    if( False == ( 'name' in P_data ) ):
         return Ir_list
 
     if( 'debug' == P_data[ 'name' ] ):

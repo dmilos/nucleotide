@@ -36,7 +36,7 @@ class Translator:
 
         try:
             process = subprocess.Popen( [ 'gcc', '-dumpversion' ], stdout = subprocess.PIPE )
-        except EnvironmentError, e:
+        except( EnvironmentError ):
             return
 
         version = str.split( process.communicate()[0], os.linesep )[0]

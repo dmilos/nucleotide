@@ -32,7 +32,7 @@ def _windows_executable_CPPFLAGS( P_data ):
 def _windows_executable_CPPDEFINES( P_data ):
     Ir_list= []
 
-    if( False == P_data.has_key( 'type' ) ):
+    if( False == ( 'type' in P_data ) ):
         return Ir_list
 
     if( 'console' == P_data['type'] ):
@@ -50,7 +50,7 @@ def _windows_executable_LIBS( P_data ):
 def _windows_executable_LINKFLAGS( P_data ):
     Ir_list= []
 
-    if( False == P_data.has_key( 'type' ) ):
+    if( False == ( 'type' in P_data ) ):
         return Ir_list
 
     if( 'console' == P_data['type'] ):

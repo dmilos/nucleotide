@@ -38,19 +38,17 @@ class Config:
 
         #print( 'Config::__init__( P_data = ' + str( P_data ) + ' )' )
 
-        if( True == P_data.has_key( 'CPPFLAGS'   ) ): self.m_native[ 'CPPFLAGS'   ] = P_data[ 'CPPFLAGS'  ]
-        if( True == P_data.has_key( 'CPPPATH'    ) ): self.m_native[ 'CPPPATH'    ] = P_data[ 'CPPPATH'   ]
-        if( True == P_data.has_key( 'CPPDEFINES' ) ): self.m_native[ 'CPPDEFINES' ] = P_data[ 'CPPDEFINES']
-        if( True == P_data.has_key( 'LIBPATH'    ) ): self.m_native[ 'LIBPATH'    ] = P_data[ 'LIBPATH'   ]
-        if( True == P_data.has_key( 'LIBS'       ) ): self.m_native[ 'LIBS'       ] = P_data[ 'LIBS'      ]
-        if( True == P_data.has_key( 'LINKFLAGS'  ) ): self.m_native[ 'LINKFLAGS'  ] = P_data[ 'LINKFLAGS' ]
-
-        if( True == P_data.has_key( 'TARGET_ARCH'  ) ): self.m_native[ 'TARGET_ARCH'  ] = P_data[ 'TARGET_ARCH'  ]
-        if( True == P_data.has_key( 'MSVC_VERSION' ) ): self.m_native[ 'MSVC_VERSION' ] = P_data[ 'MSVC_VERSION' ]
-
-        if( True == P_data.has_key( 'CC'   ) ): self.m_native[ 'CC'   ] = P_data[ 'CC'   ]
-        if( True == P_data.has_key( 'CXX'  ) ): self.m_native[ 'CXX'  ] = P_data[ 'CXX'  ]
-        if( True == P_data.has_key( 'LINK' ) ): self.m_native[ 'LINK' ] = P_data[ 'LINK' ]
+        if( True == ( 'CPPFLAGS'     in P_data ) ): self.m_native[ 'CPPFLAGS'   ] = P_data[ 'CPPFLAGS'  ]
+        if( True == ( 'CPPPATH'      in P_data ) ): self.m_native[ 'CPPPATH'    ] = P_data[ 'CPPPATH'   ]
+        if( True == ( 'CPPDEFINES'   in P_data ) ): self.m_native[ 'CPPDEFINES' ] = P_data[ 'CPPDEFINES']
+        if( True == ( 'LIBPATH'      in P_data ) ): self.m_native[ 'LIBPATH'    ] = P_data[ 'LIBPATH'   ]
+        if( True == ( 'LIBS'         in P_data ) ): self.m_native[ 'LIBS'       ] = P_data[ 'LIBS'      ]
+        if( True == ( 'LINKFLAGS'    in P_data ) ): self.m_native[ 'LINKFLAGS'  ] = P_data[ 'LINKFLAGS' ]
+        if( True == ( 'TARGET_ARCH'  in P_data ) ): self.m_native[ 'TARGET_ARCH'  ] = P_data[ 'TARGET_ARCH'  ]
+        if( True == ( 'MSVC_VERSION' in P_data ) ): self.m_native[ 'MSVC_VERSION' ] = P_data[ 'MSVC_VERSION' ]
+        if( True == ( 'CC'           in P_data ) ): self.m_native[ 'CC'   ] = P_data[ 'CC'   ]
+        if( True == ( 'CXX'          in P_data ) ): self.m_native[ 'CXX'  ] = P_data[ 'CXX'  ]
+        if( True == ( 'LINK'         in P_data ) ): self.m_native[ 'LINK' ] = P_data[ 'LINK' ]
 
 
     def get_native( self ):
@@ -60,7 +58,7 @@ class Config:
         return self.m_native[ P_name ]
 
     def exists( self, P_name ):
-        return self.m_native.has_key( P_name )
+        return True == ( P_name in self.m_native )
 
     def set( self, P_name, P_value ):
         self.m_native[P_name] = P_value
@@ -90,7 +88,7 @@ class Config:
         #print( 'Config::accumulate::self.m_native = ' + str( self.m_native ) )
 
     def _process_value( self, P_data, P_key, P_param={} ):
-        if( False == P_data.has_key( P_key ) ):
+        if( False == ( P_key in P_data ) ):
             return;
 
         if( False ==  self.exists( P_key ) ):
@@ -103,7 +101,7 @@ class Config:
         self.set(  P_key, P_data[ P_key ] )
 
     def _process_list( self, P_data, P_key, P_param={} ):
-        if( False == P_data.has_key( P_key ) ):
+        if( False == ( P_key in P_data ) ):
             return;
 
         if( False ==  self.exists( P_key ) ):

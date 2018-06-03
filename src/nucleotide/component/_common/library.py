@@ -27,7 +27,7 @@ def _common_library_LIBPATH( P_list ):
     Ir_list = []
 
     for item in P_list:
-        if( False == P_list[item].has_key( 'path' ) ):
+        if( False == ( 'path' in P_list[item] ) ):
             continue
         Ir_list += [ P_list[item]['path'] ]
 
@@ -40,7 +40,7 @@ def _common_library_LIBS( P_list ):
     Ir_list = []
 
     for item in P_list:
-        if( False == P_list[item].has_key( 'list' ) ):
+        if( False == ( 'list' in P_list[item] ) ):
             continue
         Ir_list += P_list[item]['list']
 

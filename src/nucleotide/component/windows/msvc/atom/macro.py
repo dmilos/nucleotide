@@ -23,12 +23,12 @@ import nucleotide.component.function
 def _windows_Macro_CPPFLAGS( P_data ):
     Ir_list = []
 
-    if( False== P_data.has_key( 'name' ) ):
+    if( False == ( 'name' in P_data ) ):
         return Ir_list
 
     s = '/D' + P_data[ 'name' ]
 
-    if( True == P_data.has_key( 'parameter' ) ):
+    if( True == ( 'parameter' in P_data ) ):
         s += '('
         for p in P_data['parameter']:
             s += p
@@ -36,7 +36,7 @@ def _windows_Macro_CPPFLAGS( P_data ):
         s = s = s[:-1]
         s += ')'
 
-    if( True == P_data.has_key( 'body' ) ):
+    if( True == ( 'body' in P_data ) ):
         s += '=' + P_data[ 'body' ]
 
     Ir_list += [ s ]

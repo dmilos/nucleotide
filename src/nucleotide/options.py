@@ -59,7 +59,7 @@ class Options:
         self.m_this[ full_name ] = P_atom
 
         for represent in P_atom.get_klass().others():
-            if( False == self.m_represent.has_key( represent ) ):
+            if( False == ( represent in self.m_represent ) ):
                 self.m_represent[ represent ]  = []
             self.m_represent[ represent ] += [ full_name ]
             #print( '    Options::extend( represent: ' + represent  + '   with: '+ full_name+' )' )
@@ -68,7 +68,7 @@ class Options:
     def get( self, P_translator, P_universal ):
         #print( 'Options::get(' + ' translator =' + P_translator.string()  + ', universal = '+ P_universal + ' )' )
 
-        if( False == self.m_represent.has_key( P_universal ) ) :
+        if( False == ( P_universal in self.m_represent ) ) :
             print( '    Options::get:: 0 - i_classeq = [] for \'' + P_universal + '\'' )
             return nucleotide.atom.Atom( )
 
@@ -77,7 +77,7 @@ class Options:
         #print( '    Options::get:: 1 - i_classeq = ' + str( i_classeq ) )
 
         for element in i_classeq:
-            if( False == self.m_this.has_key( element ) ) :
+            if( False == ( element in self.m_this ) ) :
                 #print( '            Options::get:: 2 - no key = ' + str( element ) )
                 continue
             I_level =  P_translator.similarity( self.m_this[ element ].get_translator() )

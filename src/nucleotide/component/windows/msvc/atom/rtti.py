@@ -23,13 +23,13 @@ import nucleotide.component
 import nucleotide.component.function
 
 def _windows_RTTI_CPPFLAGS( P_data ):
-    if( False == P_data.has_key( 'enable ') ):
+    if( False == ( 'enable' in P_data ) ):
         return ['/GR']
 
-    if( 'true' == P_data.has_key( 'enable' ) ):
+    if( 'true' == P_data[ 'enable' ] ):
         return ['/GR' ]
 
-    if( 'false' == P_data.has_key( 'enable' ) ):
+    if( 'false' == P_data[ 'enable' ] ):
         return [ '/GR-' ]
 
     return ['/GR']

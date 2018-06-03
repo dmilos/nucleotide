@@ -20,7 +20,7 @@ import nucleotide.component
 import nucleotide.component.function
 
 def __common_architecture_TARGET_ARCH( P_data ):
-    if( False == P_data.has_key( 'name' ) ):
+    if( False == ( 'name' in P_data ) ):
         return ''
     return P_data[ 'name' ]
 

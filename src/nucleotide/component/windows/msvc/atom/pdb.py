@@ -25,36 +25,36 @@ import nucleotide.component.function
 def _windows_PDB_CPPFLAGS( P_data ):
     Ir_list = []
 
-    if( True == P_data.has_key( 'configuration' ) ):
+    if( True == ( 'configuration' in P_data ) ):
         if( 'debug' == P_data[ 'configuration' ] ):
            Ir_list.append( '/ZI' )
         if( 'release' == P_data[ 'configuration' ] ):
            Ir_list.append( '/Zi' )
 
-    if( True == P_data.has_key( 'synchronous' ) ):
+    if( True == ( 'synchronous' in P_data ) ): 
         if( 'true' == P_data[ 'synchronous' ] ):
            Ir_list.append( '/FS' )
 
-    if( True == P_data.has_key( 'file-name-compile' ) ):
+    if( True == ( 'file-name-compile' in P_data ) ):
         Ir_list.append( '/Fd"' + P_data['file-name-compile'] + '"' )
     else:
-        if( True == P_data.has_key( 'file-name' ) ):
+        if( True == ( 'file-name' in P_data ) ):
             Ir_list.append( '/Fd"' + P_data['file-name'] + '"' )
 
     return Ir_list
 
 def _windows_PDB_LINKFLAGS( P_data ):
     Ir_list = []
-    if( True == P_data.has_key( 'configuration' ) ):
+    if( True == ( 'configuration' in P_data ) ):
         if( 'debug' == P_data['configuration'] ):
            Ir_list.append( '/DEBUG' )
         if( 'release' == P_data['configuration'] ):
            Ir_list.append( '/DEBUG' )
 
-    if( True == P_data.has_key( 'file-name-executable' ) ):
+    if( True == ( 'file-name-executable' in P_data )  ):
         Ir_list.append( '/PDB:"' + P_data['file-name-executable'] + '"' )
     else:
-        if( True == P_data.has_key( 'file-name' ) ):
+        if( True == ( 'file-name' in P_data ) ):
             Ir_list.append( '/PDB:"' + P_data['file-name'] + '"' )
 
     return Ir_list

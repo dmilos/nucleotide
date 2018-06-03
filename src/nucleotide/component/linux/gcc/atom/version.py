@@ -23,17 +23,17 @@ import nucleotide.component
 import nucleotide.component.function
 
 def _linux_gcc_version_GCC_CC_VERSION( P_data ):
-    if( False == P_data.has_key( 'gcc' ) ):
+    if( False == ( 'gcc' in P_data ) ):
         return None
     return 'gcc-' + P_data[ 'gcc' ][0]
 
 def _linux_gcc_version_GCC_CXX_VERSION( P_data ):
-    if( False == P_data.has_key( 'gcc') ):
+    if( False == ( 'gcc' in P_data ) ):
         return None
     return 'g++-' + P_data[ 'gcc' ][0]
 
 def _linux_gcc_version_GCC_LINK_VERSION( P_data ):
-    if( False == P_data.has_key( 'gcc') ):
+    if( False == ( 'gcc' in P_data ) ):
         return None
     return 'g++-' + P_data[ 'gcc' ][0]
 

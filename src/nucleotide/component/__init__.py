@@ -18,5 +18,5 @@
 #__all__   = [ 'warning' ]
 #__name__  = 'nucleotide.component'
 
-import main
+#import main
 

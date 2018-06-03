@@ -10,12 +10,12 @@ rootdir = os.path.abspath( os.path.dirname(__file__) )
 print ( rootdir )
 
 #my_version = "0.1.0" +  str(time.time()),
-my_version = "0.1.3"
+my_version = "0.1.8"
 
 #my_packages = ["nucleotide", "nucleotide.component"]
 my_packages = find_packages( rootdir )
 
-print my_packages
+print ( my_packages )
 
 setup(
     name             = "nucleotide",
@@ -34,6 +34,7 @@ setup(
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3',
         'Intended Audience :: Developers',
         'Operating System :: OS Independent',
         'License :: OSI Approved :: Apache Software License',

@@ -32,7 +32,8 @@ class Settings:
             self.m_translator = P_translator;
         else:
             catalog = nucleotide.Catalog()
-            self.m_translator = catalog.get()[0]
+            if( 0 != len( catalog.get() ) ):
+                self.m_translator = catalog.get()[0]
 
         self.m_config = nucleotide.Config()
         if( None == P_options ):

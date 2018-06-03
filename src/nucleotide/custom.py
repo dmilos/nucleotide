@@ -27,7 +27,7 @@ class Custom:
         self.m_dictinary = copy.deepcopy( P_dictinary )
 
     def get( self, P_name ):
-        if( False == self.m_dictinary.has_key( P_name ) ):
+        if( False == ( P_name in self.m_dictinary ) ):
             return None
         return self.m_dictinary[ P_name  ]
 
@@ -35,7 +35,7 @@ class Custom:
         self.m_dictinary[ P_name ] = P_value
 
     def exists( self, P_name ):
-        if( False == self.m_dictinary.has_key( P_name ) ):
+        if( False == ( P_name in self.m_dictinary ) ):
             return False
         return True
 

@@ -25,7 +25,7 @@ import nucleotide.component.function
 def _atom_linux_optimisation_CPPFLAGS( P_data ):
     Ir_list = []
 
-    if( False == P_data.has_key( 'configuration') ):
+    if( False == ( 'configuration' in P_data ) ):
         return Ir_list
 
     if( 'debug' == P_data[ 'configuration' ] ):

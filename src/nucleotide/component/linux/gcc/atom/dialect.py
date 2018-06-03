@@ -23,7 +23,7 @@ import nucleotide.component
 import nucleotide.component.function
 
 def _linux_Dialect_CPPFLAGS( P_data ):
-    if( False == P_data.has_key( 'dialect' ) ):
+    if( False == ( 'dialect' in P_data ) ):
         return [ '' ]
 
     return [ '-std=' + P_data['dialect'] ]

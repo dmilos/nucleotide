@@ -28,7 +28,14 @@ try:
     _winreg_OpenKey  = _winreg.OpenKey
     _winreg_CloseKey = _winreg.CloseKey
 except ImportError:
-    pass
+    try:
+        import winreg
+        _winreg_HKEY_LOCAL_MACHINE = winreg.HKEY_LOCAL_MACHINE
+        _winreg_OpenKey  = winreg.OpenKey
+        _winreg_CloseKey = winreg.CloseKey
+    except ImportError:
+        _winreg_OpenKey  = None
+        _winreg_CloseKey = None
 
 import nucleotide
 import nucleotide.translator
@@ -63,7 +70,6 @@ class Translator:
         I_data['platform']['guest'] = 'Windows'
         I_data['cc']['vendor'] = 'Microsoft'
         I_data['cc']['name'] = 'msvc'
-
 
         if( True == Translator._exists( _winreg_HKEY_LOCAL_MACHINE, 'SOFTWARE\\Microsoft\\VisualStudio\\14.0' ) ):
             I_data['cc']['version'] = '14'
@@ -118,6 +124,10 @@ class Translator:
 
     @staticmethod
     def _exists( key, sub_key ):
+        if None == _winreg_OpenKey:
+           result = False
+           return result
+
         try:
             k = _winreg_OpenKey( key, sub_key )
             _winreg_CloseKey( k )

@@ -23,7 +23,7 @@ import nucleotide.component
 import nucleotide.component.function
 
 def _windows_version_MSVC_VERSION( P_data ):
-    if( False == P_data.has_key( 'msvc') ):
+    if( False == ( 'msvc' in P_data ) ):
         return None
     return P_data[ 'msvc' ][0]
 

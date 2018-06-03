@@ -60,7 +60,7 @@ def list( P_list, P_translator ):
         return Ir_list;
 
     for item in P_list:
-        if( False == nucleotide.component._common.warning.table.TABLE.has_key( item ) ):
+        if( False == ( item in nucleotide.component._common.warning.table.TABLE ) ):
             continue
         I_best = -1
         for elem in nucleotide.component._common.warning.table.TABLE[item]:

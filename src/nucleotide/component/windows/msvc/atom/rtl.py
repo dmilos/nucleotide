@@ -30,7 +30,7 @@ def _windows_RTL_CPPFLAGS( P_data ):
     if( 'static' == P_data['type'] ):
        I_flag += 'T'
 
-    if( True == P_data.has_key( 'configuration' ) ):
+    if( True == ( 'configuration' in P_data ) ):
         if( 'debug' == P_data['configuration'] ):
            I_flag += 'd'
         if( 'release' == P_data['configuration'] ):
