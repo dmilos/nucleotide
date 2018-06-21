@@ -29,7 +29,7 @@ def _linux_gcc_alignment_CPPFLAGS( P_data ):
 
     if( False == ( 'size' in P_data ) ):
         return []
-    return  ['-fpack-struct=n' + P_data['size'] ]
+    return  ['-fpack-struct=' + P_data['size'] ]
 
 atom_linux_gcc_alignment = {
     'platform' : {
@@ -46,7 +46,7 @@ atom_linux_gcc_alignment = {
         'CPPFLAGS'    : _linux_gcc_alignment_CPPFLAGS,
     },
     'name' :'compiler:memory:alignment',
-    'class':  [ 'compiler:memory:alignment', 'linux:memory:alignment' ]
+    'class':  [ 'compiler:memory:alignment', 'linux:memory:alignment', 'linux:compiler:memory:alignment' ]
 }
 
 class Alignment:
@@ -55,7 +55,11 @@ class Alignment:
 
     @staticmethod
     def extend( P_option ):
-        nucleotide.component.function.extend( P_option, 'linux:memory:alignment',         atom_linux_gcc_alignment )
+        nucleotide.component.function.extend( P_option, 'A:linux:memory:alignment',             atom_linux_gcc_alignment)
+        atom_linux_gcc_alignment['platform']['host']  = 'X';
+        nucleotide.component.function.extend( P_option, 'x:linux:memory:alignment',             atom_linux_gcc_alignment)
+        atom_linux_gcc_alignment['platform']['guest'] = 'X';
+        nucleotide.component.function.extend( P_option, 'y:linux:memory:alignment',             atom_linux_gcc_alignment)
 
     @staticmethod
     def check():

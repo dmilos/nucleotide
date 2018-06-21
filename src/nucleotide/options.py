@@ -84,10 +84,10 @@ class Options:
             if( I_best['level'] < I_level ):
                 I_best['level'] = I_level
                 I_best['name'] = element
-            #print( '        Options::get:: 3 - ' + ' element:   ' + element + ' ; ' + ' level: ' + str( I_level ) )
+            #print( '    Options::get:: 3 - ' + ' element:   ' + element + '; ' + ' level: ' + str( I_level ) )
 
         if( -1 == I_best['level'] ):
-            print( '    Options::get:: 4 ' + P_universal + ' - I_best[\'level\'] = ' + str( I_best['level'] ) )
+            print( '    Options::get:: 4 for: ' + '||' + str( I_best['level'] ) + '|| - ' + P_universal + " - " + I_best['name'] )
             return nucleotide.atom.Atom( )
 
         Options.message( '    Options::get:: 5 for: ' + '||' + str( I_best['level'] ) + '|| - ' + P_universal + " - " + I_best['name'] )

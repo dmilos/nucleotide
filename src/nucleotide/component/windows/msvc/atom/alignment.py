@@ -46,7 +46,7 @@ atom_windows_msvc_alignment = {
         'CPPFLAGS'    : _windows_alignment_CPPFLAGS,
     },
     'name' :'compiler:memory:alignment',
-    'class':  [ 'compiler:alignment', 'compiler:memory:alignment', 'windows:memory:alignment' ]
+    'class':  [ 'compiler:alignment', 'compiler:memory:alignment', 'windows:memory:alignment', 'windows:compiler:memory:alignment' ]
 }
 
 class Alignment:

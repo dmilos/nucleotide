@@ -9,6 +9,9 @@
 *.lib
 *.exp
 *.bak
+*.pdb
+*.ilk
+*.idb
 example/framework/00_minimal/main
 example/framework/01_extend/main
 example/test/architecture/main-amd64
