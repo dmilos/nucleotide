@@ -121,7 +121,7 @@ atom_windows_shared_object = {
 }
 
 
-def _windows_optimisation_CPPFLAGS( P_data ):
+def _windows_optimization_CPPFLAGS( P_data ):
     Ir_list = []
     if( True == ( 'configuration' in P_data ) ):
         if( 'debug' == P_data['configuration'] ):
@@ -131,7 +131,7 @@ def _windows_optimisation_CPPFLAGS( P_data ):
 
     return Ir_list
 
-atom_windows_optimisation = {
+atom_windows_optimization = {
     'platform' : {
         'host'  : 'Windows',
         'guest' : 'Windows'
@@ -142,21 +142,21 @@ atom_windows_optimisation = {
         'version': 'X'
     },
     'config' : {
-        'CPPFLAGS'  : _windows_optimisation_CPPFLAGS,
+        'CPPFLAGS'  : _windows_optimization_CPPFLAGS,
     },
-    'name' : 'release-optimisation',
-    'class': [ 'compiler:optimisation', 'windows:compiler:optimisation' ]
+    'name' : 'release-optimization',
+    'class': [ 'compiler:optimization', 'windows:compiler:optimization' ]
 }
 
 
 def init( P_option ) :
 
     nucleotide.component.function.extend( P_option, 'windows:compiler:configuration',    atom_windows_configuration )
-    nucleotide.component.function.extend( P_option, 'windows:compiler:optimisation',     atom_windows_optimisation )
+    nucleotide.component.function.extend( P_option, 'windows:compiler:optimization',     atom_windows_optimization )
 
     nucleotide.component.function.extend( P_option, 'windows:shared:library', atom_windows_shared_library)
     nucleotide.component.function.extend( P_option, 'windows:shared:object',  atom_windows_shared_object)
 
    #nucleotide.component.function.extend( P_option, 'windows:linker:warning',      atom_windows_linker_warning )
-   #nucleotide.component.function.extend( P_option, 'windows:linker:optimisation', atom_windows_linker_warning )
+   #nucleotide.component.function.extend( P_option, 'windows:linker:optimization', atom_windows_linker_warning )
 

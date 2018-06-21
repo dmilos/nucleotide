@@ -24,15 +24,14 @@ import nucleotide.component.function
 
 def _windows_dialect_CPPFLAGS( P_data ):
     Ir_list = []
+    if( True == ( 'dialect' in P_data ) ):
+        if( 'plain_c' == P_data['dialect'] ):
+            Ir_list += ['/TC' ]
+        if( 'plain_cpp' == P_data['dialect'] ):
+            Ir_list += ['/TP' ]
 
-    if( False == ( 'dialect' in P_data ) ):
-        return Ir_list
-
-    if( 'plain_c' == P_data['dialect'] ):
-        Ir_list += ['/TC' ]
-
-    if( 'plain_cpp' == P_data['dialect'] ):
-        Ir_list += ['/TP' ]
+    if( True == ( 'standard' in P_data ) ):
+        Ir_list += ['/std:' + P_data['standard'] ]
 
     return Ir_list
 

@@ -90,7 +90,7 @@ class Options:
             print( '    Options::get:: 4 ' + P_universal + ' - I_best[\'level\'] = ' + str( I_best['level'] ) )
             return nucleotide.atom.Atom( )
 
-        Options.message( '    Options::get:: 5 for: ' + P_universal + ' - return: ||' + str( I_best['level'] ) + '|| - '+  I_best['name'] )
+        Options.message( '    Options::get:: 5 for: ' + '||' + str( I_best['level'] ) + '|| - ' + P_universal + " - " + I_best['name'] )
         return self.m_this[ I_best['name'] ]
 
     def get_this(self):

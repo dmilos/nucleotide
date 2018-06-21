@@ -23,7 +23,7 @@ import nucleotide.component
 import nucleotide.component.function
 
 def _linux_RTTI_CPPFLAGS( P_data ):
-    if( False == P_data.has_key( 'enable' ) ):
+    if( False == ( 'enable' in P_data ) ):
         return [ '' ]
 
     if( 'true' == P_data[ 'enable' ] ):

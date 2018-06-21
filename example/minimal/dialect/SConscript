@@ -1,0 +1,25 @@
+import nucleotide
+
+Import('settings')
+
+
+# Accumulate Atoms
+
+## Enable exceptions
+settings.accumulate( 'exception' )
+
+## Set Run Time Library
+settings.accumulate( 'source:c++', { 'dialect' : 'c++11', 'standard' : 'c++11' } )
+
+# Accumulate source
+source = []
+source +=   ['main.cpp']
+
+# Make native environment
+envProgram = nucleotide.Environment( settings ).native()
+
+# Create program
+program = envProgram.Program( target =  'main' + envProgram['PROGSUFFIX'], source = source  )
+
+# ... and return!
+Return( 'program' )

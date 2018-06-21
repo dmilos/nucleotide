@@ -1,0 +1,31 @@
+import nucleotide
+
+Import('settings')
+
+
+# Accumulate Atoms
+## Avoid complain of MSVC
+#settings.accumulate( 'exception' )
+
+settings.accumulate( 'package', { 'boost'    : { 'version': '1_63', 'architecture': '32', 'link': 'auto'   , 'compiler': 'MSVC12'  } } )
+settings.accumulate( 'package', { 'opencv'   : { 'version': '341', 'architecture': '64', 'link': 'auto', 'compiler': 'msvc14', "configuration": "RELEASE"  } } )
+settings.accumulate( 'package', { 'protobuf'  : { 'version': '2.75', 'architecture': 'x86', 'link': 'auto'   , 'compiler': 'msvc14',  } } )
+settings.accumulate( 'package', { 'zlib'  : { 'version': '2.75', 'architecture': 'x86', 'link': 'auto'   , 'compiler': 'msvc14',  } } )
+settings.accumulate( 'package', { 'tbb'     : { 'version': '2.75', 'architecture': '32', 'link': 'static' , 'compiler': '_msvc14', "configuration": "RELEASE",  } } )
+#settings.accumulate( 'package', { 'python'   : { 'version': '2.75', 'architecture': 'x86', 'link': 'auto'   , 'compiler': 'msvc14',  } } )
+#settings.accumulate( 'package', { 'MySql'    : { 'version': '2.75', 'architecture': 'x86', 'link': 'dynamic', 'compiler': 'msvc14',  } } )
+#settings.accumulate( 'package', { 'SqLite3'  : { 'version': '2.75', 'architecture': 'x86', 'link': 'auto'   , 'compiler': 'msvc14',  } } )
+
+
+# Accumulate source
+source = []
+source +=   ['main.cpp'] 
+
+# Make native environment
+envProgram = nucleotide.Environment( settings ).native()
+
+# Create program
+program = envProgram.Program( target =  'main' + envProgram['PROGSUFFIX'], source = source  )
+
+# ... and return!
+Return( 'program' )

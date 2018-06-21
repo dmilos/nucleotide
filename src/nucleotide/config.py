@@ -15,7 +15,6 @@
 #   limitations under the License. 
 
 
-import re
 
 # Scons Native thing only. Stored in (key,data) format
 class Config:
@@ -64,6 +63,7 @@ class Config:
         self.m_native[P_name] = P_value
 
     def append( self, P_name, P_list ):
+        #print( P_name + " + " + str(P_list) )
         self.m_native[P_name] += P_list
 
     ## Take all from other config by respecting P_param
@@ -101,8 +101,10 @@ class Config:
         self.set(  P_key, P_data[ P_key ] )
 
     def _process_list( self, P_data, P_key, P_param={} ):
+        #print( P_data )
         if( False == ( P_key in P_data ) ):
             return;
+        #print( P_key )
 
         if( False ==  self.exists( P_key ) ):
             self.set( P_key, [] )

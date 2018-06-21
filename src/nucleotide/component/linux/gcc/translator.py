@@ -26,7 +26,6 @@ import nucleotide.component.linux
 import nucleotide.component.linux.gcc
 import nucleotide.component.linux.gcc.atom
 import nucleotide.component.linux.gcc.atom._misc
-import nucleotide.component.linux.gcc.atom.boost
 import nucleotide.component.linux.gcc.atom.python
 import nucleotide.component.linux.gcc.atom.warning
 import nucleotide.component.linux.gcc.atom.pdb
@@ -41,7 +40,9 @@ import nucleotide.component.linux.gcc.atom.executable
 import nucleotide.component.linux.gcc.atom.macro
 import nucleotide.component.linux.gcc.atom.version
 import nucleotide.component.linux.gcc.atom.configuration
-import nucleotide.component.linux.gcc.atom.optimisation
+import nucleotide.component.linux.gcc.atom.optimization
+import nucleotide.component.linux.gcc.atom.package
+import nucleotide.component.linux.gcc.atom.alignment
 
 ## Detect GCC on linux
 class Translator:
@@ -94,7 +95,6 @@ class Translator:
     @staticmethod
     def extend(P_options):
         nucleotide.component.linux.gcc.atom._misc.init(P_options)
-        nucleotide.component.linux.gcc.atom.boost.Boost.extend(P_options)
         nucleotide.component.linux.gcc.atom.python.Python.extend(P_options)
         nucleotide.component.linux.gcc.atom.warning.Warning.extend(P_options)
         nucleotide.component.linux.gcc.atom.pdb.PDB.extend(P_options)
@@ -109,6 +109,8 @@ class Translator:
         nucleotide.component.linux.gcc.atom.macro.Macro.extend(P_options)
         nucleotide.component.linux.gcc.atom.version.Version.extend(P_options)
         nucleotide.component.linux.gcc.atom.configuration.Configuration.extend(P_options)
-        nucleotide.component.linux.gcc.atom.optimisation.Optimisation.extend(P_options)
+        nucleotide.component.linux.gcc.atom.optimization.Optimization.extend(P_options)
+        nucleotide.component.linux.gcc.atom.package.Package.extend(P_options)
+        nucleotide.component.linux.gcc.atom.alignment.Alignment.extend(P_options)
 
 

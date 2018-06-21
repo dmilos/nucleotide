@@ -23,7 +23,6 @@ import nucleotide
 import nucleotide.component
 import nucleotide.component._common
 import nucleotide.component._common.blank
-import nucleotide.component._common.boost
 import nucleotide.component._common.architecture
 import nucleotide.component._common.include
 import nucleotide.component._common.library
@@ -40,7 +39,6 @@ class Translator:
     @staticmethod
     def extend(P_options):
         nucleotide.component._common.blank.Blank.extend( P_options )
-        nucleotide.component._common.boost.Boost.extend( P_options )
         nucleotide.component._common.architecture.Architecture.extend( P_options )
         nucleotide.component._common.include.Include.extend( P_options )
         nucleotide.component._common.library.Library.extend( P_options )

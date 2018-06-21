@@ -19,9 +19,9 @@ import platform
 
 import nucleotide
 import nucleotide.component
-import nucleotide.component.linux
-import nucleotide.component.linux.gcc
-import nucleotide.component.linux.gcc.translator
+import nucleotide.component.windows
+import nucleotide.component.windows.cygwingcc.atom
+import nucleotide.component.windows.cygwingcc.atom.blank
 
 
 ##Detect GCC on CYgWin
@@ -29,8 +29,6 @@ class Translator:
     m_list = []
     def __init__(self):
         self.m_list = []
-
-        TODO
 
     def get(self):
         return self.m_list
@@ -41,8 +39,9 @@ class Translator:
 
     @staticmethod
     def extend(P_options):
+        nucleotide.component.windows.cygwingcc.atom.blank.Blank.extend(P_options) 
         nucleotide.component.linux.gcc.translator.Translator.extend(P_options) 
 
     @staticmethod
     def _exists( key, sub_key ):
-        return Pass
+        return False

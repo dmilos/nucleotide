@@ -25,7 +25,6 @@ import nucleotide.component
 import nucleotide.component.windows
 import nucleotide.component.windows.mingw
 import nucleotide.component.windows.mingw.atom
-import nucleotide.component.windows.mingw.atom.boost
 import nucleotide.component.windows.mingw.atom.python
 
 ## Detect MinGW on Windows
@@ -61,7 +60,6 @@ class Translator:
 
     @staticmethod
     def extend(P_options):
-        nucleotide.component.windows.mingw.atom.boost.Boost.extend(P_options)
         nucleotide.component.windows.mingw.atom.python.Python.extend(P_options)
 
 

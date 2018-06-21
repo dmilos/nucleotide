@@ -22,7 +22,6 @@ import nucleotide.component
 import nucleotide.component.windows
 import nucleotide.component.windows._common
 import nucleotide.component.windows._common.python
-import nucleotide.component.windows._common.boost
 
 ## Detect _Common on Windows
 class Translator:
@@ -40,5 +39,4 @@ class Translator:
     def extend(P_options):
 
         nucleotide.component.windows._common.python.Python.extend(P_options)
-        nucleotide.component.windows._common.boost.Boost.extend(P_options)
 

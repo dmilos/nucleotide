@@ -12,7 +12,7 @@
 #   distributed under the License is distributed on an "AS IS" BASIS,
 #   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 #   See the License for the specific language governing permissions and
-#   limitations under the License. 
+#   limitations under the License.
 
 
 import os
@@ -31,7 +31,17 @@ def _windows_PDB_CPPFLAGS( P_data ):
         if( 'release' == P_data[ 'configuration' ] ):
            Ir_list.append( '/Zi' )
 
-    if( True == ( 'synchronous' in P_data ) ): 
+    if( True == ( 'format' in P_data ) ):
+        if( 'none' == P_data[ 'format' ] ):
+           pass
+        if( 'C7' == P_data[ 'format' ] ):
+           Ir_list.append( '/Z7' )
+        if( 'classic' == P_data[ 'format' ] ):
+           Ir_list.append( '/Zi' )
+        if( 'extended' == P_data[ 'format' ] ):
+           Ir_list.append( '/ZI' )
+
+    if( True == ( 'synchronous' in P_data ) ):
         if( 'true' == P_data[ 'synchronous' ] ):
            Ir_list.append( '/FS' )
 
@@ -89,4 +99,4 @@ class PDB:
     @staticmethod
     def check(self):
         pass
- 
+

@@ -78,9 +78,11 @@ class Translator:
     @staticmethod
     def _detect():
         if( 'Windows' == platform.system() ):
+            #print ( "Platform: " + platform.system() )
             return True
 
         if( 'CYGWIN_NT' in platform.system() ):
+            #print ( "Platform: " + platform.system() )
             return True
 
         print ( "Unknown Platform: " + platform.system() )

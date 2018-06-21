@@ -23,10 +23,10 @@ import nucleotide.component
 import nucleotide.component.function
 
 def _linux_Dialect_CPPFLAGS( P_data ):
-    if( False == ( 'dialect' in P_data ) ):
+    if( False == ( 'standard' in P_data ) ):
         return [ '' ]
 
-    return [ '-std=' + P_data['dialect'] ]
+    return [ '-std=' + P_data['standard'] ]
 
 atom_linux_gcc_dialect = {
     'platform' : {

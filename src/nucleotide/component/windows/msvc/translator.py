@@ -44,7 +44,6 @@ import nucleotide.component.windows
 import nucleotide.component.windows.msvc
 import nucleotide.component.windows.msvc.atom
 import nucleotide.component.windows.msvc.atom._misc
-import nucleotide.component.windows.msvc.atom.boost
 import nucleotide.component.windows.msvc.atom.python
 import nucleotide.component.windows.msvc.atom.warning
 import nucleotide.component.windows.msvc.atom.rtti
@@ -56,7 +55,11 @@ import nucleotide.component.windows.msvc.atom.dialect
 import nucleotide.component.windows.msvc.atom.pp2f
 import nucleotide.component.windows.msvc.atom.executable
 import nucleotide.component.windows.msvc.atom.exception
+import nucleotide.component.windows.msvc.atom.encode
 import nucleotide.component.windows.msvc.atom.macro
+import nucleotide.component.windows.msvc.atom.package
+import nucleotide.component.windows.msvc.atom.rebuild_lazy
+import nucleotide.component.windows.msvc.atom.alignment
 
 
 ##Detect MSVC on Window
@@ -106,7 +109,6 @@ class Translator:
     @staticmethod
     def extend(P_options):
         nucleotide.component.windows.msvc.atom._misc.init(P_options)
-        nucleotide.component.windows.msvc.atom.boost.Boost.extend(P_options)
         nucleotide.component.windows.msvc.atom.python.Python.extend(P_options)
         nucleotide.component.windows.msvc.atom.warning.Warning.extend(P_options)
 
@@ -120,7 +122,11 @@ class Translator:
         nucleotide.component.windows.msvc.atom.pp2f.PP2F.extend(P_options)
         nucleotide.component.windows.msvc.atom.executable.Executable.extend(P_options)
         nucleotide.component.windows.msvc.atom.exception.Exception.extend(P_options)
+        nucleotide.component.windows.msvc.atom.encode.Encode.extend(P_options)
         nucleotide.component.windows.msvc.atom.macro.Macro.extend(P_options)
+        nucleotide.component.windows.msvc.atom.package.Package.extend(P_options)
+        nucleotide.component.windows.msvc.atom.rebuild_lazy.RebuildLazy.extend(P_options)
+        nucleotide.component.windows.msvc.atom.alignment.Alignment.extend(P_options)
 
     @staticmethod
     def _exists( key, sub_key ):

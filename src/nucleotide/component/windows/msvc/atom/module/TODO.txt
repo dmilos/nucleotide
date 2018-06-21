@@ -1,0 +1,27 @@
+setx  BOOST_INCLUDE_PATH c:\local\boost_1_60_0-msvc-14.0
+setx  BOOST_LIB_PATH c:\local\boost_1_60_0-msvc-14.0\lib64-msvc-14.0
+setx  CUB_PATH c:\local\cub-1.7.4
+setx  CUDNN_PATH C:\local\cudnn-9.0-v7.0\cuda
+setx  MKL_PATH C:\local\mklml-mkldnn-0.14
+setx  OPENCV_PATH_V31 c:\local\Opencv3.1.0\build
+setx  PROTOBUF_PATH c:\local\protobuf-3.1.0-vs17
+setx  SWIG_PATH c:\local\swigwin-3.0.10
+setx  ZLIB_PATH c:\local\zlib-vs17
+
+
+I_result = os.getenv('BOOST_MSVC12_INCLUDE')
+    if( None == I_result ):
+        return nucleotide.component.windows._common.boost._boost_blank_CPPPATH( P_list )
+    return [ I_result ]
+
+def _boost_msvc12_LIBPATH( P_list ):
+    I_arc = '32';
+    I_result = os.getenv('BOOST_MSVC12_LIBPATH')
+
+
+        nucleotide.component.function.check__env( 'BOOST_MSVC12_INCLUDE' )
+        nucleotide.component.function.check__env( 'BOOST_MSVC12_LIBPATH' )
+        nucleotide.component.function.check__env( 'BOOST_MSVC12_VERSION' )
+        nucleotide.component.function.check__env( 'BOOST_MSVC12_64_INCLUDE' )
+        nucleotide.component.function.check__env( 'BOOST_MSVC12_64_LIBPATH' )
+        nucleotide.component.function.check__env( 'BOOST_MSVC12_64_VERSION' )

@@ -7,8 +7,5 @@ call %prg_scons% architecture=emt64
 call %prg_scons% architecture=i386
 call %prg_scons% architecture=ia64
 call %prg_scons% architecture=itanium
-call %prg_scons% architecture=amd64
+rem call %prg_scons% architecture=amd64
 call %prg_scons% architecture=i686
-
-
-pause

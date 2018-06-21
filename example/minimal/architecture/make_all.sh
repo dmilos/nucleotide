@@ -9,6 +9,3 @@ scons architecture=ia64
 scons architecture=itanium
 scons architecture=amd64
 scons architecture=i686
-
-
-pause
