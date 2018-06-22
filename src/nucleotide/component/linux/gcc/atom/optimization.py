@@ -67,7 +67,9 @@ atom_linux_optimization = {
         'LINKFLAGS'   : _atom_linux_optimization_LINKFLAGS,
         'LIBS'        : _atom_linux_optimization_LIBS
     },
-    'class': [ 'optimization', 'compiler:optimization', 'linux:compiler:optimization' ]
+    'class': [ 'optimization', 'compiler:optimization', 'linux:compiler:optimization',
+               'optimisation', 'compiler:optimisation', 'linux:compiler:optimisation'
+    ]
 }
 
 class Optimization:
@@ -81,6 +83,12 @@ class Optimization:
          nucleotide.component.function.extend( P_option, 'x:linux:optimization',               atom_linux_optimization)
          atom_linux_optimization['platform']['guest']='X'
          nucleotide.component.function.extend( P_option, 'y:linux:optimization',               atom_linux_optimization)
+
+         nucleotide.component.function.extend( P_option, 'A:linux:optimisation',               atom_linux_optimization)
+         atom_linux_optimization['platform']['host']='X'
+         nucleotide.component.function.extend( P_option, 'x:linux:optimisation',               atom_linux_optimization)
+         atom_linux_optimization['platform']['guest']='X'
+         nucleotide.component.function.extend( P_option, 'y:linux:optimisation',               atom_linux_optimization)
 
     @staticmethod
     def check():

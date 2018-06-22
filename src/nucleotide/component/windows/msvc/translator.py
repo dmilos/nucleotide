@@ -60,6 +60,7 @@ import nucleotide.component.windows.msvc.atom.macro
 import nucleotide.component.windows.msvc.atom.package
 import nucleotide.component.windows.msvc.atom.rebuild_lazy
 import nucleotide.component.windows.msvc.atom.alignment
+import nucleotide.component.windows.msvc.atom.optimization
 
 
 ##Detect MSVC on Window
@@ -127,6 +128,7 @@ class Translator:
         nucleotide.component.windows.msvc.atom.package.Package.extend(P_options)
         nucleotide.component.windows.msvc.atom.rebuild_lazy.RebuildLazy.extend(P_options)
         nucleotide.component.windows.msvc.atom.alignment.Alignment.extend(P_options)
+        nucleotide.component.windows.msvc.atom.optimization.Optimization.extend(P_options)
 
     @staticmethod
     def _exists( key, sub_key ):
