@@ -6,14 +6,14 @@ import os
 import glob
 
 rootdir = os.path.abspath( os.path.dirname(__file__) )
-
 print ( rootdir )
 
 #my_version = "0.1.0" +  str(time.time()),
-my_version = "0.1.8"
+my_version = "0.1.4.4"
 
-#my_packages = ["nucleotide", "nucleotide.component"]
 my_packages = find_packages( rootdir )
+
+my_long_description = open( os.path.join( rootdir, "readme.txt" ) ).read(),
 
 print ( my_packages )
 
@@ -27,7 +27,7 @@ setup(
     license          = "https://raw.githubusercontent.com/dmilos/nucleotide/master/license.txt",
     packages         = my_packages,
     description      = "An Scons library which wraps interface of various compilers in to one universal.",
-    long_description = open( os.path.join( rootdir, "readme.txt" ) ).read(),
+    long_description = my_long_description,
     platforms        = ["All"],
     #install_requires = [ "scons"  ],
     # NO scripts = [ "nucleotide"  ]

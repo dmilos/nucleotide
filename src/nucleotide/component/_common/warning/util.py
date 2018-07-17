@@ -22,9 +22,9 @@ import nucleotide.component._common
 import nucleotide.component._common.warning
 import nucleotide.component._common.warning.table
 
-def windows_make( P_native, P_status ):
+def windows_make( P_native, P_status ): # https://msdn.microsoft.com/en-us/library/thxezb7y.aspx
     Ir_switch = ''
-   #if( 'enable'   == P_status ): Ir_switch = ''
+    if( 'enable'   == P_status ): Ir_switch = '/w1' + P_native
     if( 'disable'  == P_status ): Ir_switch = '/wd' + P_native
     if( 'error'    == P_status ): Ir_switch = '/we' + P_native
     if( 'once'     == P_status ): Ir_switch = '/wo' + P_native
@@ -32,7 +32,7 @@ def windows_make( P_native, P_status ):
 
 def linux_make( P_native, P_status ):
     Ir_switch = ''
-    if( 'enable'   == P_status ): Ir_switch = ''
+    if( 'enable'   == P_status ): Ir_switch = '-W'       + P_native
     if( 'disable'  == P_status ): Ir_switch = '-Wno-'    + P_native
     if( 'error'    == P_status ): Ir_switch = '-Werror=' + P_native
     if( 'once'     == P_status ): Ir_switch = ''
@@ -69,5 +69,9 @@ def list( P_list, P_translator ):
                 I_best = I_similar
                 I_text = nucleotide.component._common.warning.table.TABLE[item][elem]
         if( -1 != I_best ):
-            Ir_list += [ I_convertor( I_text, P_list[item]) ]
+            Ir_list += [ I_convertor( I_text, P_list[item] ) ]
+        else:
+            pass
+
+    print "        ||" + str(I_best) + '|| - ' + str( Ir_list )
     return Ir_list

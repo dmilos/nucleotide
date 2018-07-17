@@ -24,6 +24,7 @@ import nucleotide.component.function
 
 def _windows_dialect_CPPFLAGS( P_data ):
     Ir_list = []
+
     if( True == ( 'dialect' in P_data ) ):
         if( 'plain_c' == P_data['dialect'] ):
             Ir_list += ['/TC' ]

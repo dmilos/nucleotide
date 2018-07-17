@@ -12,23 +12,24 @@
 #   distributed under the License is distributed on an "AS IS" BASIS,
 #   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 #   See the License for the specific language governing permissions and
-#   limitations under the License. 
+#   limitations under the License.
 
 
 TABLE = {
     'misleading-indentation'                : {
             'X-X-FSF-gcc-X': 'misleading-indentation'
         },
-
     'unused-variable'                       : {
             'X-X-FSF-gcc-X'                   : 'unused-variable',
-            'Windows-Windows-Microsoft-msvc-X': '4189' 
-        },
-    'unused-local-typedefs'                 : {
-            'X-X-FSF-gcc-X': 'unused-local-typedefs'
+            'Windows-Windows-Microsoft-msvc-X': '4101'
         },
     'unused-variable-but-set'               : {
-            'X-X-FSF-gcc-X': 'unused-but-set-variable'
+            'X-X-FSF-gcc-X'                   : 'unused-but-set-variable',
+            'Windows-Windows-Microsoft-msvc-X': '4189'
+        },
+    'unused-local-typedefs'                 : {
+            'X-X-FSF-gcc-X'                   :  'unused-local-typedefs',
+            'Windows-Windows-Microsoft-msvc-X': '4901'
         },
     'unused-formal-parameter'               : {
             'Windows-Windows-Microsoft-msvc-X': '4100'

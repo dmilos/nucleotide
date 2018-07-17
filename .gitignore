@@ -44,3 +44,10 @@ example/test/macro/main
 /build/readme.txt
 /build/nucleotide.egg-info
 /build/readme.rst
+/build/p3/nucleotide
+/build/p3/license.txt
+/build/p3/readme.rst
+/build/p3/readme.txt
+/build/p3/build
+/build/p3/dist
+/build/p3/nucleotide.egg-info

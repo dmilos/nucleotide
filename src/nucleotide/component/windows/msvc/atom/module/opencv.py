@@ -55,7 +55,13 @@ def _windows_msvc_atom_module_opencv_LIBS( P_list ):
     #print "_windows_msvc_atom_module_opencv_LIBS"
     Ir_result = [];
 
-    version = P_list['version'];
+    if( False == ( 'version' in P_list ) ):
+        return;
+
+    if( 0 == len( P_list ) ):
+        return
+
+    version = next( iter( P_list['version'] ) )
 
     if( "configuration" in P_list ):
         if( 'release' == P_list["configuration"].lower() ):
@@ -86,5 +92,3 @@ atom__common_package = {
     'name' :'package',
     'class':  [ 'package::opencv', 'windows:package:opencv' ]
 }
-
-

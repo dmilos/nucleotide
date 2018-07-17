@@ -30,13 +30,13 @@ def find_ENVIRONMENT__generic( P_prefix, P_list, P_folder, P_ensure ):
 
     I_element=[]
     if( "version"           in P_ensure ):
-        if( True == ( 'version'         in P_list ) ): I_element += [ P_list['version'].replace(".", "_") ]
+        if( True == ( 'version'         in P_list ) ): I_element += [ P_list['version']        ]
     if( "architecture"      in P_ensure ):
-        if( True == ( 'architecture'    in P_list ) ): I_element += [ P_list["architecture"]              ]
+        if( True == ( 'architecture'    in P_list ) ): I_element += [ P_list["architecture"]   ]
     if( "compiler"          in P_ensure ):
-        if( True == ( 'compiler'        in P_list ) ): I_element += [ P_list["compiler"]                  ]
+        if( True == ( 'compiler'        in P_list ) ): I_element += [ P_list["compiler"]       ]
     if( "configuration"     in P_ensure ):
-        if( True == ( 'configuration'   in P_list ) ): I_element += [ P_list["configuration"]             ]
+        if( True == ( 'configuration'   in P_list ) ): I_element += [ P_list["configuration"]  ]
 
     #print " elements: " + str(I_element)
     for prefix in P_prefix:
@@ -71,7 +71,13 @@ def find_ENVIRONMENT_PATH( P_include, P_prefix, P_list ):
     I_decoration = [ "version", "architecture", "folder", "compiler", "configuration" ]
 
     max = 0;
-    for flag in xrange( 0, 32 ) :
+    I_list = copy.deepcopy( P_list )
+    I_list['version'] = ''
+
+    if( False == "version"  in P_list ):
+        P_list['version'] = ['']
+
+    for flag in xrange( 0, 32 ):
         ornament = []
         if ( 0 != ( flag &  1 ) ): ornament += [ I_decoration[ 0 ]];
         if ( 0 != ( flag &  2 ) ): ornament += [ I_decoration[ 1 ]];
@@ -80,11 +86,14 @@ def find_ENVIRONMENT_PATH( P_include, P_prefix, P_list ):
         if ( 0 != ( flag & 16 ) ): ornament += [ I_decoration[ 4 ]];
 
         #print ornament
-        I_result = find_ENVIRONMENT__generic( P_prefix, P_list, P_include, ornament )
-        if( 0 != len( I_result ) ):
-            if( max < len( ornament ) ):
-                Ir_result = copy.deepcopy( I_result )
-                max = len( ornament )
+
+        for version in P_list['version'] :
+            I_list['version'] = version
+            I_result = find_ENVIRONMENT__generic( P_prefix, I_list, P_include, ornament )
+            if( 0 != len( I_result ) ):
+                if( max < len( ornament ) ):
+                    Ir_result = copy.deepcopy( I_result )
+                    max = len( ornament )
 
     if( 0 == max ):
        print()

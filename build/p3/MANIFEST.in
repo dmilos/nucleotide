@@ -1,0 +1,2 @@
+include license.txt MANIFEST readme.txt
+recursive-include nucleotide/component *

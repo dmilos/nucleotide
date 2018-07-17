@@ -55,5 +55,12 @@ class Environment:
         if( True == P_settings.get_config().exists( 'CXX'  ) ) and ( None != P_settings.get_config().get( 'CXX'  ) ): self.M_native.Replace( CXX  = P_settings.get_config().get( 'CXX'  ) )
         if( True == P_settings.get_config().exists( 'LINK' ) ) and ( None != P_settings.get_config().get( 'LINK' ) ): self.M_native.Replace( LINK = P_settings.get_config().get( 'LINK' ) )
 
+        #print ( P_settings.get_config().get( 'CPPFLAGS'  )  )
+        #print ( P_settings.get_config().get( 'CPPPATH'  )   )
+        #print ( P_settings.get_config().get( 'CPPDEFINES'   )
+        #print ( P_settings.get_config().get( 'LIBPATH'  )   )
+        #print ( P_settings.get_config().get( 'LIBS'  )      )
+        #print ( P_settings.get_config().get( 'LINKFLAGS'  ) )
+
     def native( self ):
         return self.M_native

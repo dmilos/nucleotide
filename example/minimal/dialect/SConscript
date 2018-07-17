@@ -9,7 +9,7 @@ Import('settings')
 settings.accumulate( 'exception' )
 
 ## Set Run Time Library
-settings.accumulate( 'source:c++', { 'dialect' : 'c++11', 'standard' : 'c++11' } )
+settings.accumulate( 'source:c++', { 'dialect' : 'plain_cpp', 'standard' : 'c++11' } )
 
 # Accumulate source
 source = []
