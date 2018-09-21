@@ -27,100 +27,113 @@ import nucleotide.component.windows.msvc.atom.module.opencv
 import nucleotide.component.windows.msvc.atom.module.zlib
 import nucleotide.component.windows.msvc.atom.module.tbb
 import nucleotide.component.windows.msvc.atom.module.protobuf
+import nucleotide.component.windows.msvc.atom.module.python
 
+
+Is_list={
+
+    'boost': {
+        'CPPDEFINES':nucleotide.component.windows.msvc.atom.module.boost._windows_msvc_atom_module_boost_CPPDEFINES,
+        'CPPPATH'   :nucleotide.component.windows.msvc.atom.module.boost._windows_msvc_atom_module_boost_CPPPATH,
+        'LINKFLAGS' :nucleotide.component.windows.msvc.atom.module.boost._windows_msvc_atom_module_boost_LINKFLAGS,
+        'LIBPATH'   :nucleotide.component.windows.msvc.atom.module.boost._windows_msvc_atom_module_boost_LIBPATH,
+        'LIBS'      :nucleotide.component.windows.msvc.atom.module.boost._windows_msvc_atom_module_boost_LIBS,
+    },
+    'opencv': {
+        'CPPDEFINES':nucleotide.component.windows.msvc.atom.module.opencv._windows_msvc_atom_module_opencv_CPPDEFINES,
+        'CPPPATH'   :nucleotide.component.windows.msvc.atom.module.opencv._windows_msvc_atom_module_opencv_CPPPATH,
+        'LINKFLAGS' :nucleotide.component.windows.msvc.atom.module.opencv._windows_msvc_atom_module_opencv_LINKFLAGS,
+        'LIBPATH'   :nucleotide.component.windows.msvc.atom.module.opencv._windows_msvc_atom_module_opencv_LIBPATH,
+        'LIBS'      :nucleotide.component.windows.msvc.atom.module.opencv._windows_msvc_atom_module_opencv_LIBS,
+    },
+    'zlib': {
+        'CPPDEFINES':nucleotide.component.windows.msvc.atom.module.zlib._windows_msvc_atom_module_zlib_CPPDEFINES,
+        'CPPPATH'   :nucleotide.component.windows.msvc.atom.module.zlib._windows_msvc_atom_module_zlib_CPPPATH,
+        'LINKFLAGS' :nucleotide.component.windows.msvc.atom.module.zlib._windows_msvc_atom_module_zlib_LINKFLAGS,
+        'LIBPATH'   :nucleotide.component.windows.msvc.atom.module.zlib._windows_msvc_atom_module_zlib_LIBPATH,
+        'LIBS'      :nucleotide.component.windows.msvc.atom.module.zlib._windows_msvc_atom_module_zlib_LIBS,
+    },
+
+    'tbb': {
+        'CPPDEFINES':nucleotide.component.windows.msvc.atom.module.tbb._windows_msvc_atom_module_tbb_CPPDEFINES,
+        'CPPPATH'   :nucleotide.component.windows.msvc.atom.module.tbb._windows_msvc_atom_module_tbb_CPPPATH,
+        'LINKFLAGS' :nucleotide.component.windows.msvc.atom.module.tbb._windows_msvc_atom_module_tbb_LINKFLAGS,
+        'LIBPATH'   :nucleotide.component.windows.msvc.atom.module.tbb._windows_msvc_atom_module_tbb_LIBPATH,
+        'LIBS'      :nucleotide.component.windows.msvc.atom.module.tbb._windows_msvc_atom_module_tbb_LIBS,
+    },
+
+    'protobuf': {
+        'CPPDEFINES':nucleotide.component.windows.msvc.atom.module.protobuf._windows_msvc_atom_module_protobuf_CPPDEFINES,
+        'CPPPATH'   :nucleotide.component.windows.msvc.atom.module.protobuf._windows_msvc_atom_module_protobuf_CPPPATH,
+        'LINKFLAGS' :nucleotide.component.windows.msvc.atom.module.protobuf._windows_msvc_atom_module_protobuf_LINKFLAGS,
+        'LIBPATH'   :nucleotide.component.windows.msvc.atom.module.protobuf._windows_msvc_atom_module_protobuf_LIBPATH,
+        'LIBS'      :nucleotide.component.windows.msvc.atom.module.protobuf._windows_msvc_atom_module_protobuf_LIBS,
+    },
+
+    'python': {
+        'CPPDEFINES':nucleotide.component.windows.msvc.atom.module.python._windows_msvc_atom_module_python_CPPDEFINES,
+        'CPPPATH'   :nucleotide.component.windows.msvc.atom.module.python._windows_msvc_atom_module_python_CPPPATH,
+        'LINKFLAGS' :nucleotide.component.windows.msvc.atom.module.python._windows_msvc_atom_module_python_LINKFLAGS,
+        'LIBPATH'   :nucleotide.component.windows.msvc.atom.module.python._windows_msvc_atom_module_python_LIBPATH,
+        'LIBS'      :nucleotide.component.windows.msvc.atom.module.python._windows_msvc_atom_module_python_LIBS,
+    }
+
+}
 
 def _windows_msvc_atom_package_CPPDEFINES( P_list ):
 
-    if( True == ( 'boost' in  P_list ) ):
-        return nucleotide.component.windows.msvc.atom.module.boost._windows_msvc_atom_module_boost_CPPDEFINES( P_list['boost'] )
-
-    if( True == ( 'opencv' in  P_list ) ):
-        return nucleotide.component.windows.msvc.atom.module.opencv._windows_msvc_atom_module_opencv_CPPDEFINES( P_list['opencv'] )
-
-    if( True == ( 'zlib' in  P_list ) ):
-        return nucleotide.component.windows.msvc.atom.module.zlib._windows_msvc_atom_module_zlib_CPPDEFINES( P_list['zlib'] )
-
-    if( True == ( 'tbb' in  P_list ) ):
-        return nucleotide.component.windows.msvc.atom.module.tbb._windows_msvc_atom_module_tbb_CPPDEFINES( P_list['tbb'] )
-
-    if( True == ( 'protobuf' in  P_list ) ):
-        return nucleotide.component.windows.msvc.atom.module.protobuf._windows_msvc_atom_module_protobuf_CPPDEFINES( P_list['protobuf'] )
+    #print P_list
+    for key in P_list:
+        if( key in Is_list ):
+            return Is_list[key]['CPPDEFINES'](  P_list[key] )
+        else:
+            print 'Pakage: \'' + key + '\' Not found.'
 
     return []
 
+
 def _windows_msvc_atom_package_CPPPATH( P_list ):
 
-    if( True == ( 'boost' in  P_list ) ):
-        return nucleotide.component.windows.msvc.atom.module.boost._windows_msvc_atom_module_boost_CPPPATH( P_list['boost'] )
-
-    if( True == ( 'opencv' in  P_list ) ):
-        return nucleotide.component.windows.msvc.atom.module.opencv._windows_msvc_atom_module_opencv_CPPPATH( P_list['opencv'] )
-
-    if( True == ( 'zlib' in  P_list ) ):
-        return nucleotide.component.windows.msvc.atom.module.zlib._windows_msvc_atom_module_zlib_CPPPATH( P_list['zlib'] )
-
-    if( True == ( 'tbb' in  P_list ) ):
-        return nucleotide.component.windows.msvc.atom.module.tbb._windows_msvc_atom_module_tbb_CPPPATH( P_list['tbb'] )
-
-    if( True == ( 'protobuf' in  P_list ) ):
-        return nucleotide.component.windows.msvc.atom.module.protobuf._windows_msvc_atom_module_protobuf_CPPPATH( P_list['protobuf'] )
+    #print P_list
+    for key in P_list:
+        if( key in Is_list ):
+            return Is_list[key]['CPPPATH'](  P_list[key] )
+        else:
+            print 'Pakage: \'' + key + '\' Not found.'
 
     return []
 
 def _windows_msvc_atom_package_LINKFLAGS( P_list ):
 
-    if( True == ( 'boost' in  P_list ) ):
-        return nucleotide.component.windows.msvc.atom.module.boost._windows_msvc_atom_module_boost_LINKFLAGS( P_list['boost'] )
-
-    if( True == ( 'opencv' in  P_list ) ):
-        return nucleotide.component.windows.msvc.atom.module.opencv._windows_msvc_atom_module_opencv_LINKFLAGS( P_list['opencv'] )
-
-    if( True == ( 'zlib' in  P_list ) ):
-        return nucleotide.component.windows.msvc.atom.module.zlib._windows_msvc_atom_module_zlib_LINKFLAGS( P_list['zlib'] )
-
-    if( True == ( 'tbb' in  P_list ) ):
-        return nucleotide.component.windows.msvc.atom.module.tbb._windows_msvc_atom_module_tbb_LINKFLAGS( P_list['tbb'] )
-
-    if( True == ( 'protobuf' in  P_list ) ):
-        return nucleotide.component.windows.msvc.atom.module.protobuf._windows_msvc_atom_module_protobuf_LINKFLAGS( P_list['protobuf'] )
+    #print P_list
+    for key in P_list:
+        if( key in Is_list ):
+            return Is_list[key]['LINKFLAGS'](  P_list[key] )
+        else:
+            print 'Pakage: \'' + key + '\' Not found.'
 
     return []
 
 def _windows_msvc_atom_package_LIBPATH( P_list ):
 
-    if( True == ( 'boost' in  P_list ) ):
-        return nucleotide.component.windows.msvc.atom.module.boost._windows_msvc_atom_module_boost_LIBPATH( P_list['boost'] )
-
-    if( True == ( 'opencv' in  P_list ) ):
-        return nucleotide.component.windows.msvc.atom.module.opencv._windows_msvc_atom_module_opencv_LIBPATH( P_list['opencv'] )
-
-    if( True == ( 'zlib' in  P_list ) ):
-        return nucleotide.component.windows.msvc.atom.module.zlib._windows_msvc_atom_module_zlib_LIBPATH( P_list['zlib'] )
-
-    if( True == ( 'tbb' in  P_list ) ):
-        return nucleotide.component.windows.msvc.atom.module.tbb._windows_msvc_atom_module_tbb_LIBPATH( P_list['tbb'] )
-
-    if( True == ( 'protobuf' in  P_list ) ):
-        return nucleotide.component.windows.msvc.atom.module.protobuf._windows_msvc_atom_module_protobuf_LIBPATH( P_list['protobuf'] )
+    #print P_list
+    for key in P_list:
+        if( key in Is_list ):
+            return Is_list[key]['LIBPATH'](  P_list[key] )
+        else:
+            print 'Pakage: \'' + key + '\' Not found.'
 
     return []
 
 def _windows_msvc_atom_package_LIBS( P_list ):
 
-    if( True == ( 'boost' in  P_list ) ):
-        return nucleotide.component.windows.msvc.atom.module.boost._windows_msvc_atom_module_boost_LIBS( P_list['boost'] )
+    #print P_list
+    for key in P_list:
+        if( key in Is_list ):
+            return Is_list[key]['LIBS'](  P_list[key] )
+        else:
+            print 'Pakage: \'' + key + '\' Not found.'
 
-    if( True == ( 'opencv' in  P_list ) ):
-        return nucleotide.component.windows.msvc.atom.module.opencv._windows_msvc_atom_module_opencv_LIBS( P_list['opencv'] )
-
-    if( True == ( 'zlib' in  P_list ) ):
-        return nucleotide.component.windows.msvc.atom.module.zlib._windows_msvc_atom_module_zlib_LIBS( P_list['zlib'] )
-
-    if( True == ( 'tbb' in  P_list ) ):
-        return nucleotide.component.windows.msvc.atom.module.tbb._windows_msvc_atom_module_tbb_LIBS( P_list['tbb'] )
-
-    if( True == ( 'protobuf' in  P_list ) ):
-        return nucleotide.component.windows.msvc.atom.module.protobuf._windows_msvc_atom_module_protobuf_LIBS( P_list['protobuf'] )
     return []
 
 

@@ -72,6 +72,6 @@ def list( P_list, P_translator ):
             Ir_list += [ I_convertor( I_text, P_list[item] ) ]
         else:
             pass
+        print "        ||" + str(I_best) + '|| - ' + str( Ir_list )
 
-    print "        ||" + str(I_best) + '|| - ' + str( Ir_list )
     return Ir_list

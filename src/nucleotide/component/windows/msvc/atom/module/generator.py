@@ -118,7 +118,7 @@ def find_ENVIRONMENT_CPPPATH( P_prefix, P_list ):
 def find_ENVIRONMENT_LIBPATH( P_prefix, P_list ):
     sys.stdout.write('        LIBPATH: ' )
 
-    I_library ={ "LIBRARY", "LIB", "LIBS", "LIBRARIES",
+    I_library ={ "LIBRARY", "LIB", "LIBS", "LIBRARIES", "LIBPATH",
                           "LIBRARYPATH",  "LIBRARY_PATH", "LIB_PATH", "LIBS_PATH", "PATH_LIBS", "PATH_LIB",
                           "LIBRARYDIR",   "LIBRARY_DIR",  "LIB_DIR",  "LIBS_DIR",  "DIR_LIBS",  "DIR_LIB",
                           "LIBRARYDIRS",  "LIBRARY_DIRS", "LIB_DIRS", "LIBS_DIRS", "DIRS_LIBS", "DIRS_LIB",
