@@ -30,6 +30,9 @@ def _python_default_CPPPATH( P_list ):
 def _python_default_LIBPATH( P_list ):
     return [ os.getenv('PYTHON_LIBPATH') ]
 
+def _python_default_LIBS( P_list ):
+    return [ 'pythonXYZ' ]
+
 atom_python_default = {
     'platform' : {
         'host'  : 'X',
@@ -43,7 +46,7 @@ atom_python_default = {
     'config' : {
             'CPPPATH'  : _python_default_CPPPATH,
             'LIBPATH'  : _python_default_LIBPATH,
-            'LIBS'   : [ 'python' ]
+            'LIBS'     : _python_default_LIBS
     },
     'name' : 'python:default',
     'class': [ 'python', 'python:default' ]

@@ -28,10 +28,10 @@ def atom_linux_configuration_CPPFLAGS( P_data ):
     if( False == ( 'name' in P_data ) ):
         return Ir_list
 
-    if( 'debug' == P_data[ 'name' ] ):
+    if( 'debug' == P_data[ 'name' ].lower() ):
         Ir_list += [ '-g'  ]
 
-    if( 'release'== P_data[ 'name' ] ):
+    if( 'release'== P_data[ 'name' ].lower() ):
         pass
 
     return Ir_list
@@ -42,10 +42,10 @@ def atom_linux_configuration_CPPDEFINES( P_data ):
     if( False == ( 'name' in P_data ) ):
         return Ir_list
 
-    if( 'debug' == P_data[ 'name' ] ):
+    if( 'debug' == P_data[ 'name' ].lower() ):
         Ir_list += [ '_DEBUG'  ]
 
-    if( 'release' == P_data[ 'name' ] ):
+    if( 'release' == P_data[ 'name' ].lower() ):
         Ir_list += [ 'NDEBUG'  ]
 
     return Ir_list
@@ -56,10 +56,10 @@ def atom_linux_configuration_LINKFLAGS( P_data ):
     if( False == ( 'name' in P_data ) ):
         return Ir_list
 
-    if( 'debug' == P_data[ 'name' ] ):
+    if( 'debug' == P_data[ 'name' ].lower() ):
         pass #Ir_list += [ 'TODO'  ]
 
-    if( 'release'== P_data[ 'name' ] ):
+    if( 'release'== P_data[ 'name' ].lower() ):
         pass
 
     return Ir_list

@@ -31,9 +31,9 @@ def _windows_RTL_CPPFLAGS( P_data ):
        I_flag += 'T'
 
     if( True == ( 'configuration' in P_data ) ):
-        if( 'debug' == P_data['configuration'] ):
+        if( 'debug' == P_data['configuration'].lower() ):
            I_flag += 'd'
-        if( 'release' == P_data['configuration'] ):
+        if( 'release' == P_data['configuration'].lower() ):
            pass
 
     return [ '/' + I_flag ]

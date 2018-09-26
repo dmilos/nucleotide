@@ -1,0 +1,25 @@
+import nucleotide
+
+Import('settings')
+
+
+# Accumulate Atoms
+
+## Enable exceptions
+settings.accumulate( 'exception' )
+
+## Set Run Time Library
+settings.accumulate( 'library', { 'opencv3': { 'path': 'c:\\opencv3\\x64\\vc14\\lib', 'list' : [ 'opencv_world310.lib' ] } } )
+
+# Accumulate source
+source = []
+source +=   ['main.cpp']
+
+# Make native environment
+envProgram = nucleotide.Environment( settings ).native()
+
+# Create program
+program = envProgram.Program( target =  'main' + envProgram['PROGSUFFIX'], source = source  )
+
+# ... and return!
+Return( 'program' )

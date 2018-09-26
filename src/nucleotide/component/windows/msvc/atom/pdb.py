@@ -26,9 +26,9 @@ def _windows_PDB_CPPFLAGS( P_data ):
     Ir_list = []
 
     if( True == ( 'configuration' in P_data ) ):
-        if( 'debug' == P_data[ 'configuration' ] ):
+        if( 'debug' == P_data[ 'configuration' ].lower() ):
            Ir_list.append( '/ZI' )
-        if( 'release' == P_data[ 'configuration' ] ):
+        if( 'release' == P_data[ 'configuration' ].lower() ):
            Ir_list.append( '/Zi' )
 
     if( True == ( 'format' in P_data ) ):
@@ -56,9 +56,9 @@ def _windows_PDB_CPPFLAGS( P_data ):
 def _windows_PDB_LINKFLAGS( P_data ):
     Ir_list = []
     if( True == ( 'configuration' in P_data ) ):
-        if( 'debug' == P_data['configuration'] ):
+        if( 'debug' == P_data['configuration'].lower() ):
            Ir_list.append( '/DEBUG' )
-        if( 'release' == P_data['configuration'] ):
+        if( 'release' == P_data['configuration'].lower() ):
            Ir_list.append( '/DEBUG' )
 
     if( True == ( 'file-name-executable' in P_data )  ):

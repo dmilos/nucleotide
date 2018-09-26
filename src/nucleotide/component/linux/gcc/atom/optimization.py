@@ -28,10 +28,10 @@ def _atom_linux_optimization_CPPFLAGS( P_data ):
     if( False == ( 'configuration' in P_data ) ):
         return Ir_list
 
-    if( 'debug' == P_data[ 'configuration' ] ):
+    if( 'debug' == P_data[ 'configuration' ].lower() ):
         Ir_list += [ '-Og'  ]
 
-    if( 'release' == P_data[ 'configuration' ] ):
+    if( 'release' == P_data[ 'configuration' ].lower() ):
         Ir_list += [ '-O2'  ]
 
     return Ir_list

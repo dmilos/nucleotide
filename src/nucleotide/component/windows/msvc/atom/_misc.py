@@ -25,10 +25,10 @@ def _windows_configuration_CPPDEFINES( P_data ):
     if( False == ( 'name' in P_data ) ):
         return Ir_list
 
-    if( 'debug' == P_data[ 'name' ] ):
+    if( 'debug' == P_data[ 'name' ].lower() ):
         Ir_list += [ '_DEBUG' ]
 
-    if( 'release'== P_data[ 'name' ] ):
+    if( 'release'== P_data[ 'name' ].lower() ):
         Ir_list += [ 'NDEBUG' ]
     return Ir_list
 
@@ -38,10 +38,10 @@ def _windows_configuration_CPPFLAGS( P_data ):
     if( False == ( 'name' in P_data ) ):
         return Ir_list
 
-    if( 'debug' == P_data[ 'name' ] ):
+    if( 'debug' == P_data[ 'name' ].lower() ):
         Ir_list += [ '/RTC1'  ]
 
-    if( 'release'== P_data[ 'name' ] ):
+    if( 'release'== P_data[ 'name' ].lower() ):
         pass
 
     return Ir_list
@@ -52,10 +52,10 @@ def _windows_configuration_LINKFLAGS( P_data ):
     if( False == ( 'name' in P_data ) ):
         return Ir_list
 
-    if( 'debug' == P_data[ 'name' ] ):
+    if( 'debug' == P_data[ 'name' ].lower() ):
         Ir_list += [ '/DEBUG' ]
 
-    if( 'release'== P_data[ 'name' ] ):
+    if( 'release'== P_data[ 'name' ].lower() ):
         pass
 
     return Ir_list
@@ -124,9 +124,9 @@ atom_windows_shared_object = {
 def _windows_optimization_CPPFLAGS( P_data ):
     Ir_list = []
     if( True == ( 'configuration' in P_data ) ):
-        if( 'debug' == P_data['configuration'] ):
+        if( 'debug' == P_data['configuration'].lower() ):
            Ir_list.append( '/Od' )
-        if( 'release' == P_data['configuration'] ):
+        if( 'release' == P_data['configuration'].lower() ):
            Ir_list.append( '/O2' )
 
     return Ir_list
