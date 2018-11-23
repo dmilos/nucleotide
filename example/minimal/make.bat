@@ -51,6 +51,11 @@ call %prg_scons% -c
 call %prg_scons%
 cd ..
 
+cd library
+call %prg_scons% -c
+call %prg_scons%
+cd ..
+
 cd package
 call %prg_scons% -c
 call %prg_scons%

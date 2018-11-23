@@ -25,9 +25,9 @@ import nucleotide.component.function
 def _windows_RTL_CPPFLAGS( P_data ):
     I_flag = 'M'
 
-    if( 'dynamic' == P_data['type'] ):
+    if( 'dynamic' == P_data['type'].lower() ):
        I_flag += 'D'
-    if( 'static' == P_data['type'] ):
+    if( 'static' == P_data['type'].lower() ):
        I_flag += 'T'
 
     if( True == ( 'configuration' in P_data ) ):

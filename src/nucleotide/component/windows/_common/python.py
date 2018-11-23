@@ -31,6 +31,7 @@ def _python_default_LIBPATH( P_list ):
     return [ os.getenv('PYTHON_LIBPATH') ]
 
 def _python_default_LIBS( P_list ):
+    #TODO 'python' + P_list['version']
     return [ 'pythonXYZ' ]
 
 atom_python_default = {

@@ -28,10 +28,10 @@ import nucleotide.component.windows.msvc.atom.module.zlib
 import nucleotide.component.windows.msvc.atom.module.tbb
 import nucleotide.component.windows.msvc.atom.module.protobuf
 import nucleotide.component.windows.msvc.atom.module.python
+import nucleotide.component.windows.msvc.atom.module.bzip2
 
 
 Is_list={
-
     'boost': {
         'CPPDEFINES':nucleotide.component.windows.msvc.atom.module.boost._windows_msvc_atom_module_boost_CPPDEFINES,
         'CPPPATH'   :nucleotide.component.windows.msvc.atom.module.boost._windows_msvc_atom_module_boost_CPPPATH,
@@ -76,8 +76,15 @@ Is_list={
         'LINKFLAGS' :nucleotide.component.windows.msvc.atom.module.python._windows_msvc_atom_module_python_LINKFLAGS,
         'LIBPATH'   :nucleotide.component.windows.msvc.atom.module.python._windows_msvc_atom_module_python_LIBPATH,
         'LIBS'      :nucleotide.component.windows.msvc.atom.module.python._windows_msvc_atom_module_python_LIBS,
-    }
+    },
 
+    'bzip2': {
+        'CPPDEFINES':nucleotide.component.windows.msvc.atom.module.bzip2._windows_msvc_atom_module_bzip2_CPPDEFINES,
+        'CPPPATH'   :nucleotide.component.windows.msvc.atom.module.bzip2._windows_msvc_atom_module_bzip2_CPPPATH,
+        'LINKFLAGS' :nucleotide.component.windows.msvc.atom.module.bzip2._windows_msvc_atom_module_bzip2_LINKFLAGS,
+        'LIBPATH'   :nucleotide.component.windows.msvc.atom.module.bzip2._windows_msvc_atom_module_bzip2_LIBPATH,
+        'LIBS'      :nucleotide.component.windows.msvc.atom.module.bzip2._windows_msvc_atom_module_bzip2_LIBS,
+    }
 }
 
 def _windows_msvc_atom_package_CPPDEFINES( P_list ):
@@ -87,7 +94,7 @@ def _windows_msvc_atom_package_CPPDEFINES( P_list ):
         if( key in Is_list ):
             return Is_list[key]['CPPDEFINES'](  P_list[key] )
         else:
-            print 'Pakage: \'' + key + '\' Not found.'
+            print( 'Pakage: \'' + key + '\' Not found.' )
 
     return []
 
@@ -99,7 +106,7 @@ def _windows_msvc_atom_package_CPPPATH( P_list ):
         if( key in Is_list ):
             return Is_list[key]['CPPPATH'](  P_list[key] )
         else:
-            print 'Pakage: \'' + key + '\' Not found.'
+            print( 'Pakage: \'' + key + '\' Not found.' )
 
     return []
 
@@ -110,7 +117,7 @@ def _windows_msvc_atom_package_LINKFLAGS( P_list ):
         if( key in Is_list ):
             return Is_list[key]['LINKFLAGS'](  P_list[key] )
         else:
-            print 'Pakage: \'' + key + '\' Not found.'
+            print( 'Pakage: \'' + key + '\' Not found.' )
 
     return []
 
@@ -121,7 +128,7 @@ def _windows_msvc_atom_package_LIBPATH( P_list ):
         if( key in Is_list ):
             return Is_list[key]['LIBPATH'](  P_list[key] )
         else:
-            print 'Pakage: \'' + key + '\' Not found.'
+            print( 'Pakage: \'' + key + '\' Not found.' )
 
     return []
 
@@ -132,7 +139,7 @@ def _windows_msvc_atom_package_LIBS( P_list ):
         if( key in Is_list ):
             return Is_list[key]['LIBS'](  P_list[key] )
         else:
-            print 'Pakage: \'' + key + '\' Not found.'
+            print( 'Pakage: \'' + key + '\' Not found.' )
 
     return []
 

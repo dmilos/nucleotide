@@ -38,8 +38,14 @@ TABLE = {
             'Windows-Windows-Microsoft-msvc-X': '4702'
         },
 
+     'member-uninitialized'           : {
+            #'X-X-FSF-gcc-X': 'TODO'
+            #'Windows-Windows-Microsoft-msvc-X': 'TODO'
+        },
+
     'member-order-initialization'           : {
-            'X-X-FSF-gcc-X': 'reorder'
+            'X-X-FSF-gcc-X': 'reorder',
+            'Windows-Windows-Microsoft-msvc-X': '5038'
         },
 
     'return-no-return-statement'            : {
@@ -95,7 +101,10 @@ TABLE = {
 
     'decorated-name-length-exceeded' : {
         'Windows-Windows-Microsoft-msvc-X': '4503'
-    }
+    },
 
+    'variable-shadow-variable' : {
+    'linux-gcc': 'shadow'
+    }
 
 }

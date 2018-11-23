@@ -77,7 +77,7 @@ def find_ENVIRONMENT_PATH( P_include, P_prefix, P_list ):
     if( False == "version"  in P_list ):
         P_list['version'] = ['']
 
-    for flag in xrange( 0, 32 ):
+    for flag in range( 0, 32 ):
         ornament = []
         if ( 0 != ( flag &  1 ) ): ornament += [ I_decoration[ 0 ]];
         if ( 0 != ( flag &  2 ) ): ornament += [ I_decoration[ 1 ]];

@@ -9,7 +9,7 @@ rootdir = os.path.abspath( os.path.dirname(__file__) )
 print ( rootdir )
 
 #my_version = "0.1.0" +  str(time.time()),
-my_version = "0.1.4.4"
+my_version = "0.1.4.5"
 
 my_packages = find_packages( rootdir )
 
