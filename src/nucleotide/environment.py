@@ -24,7 +24,7 @@ class Environment:
 
     def __init__( self, P_settings ):
 
-        #print() 'Environment::P_settings.get_config().m_native: ' + str( P_settings.get_config().m_native ) )
+        #print( 'Environment::P_settings.get_config().m_native: ' + str( P_settings.get_config().m_native ) )
 
         I_init = {}
 

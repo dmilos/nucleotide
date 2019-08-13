@@ -26,6 +26,7 @@ def _common_include_CPPPATH( P_list ):
     Ir_list = []
     for item in P_list:
         Ir_list += [ P_list[item] ]
+        print( "        " + str( P_list[item] ) )
     return Ir_list
 
 atom__common_include = {
