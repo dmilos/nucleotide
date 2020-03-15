@@ -70,7 +70,8 @@ TABLE = {
 
     'conversion-comparation' : {
         'Windows-Windows-Microsoft-msvc-X': [ '4388', '4018' ],
-        'linux-gcc': 'sign-compare'
+        'linux-gcc'                       : 'sign-compare',
+        'X-X-FSF-gcc-X'                   : 'sign-compare'
         },
 
     'conversion-data-loss' : {
@@ -101,6 +102,11 @@ TABLE = {
 
     'decorated-name-length-exceeded' : {
         'Windows-Windows-Microsoft-msvc-X': '4503'
+    },
+
+    'assignment-within-conditional-expression': {
+        'Windows-Windows-Microsoft-msvc-X': '4706'
+        'X-X-FSF-gcc-X'                   : 'sign-compare'
     },
 
     'variable-shadow-variable' : {
