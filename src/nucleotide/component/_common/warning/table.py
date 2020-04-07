@@ -105,7 +105,7 @@ TABLE = {
     },
 
     'assignment-within-conditional-expression': {
-        'Windows-Windows-Microsoft-msvc-X': '4706'
+        'Windows-Windows-Microsoft-msvc-X': '4706',
         'X-X-FSF-gcc-X'                   : 'sign-compare'
     },
 
