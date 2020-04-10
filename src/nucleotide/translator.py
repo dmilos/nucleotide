@@ -119,7 +119,7 @@ class Translator:
         #print( 'Directory.extract(' + P_string + ')' )
         m = re.match( '(\w*)-(\w*)-(\w*)-(\w*)-(\w*)', P_string )
         if( None == m ):
-            #print 'Directory.extract:: return invalid'
+            #print( 'Directory.extract:: return invalid' )
             return Translator( {'host'  : 'Y','guest' : 'Y'}, { 'vendor': 'Y', 'name': 'Y', 'version': 'Y'} )
 
         Ir_return = Translator( {'host' : m.group(1), 'guest' : m.group(2) }, { 'vendor': m.group(3), 'name': m.group(4), 'version': m.group(5)} )

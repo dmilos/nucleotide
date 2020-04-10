@@ -38,30 +38,30 @@ def find_ENVIRONMENT__generic( P_prefix, P_list, P_folder, P_ensure ):
     if( "configuration"     in P_ensure ):
         if( True == ( 'configuration'   in P_list ) ): I_element += [ P_list["configuration"]  ]
 
-    #print " elements: " + str(I_element)
+    #print( " elements: " + str(I_element) )
     for prefix in P_prefix:
         for folder in P_folder:
             I_detail =  copy.deepcopy( I_element )
             if( "folder"     in P_ensure ):
                 I_detail += [folder]
-            #print I_detail
-            #print "    " + str(P_ensure) + str(I_detail) + prefix+" "+folder
+            #print( I_detail )
+            #print( "    " + str(P_ensure) + str(I_detail) + prefix+" "+folder )
 
             #continue;
             for permutation in itertools.permutations( I_detail ):
                 variation = [ prefix ]
                 variation += permutation
-                #print variation
+                #print( variation )
 
                 variable = ""
                 for element in variation:
                     variable += element + "_"
 
                 variable = variable.strip( "_" )
-                #print variable
+                #print( variable )
                 e = os.environ.get( variable )
                 if( None != e ):
-                    #print variable +" = "+ str( [ e ] )
+                    #print( variable +" = "+ str( [ e ] ) )
                     return [ variable, e ]
 
     return []
@@ -85,7 +85,7 @@ def find_ENVIRONMENT_PATH( P_include, P_prefix, P_list ):
         if ( 0 != ( flag &  8 ) ): ornament += [ I_decoration[ 3 ]];
         if ( 0 != ( flag & 16 ) ): ornament += [ I_decoration[ 4 ]];
 
-        #print ornament
+        #print( ornament )
 
         for version in P_list['version'] :
             I_list['version'] = version

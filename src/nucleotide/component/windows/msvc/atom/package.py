@@ -89,7 +89,7 @@ Is_list={
 
 def _windows_msvc_atom_package_CPPDEFINES( P_list ):
 
-    #print P_list
+    #print( P_list )
     for key in P_list:
         if( key in Is_list ):
             return Is_list[key]['CPPDEFINES'](  P_list[key] )
@@ -101,7 +101,7 @@ def _windows_msvc_atom_package_CPPDEFINES( P_list ):
 
 def _windows_msvc_atom_package_CPPPATH( P_list ):
 
-    #print P_list
+    #print( P_list )
     for key in P_list:
         if( key in Is_list ):
             return Is_list[key]['CPPPATH'](  P_list[key] )
@@ -112,7 +112,7 @@ def _windows_msvc_atom_package_CPPPATH( P_list ):
 
 def _windows_msvc_atom_package_LINKFLAGS( P_list ):
 
-    #print P_list
+    #print( P_list )
     for key in P_list:
         if( key in Is_list ):
             return Is_list[key]['LINKFLAGS'](  P_list[key] )
@@ -123,7 +123,7 @@ def _windows_msvc_atom_package_LINKFLAGS( P_list ):
 
 def _windows_msvc_atom_package_LIBPATH( P_list ):
 
-    #print P_list
+    #print( P_list )
     for key in P_list:
         if( key in Is_list ):
             return Is_list[key]['LIBPATH'](  P_list[key] )
@@ -134,7 +134,7 @@ def _windows_msvc_atom_package_LIBPATH( P_list ):
 
 def _windows_msvc_atom_package_LIBS( P_list ):
 
-    #print P_list
+    #print( P_list )
     for key in P_list:
         if( key in Is_list ):
             return Is_list[key]['LIBS'](  P_list[key] )

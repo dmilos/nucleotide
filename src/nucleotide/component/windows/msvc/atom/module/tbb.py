@@ -26,12 +26,12 @@ import nucleotide.component.windows.msvc.atom.module.generator
 
 
 def _windows_msvc_atom_module_tbb_CPPDEFINES( P_list ):
-    #print "_windows_msvc_atom_module_tbb_CPPDEFINES"
+    #print( "_windows_msvc_atom_module_tbb_CPPDEFINES" )
     Ir_result = [];
     return Ir_result
 
 def _windows_msvc_atom_module_tbb_CPPPATH( P_list ):
-    #print "_windows_msvc_atom_module_tbb_CPPPATH"
+    #print( "_windows_msvc_atom_module_tbb_CPPPATH" )
 
     prefix  = { "TBBROOT", "TBB_ROOT", "TBB" }
     Ir_result = nucleotide.component.windows.msvc.atom.module.generator.find_ENVIRONMENT_CPPPATH( prefix, P_list )
@@ -40,11 +40,11 @@ def _windows_msvc_atom_module_tbb_CPPPATH( P_list ):
 
 def _windows_msvc_atom_module_tbb_LINKFLAGS( P_list ):
     Ir_result = [];
-    #print '_windows_msvc_atom_module_tbb_LINKFLAGS'
+    #print( '_windows_msvc_atom_module_tbb_LINKFLAGS' )
     return Ir_result
 
 def _windows_msvc_atom_module_tbb_LIBPATH( P_list ):
-    #print "_windows_msvc_atom_module_tbb_LIBPATH"
+    #print( "_windows_msvc_atom_module_tbb_LIBPATH" )
 
     prefix  = { "TBBROOT", "TBB_ROOT", "TBB" }
     Ir_result = nucleotide.component.windows.msvc.atom.module.generator.find_ENVIRONMENT_LIBPATH( prefix, P_list )
@@ -52,7 +52,7 @@ def _windows_msvc_atom_module_tbb_LIBPATH( P_list ):
     return Ir_result
 
 def _windows_msvc_atom_module_tbb_LIBS( P_list ):
-    #print "_windows_msvc_atom_module_tbb_LIBS"
+    #print( "_windows_msvc_atom_module_tbb_LIBS" )
     Ir_result = [];
     return Ir_result
 

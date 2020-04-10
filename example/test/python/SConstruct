@@ -24,8 +24,8 @@ settings.set_custom( 'directory:source',  '.'  )
 
 settings.accumulate( 'architecture' , { 'name' : settings.get_custom( 'architecture' ) } )
 
-#print settings.get_config().m_this
-#print settings.get_options().m_this
+#print( settings.get_config().m_this  )
+#print( settings.get_options().m_this )
 
 my_choice = nucleotide.Atom( );
 my_choice.get_config().append( 'CPPPATH', [ os.getenv( 'DDMRM_path_work_code_cpp__' ) ] )

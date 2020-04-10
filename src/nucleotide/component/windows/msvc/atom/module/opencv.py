@@ -26,12 +26,12 @@ import nucleotide.component.windows.msvc.atom.module.generator
 
 
 def _windows_msvc_atom_module_opencv_CPPDEFINES( P_list ):
-    #print "_windows_msvc_atom_module_opencv_CPPDEFINES"
+    #print( "_windows_msvc_atom_module_opencv_CPPDEFINES" )
     Ir_result = [];
     return Ir_result
 
 def _windows_msvc_atom_module_opencv_CPPPATH( P_list ):
-    #print "_windows_msvc_atom_module_opencv_CPPPATH"
+    #print( "_windows_msvc_atom_module_opencv_CPPPATH" )
 
     prefix  = { "OPENCVROOT", "OPENCV_ROOT", "OPENCV" }
     Ir_result = nucleotide.component.windows.msvc.atom.module.generator.find_ENVIRONMENT_CPPPATH( prefix, P_list )
@@ -40,11 +40,11 @@ def _windows_msvc_atom_module_opencv_CPPPATH( P_list ):
 
 def _windows_msvc_atom_module_opencv_LINKFLAGS( P_list ):
     Ir_result = [];
-    #print '_windows_msvc_atom_module_opencv_LINKFLAGS'
+    #print( '_windows_msvc_atom_module_opencv_LINKFLAGS' )
     return Ir_result
 
 def _windows_msvc_atom_module_opencv_LIBPATH( P_list ):
-    #print "_windows_msvc_atom_module_opencv_LIBPATH"
+    #print( "_windows_msvc_atom_module_opencv_LIBPATH" )
 
     prefix  = { "OPENCVROOT", "OPENCV_ROOT", "OPENCV" }
     Ir_result = nucleotide.component.windows.msvc.atom.module.generator.find_ENVIRONMENT_LIBPATH( prefix, P_list )
@@ -52,7 +52,7 @@ def _windows_msvc_atom_module_opencv_LIBPATH( P_list ):
     return Ir_result
 
 def _windows_msvc_atom_module_opencv_LIBS( P_list ):
-    #print "_windows_msvc_atom_module_opencv_LIBS"
+    #print( "_windows_msvc_atom_module_opencv_LIBS" )
     Ir_result = [];
 
     if( False == ( 'version' in P_list ) ):

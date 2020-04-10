@@ -19,8 +19,8 @@ my_choice.set_klass( nucleotide.Klass( ['my-extension'] ) )
 ## 3. register
 settings.extend( 'my-extension', my_choice )
 
-#print settings.get_config().get_native()
-#print json.dumps( settings.get_options().get_represents(), indent=4 )
+#print( settings.get_config().get_native() )
+#print( json.dumps( settings.get_options().get_represents(), indent=4 ) )
 
 # Call
 product = SConscript('./SConscript', exports=[ 'settings' ] )

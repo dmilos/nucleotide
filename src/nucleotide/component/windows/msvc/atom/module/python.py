@@ -26,12 +26,12 @@ import nucleotide.component.windows.msvc.atom.module.generator
 
 
 def _windows_msvc_atom_module_python_CPPDEFINES( P_list ):
-    #print "_windows_msvc_atom_module_python_CPPDEFINES"
+    #print( "_windows_msvc_atom_module_python_CPPDEFINES" )
     Ir_result = [];
     return Ir_result
 
 def _windows_msvc_atom_module_python_CPPPATH( P_list ):
-    #print "_windows_msvc_atom_module_python_CPPPATH"
+    #print( "_windows_msvc_atom_module_python_CPPPATH" )
 
     prefix  = { "PYTHONROOT", "PYTHON_ROOT", "PYTHON" }
     Ir_result = nucleotide.component.windows.msvc.atom.module.generator.find_ENVIRONMENT_CPPPATH( prefix, P_list )
@@ -40,11 +40,11 @@ def _windows_msvc_atom_module_python_CPPPATH( P_list ):
 
 def _windows_msvc_atom_module_python_LINKFLAGS( P_list ):
     Ir_result = [];
-    #print '_windows_msvc_atom_module_python_LINKFLAGS'
+    #print( '_windows_msvc_atom_module_python_LINKFLAGS' )
     return Ir_result
 
 def _windows_msvc_atom_module_python_LIBPATH( P_list ):
-    #print "_windows_msvc_atom_module_python_LIBPATH"
+    #print( "_windows_msvc_atom_module_python_LIBPATH" )
 
     prefix  = { "PYTHONROOT", "PYTHON_ROOT", "PYTHON" }
     Ir_result = nucleotide.component.windows.msvc.atom.module.generator.find_ENVIRONMENT_LIBPATH( prefix, P_list )
@@ -52,7 +52,7 @@ def _windows_msvc_atom_module_python_LIBPATH( P_list ):
     return Ir_result
 
 def _windows_msvc_atom_module_python_LIBS( P_list ):
-    #print "_windows_msvc_atom_module_python_LIBS"
+    #print( "_windows_msvc_atom_module_python_LIBS" )
     Ir_result = [];
     return Ir_result
 

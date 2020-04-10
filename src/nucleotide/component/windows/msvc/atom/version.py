@@ -25,7 +25,7 @@ import nucleotide.component.function
 def _windows_version_MSVC_VERSION( P_data ):
     if( False == ( 'msvc' in P_data ) ):
         return None
-    print "        ||" + str( P_data ) + "||"
+    print( "        ||" + str( P_data ) + "||" )
     return P_data[ 'msvc' ][0]
 
 atom_windows_CCVERSION = {

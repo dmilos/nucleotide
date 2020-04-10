@@ -11,16 +11,16 @@ catalog = nucleotide.Atom()
 catalog = nucleotide.Catalog()
 
 for t in catalog.get():
-    print 'catalog.get()[x] == ' + str( t.string() )
+    print( 'catalog.get()[x] == ' + str( t.string() ) )
 
 config = nucleotide.Config()
 
-print 'config.get_native()' + str( config.get_native() )
+print( 'config.get_native()' + str( config.get_native() )
 
-print "config.exists('assdas')  == " + str( config.exists( 'assdas' ) )
-print "config.set('assdas', []) == " + str( config.set(    "assdas" , []) )
-print "config.get('assdas')     == " + str( config.get(    'assdas' ) )
-print "config.exists('assdas')  == " + str( config.exists( 'assdas' ) )
+print( "config.exists('assdas')  == " + str( config.exists( 'assdas' ) )     )
+print( "config.set('assdas', []) == " + str( config.set(    "assdas" , []) ) )
+print( "config.get('assdas')     == " + str( config.get(    'assdas' ) )     )
+print( "config.exists('assdas')  == " + str( config.exists( 'assdas' ) )     )
 
 config.append( "assdas", [] )
 
@@ -29,28 +29,28 @@ config.accumulate( config, {} )
 
 klass = nucleotide.Klass()
 
-print 'klass.others()' + str( klass.others() )
+print( 'klass.others()' + str( klass.others() ) )
 
 translator = nucleotide.Translator()
 
-print 'translator.get()           == ' + str( translator.get() )
-print 'translator.blank()         == ' + str( translator.blank() )
-print 'translator.string()        == ' + translator.string()
-print 'translator.extract("A-B-C-D-E").string() == ' + str( translator.extract('A-B-C-D-E').string() )
+print( 'translator.get()           == ' + str( translator.get() ) )
+print( 'translator.blank()         == ' + str( translator.blank() ) )
+print( 'translator.string()        == ' + translator.string() )
+print( 'translator.extract("A-B-C-D-E").string() == ' + str( translator.extract('A-B-C-D-E').string() ) )
 
 
 
 settings = nucleotide.Settings()
-print 'settings.get_config().get_native()     ' + str( settings.get_config().get_native() )
-print 'settings.get_options().get_native()    ' + str( settings.get_options().get_this() )
+print( 'settings.get_config().get_native()     ' + str( settings.get_config().get_native() ) )
+print( 'settings.get_options().get_native()    ' + str( settings.get_options().get_this() )  )
 
 
 
-print 'settings.get_options().get_represents() ---------- {{{ '
+print( 'settings.get_options().get_represents() ---------- {{{ ' )
 
-print json.dumps( settings.get_options().get_represents(), indent=4 , sort_keys=True )
+print( json.dumps( settings.get_options().get_represents(), indent=4 , sort_keys=True ) )
 
-print 'settings.get_options().get_represents() }}}---------- '
+print( 'settings.get_options().get_represents() }}}---------- ' )
 
 
 
